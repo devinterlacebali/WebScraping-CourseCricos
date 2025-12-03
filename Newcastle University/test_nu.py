@@ -1,131 +1,116 @@
-from playwright.sync_api import sync_playwright
-from bs4 import BeautifulSoup
+import asyncio
+import re
 import pandas as pd
-import re, time
+from bs4 import BeautifulSoup
+from playwright.async_api import async_playwright
 
-# === CONFIG ===
-INPUT_FILE = "handbook.xlsx"
-OUTPUT_FILE = "newcastle_handbook_bycode.sql"
-BASE = "https://handbook.newcastle.edu.au/program/2025/"
-HEADLESS = True
-WAIT_AFTER_LOAD = 4000
+# ===== UTILITY =====
+def clean_html(html: str) -> str:
+    """Clean whitespaces and escape SQL single quotes."""
+    if not html:
+        return ""
+    html = re.sub(r"\s+", " ", html)
+    html = html.replace("'", "''")
+    return html.strip()
 
-# === HELPERS ===
-def clean_html(html):
-    return re.sub(r"\s+", " ", html.strip().replace("'", "''"))
+def extract_section_html(soup, header_text):
+    """Find <h3> with given text and return the next container's HTML."""
+    h3 = soup.find("h3", string=lambda x: x and header_text.lower() in x.lower())
+    if not h3:
+        return ""
+    parent = h3.find_parent()
+    body = parent.find_next("div")
+    return clean_html(str(body)) if body else ""
 
-def get_text(soup, selector):
-    tag = soup.select_one(selector)
-    return tag.get_text(" ", strip=True) if tag else ""
 
-def extract_section(soup, id_pattern):
-    div = soup.find("div", id=re.compile(id_pattern, re.I))
-    if div:
-        ps = div.find_all("p")
-        if ps:
-            return "".join(str(p) for p in ps)
-    return ""
+async def scrape_one(url, page):
+    print("🔍 Scraping:", url)
 
-def extract_admission_and_english(soup):
-    html_parts = []
-    adm = soup.find("div", id=re.compile("Admissionrequirements", re.I))
-    if adm:
-        body = adm.find(attrs={"class": re.compile("CardBody")})
-        if body:
-            html_parts.append(str(body))
-    eng = soup.find("div", id=re.compile("Englishlanguagerequirements", re.I))
-    if eng:
-        html_parts.append(str(eng))
-    return "".join(html_parts)
+    await page.goto(url, timeout=120000, wait_until="domcontentloaded")
+    html = await page.content()
+    soup = BeautifulSoup(html, "html.parser")
 
-def get_attr_value_by_header(soup, header_regex):
-    for h3 in soup.find_all("h3"):
-        title = h3.get_text(strip=True)
-        if re.search(header_regex, title, flags=re.I):
-            parent = h3.find_parent(attrs={"class": re.compile("AttrContainer")})
-            if parent:
-                val_div = parent.find("div", class_=re.compile("css-19qn38w"))
-                if val_div:
-                    return val_div.get_text(strip=True)
-    return ""
+    # ============ DESCRIPTION ============
+    desc_block = soup.find("div", {"id": "Description"})
+    description = clean_html(str(desc_block)) if desc_block else ""
 
-def generate_sql(data):
-    return f"""UPDATE courses SET
-    course_description = '{data["course_description"]}',
-    onshore_tuition_fee = '',
-    offshore_tuition_fee = '',
-    entry_requirements = '{data["entry_requirements"]}',
-    total_course_duration = '{data["total_course_duration"]}',
-    apply_form = ''
-    WHERE cricos_course_code = '{data["cricos_course_code"]}';\n\n"""
+    # ============ DURATION ============
+    duration = ""
+    dur_header = soup.find("h3", string=lambda x: x and "Full time duration" in x)
+    if dur_header:
+        val = dur_header.find_next("div")
+        if val:
+            match = re.search(r"(\d+)", val.get_text())
+            if match:
+                duration = f"{match.group(1)} years"
 
-# === MAIN SCRAPER ===
-def scrape_program(page, code, name):
-    url = f"{BASE}{code}"
-    print(f"\n→ Scraping {url}")
-    data = {
-        "course_name": name,
-        "cricos_course_code": "",
-        "course_description": "",
-        "total_course_duration": "",
-        "entry_requirements": "",
-        "apply_form": link
+    # ============ CRICOS CODE ============
+    cricos_code = ""
+    cri_header = soup.find("h3", string=lambda x: x and "CRICOS" in x)
+    if cri_header:
+        val = cri_header.find_next("div")
+        if val:
+            match = re.search(r"\b\d{6}[A-Za-z]\b", val.get_text())
+            if match:
+                cricos_code = match.group(0)
+
+    # ============ ENTRY REQUIREMENTS ============
+    admission = extract_section_html(soup, "Admission requirements")
+    english = extract_section_html(soup, "English language requirements")
+    program_req = extract_section_html(soup, "Program requirements")
+
+    entry_requirements = clean_html(
+        f"{admission} {english} {program_req}"
+    )
+
+    # ============ APPLY FORM ============
+    apply_form = url
+
+    return {
+        "cricos": cricos_code,
+        "description": description,
+        "duration": duration,
+        "requirements": entry_requirements,
+        "apply": apply_form
     }
-    try:
-        page.goto(url, timeout=60000)
-        page.wait_for_timeout(WAIT_AFTER_LOAD)
-        html = page.content()
-        soup = BeautifulSoup(html, "html.parser")
 
-        # Description
-        desc = extract_section(soup, "^Description$")
-        data["course_description"] = clean_html(desc)
 
-        # Duration
-        duration = get_attr_value_by_header(soup, r"Full time duration")
-        if duration:
-            duration = re.sub(r"[^\d]", "", duration)
-            data["total_course_duration"] = f"{duration} years" if duration else ""
+async def main():
+    # ===== LOAD EXCEL =====
+    df = pd.read_excel("Newcastle University/handbook.xlsx")   # <-- ubah jika nama file berbeda
+    urls = df["url"].tolist()
 
-        # CRICOS code
-        cricos = get_attr_value_by_header(soup, r"CRICOS code")
-        data["cricos_course_code"] = cricos.strip()
+    sql_lines = []
 
-        # Entry + English
-        entry = extract_admission_and_english(soup)
-        data["entry_requirements"] = clean_html(entry)
+    async with async_playwright() as pw:
+        browser = await pw.chromium.launch(headless=True)
+        page = await browser.new_page()
 
-        print(f"✅ Success: {name} ({code})")
-        return data
-    except Exception as e:
-        print(f"⚠️ Failed {name}: {e}")
-        return None
+        for url in urls:
+            data = await scrape_one(url, page)
 
-def main():
-    df = pd.read_excel(INPUT_FILE)
-    print(f"📄 Loaded {len(df)} programs from {INPUT_FILE}")
+            sql = f"""
+UPDATE courses SET
+    course_description = '{data['description']}',
+    total_course_duration = '{data['duration']}',
+    offshore_tuition_fee = '',
+    entry_requirements = '{data['requirements']}',
+    apply_form = '{data['apply']}',
+    updated_at = NOW()
+WHERE cricos_course_code = '{data['cricos']}';
+"""
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=HEADLESS)
-        page = browser.new_page()
+            sql_lines.append(sql)
 
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-            for i, row in enumerate(df.itertuples(), start=1):
-                raw = str(row.data)
-                parts = raw.split(" ", 1)
-                if len(parts) < 2:
-                    continue
-                code, name = parts[0], parts[1]
+        await browser.close()
 
-                print(f"[{i}/{len(df)}] {code} - {name}")
-                result = scrape_program(page, code, name)
-                if result:
-                    f.write(generate_sql(result))
-                time.sleep(1)
+    # ===== SAVE SQL OUTPUT =====
+    with open("newcastle_update.sql", "w", encoding="utf-8") as f:
+        f.writelines(sql_lines)
 
-        browser.close()
+    print("✅ Finished! File saved as: newcastle_update.sql")
 
-    print(f"\n🎉 Done! SQL saved to {OUTPUT_FILE}")
 
+# ===== RUN SCRIPT =====
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

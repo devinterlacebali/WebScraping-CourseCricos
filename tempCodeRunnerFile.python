@@ -1,0 +1,83 @@
+import requests
+import json
+from openpyxl import Workbook
+
+API_URL = "https://www.acu.edu.au/webapi/GetCourseResult/get?Citizenship=International"
+BASE_URL = "https://www.acu.edu.au"
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0",
+    "Accept": "application/json, text/plain, */*"
+}
+
+
+def fetch_international_courses():
+    print("Fetching ACU International course list...")
+
+    r = requests.get(API_URL, headers=HEADERS)
+    print("Status code:", r.status_code)
+
+    if r.status_code != 200:
+        print("Error:", r.status_code)
+        print(r.text[:300])  # debug first 300 chars
+        return []
+
+    try:
+        # Default way (kalau suatu saat BOM dihapus, ini tetap jalan)
+        data = r.json()
+    except Exception:
+        # FIX: decode manual dengan utf-8-sig untuk buang BOM
+        raw = r.content.decode("utf-8-sig")
+        try:
+            data = json.loads(raw)
+        except Exception as e:
+            print("Gagal parse JSON setelah decode utf-8-sig:", e)
+            print("First 300 chars of response:")
+            print(raw[:300])
+            return []
+
+    # Kalau yg balik ternyata HTML (diawali "<")
+    if isinstance(data, str) and data.lstrip().startswith("<"):
+        print("Sepertinya respon HTML, bukan JSON:")
+        print(data[:300])
+        return []
+
+    return data.get("CoursesResults", [])
+
+
+def main():
+    courses = fetch_international_courses()
+    print(f"Total international courses: {len(courses)}")
+
+    if not courses:
+        print("Tidak ada course yang berhasil diambil. Cek log di atas.")
+        return
+
+    # Create Excel workbook
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "International Courses"
+
+    # Header row
+    ws.append(["Course Name", "URL"])
+
+    # Fill rows
+    for c in courses:
+        name = c.get("CourseName", "")
+        url = c.get("URL", "")
+
+        # ensure full URL
+        if url.startswith("/"):
+            url = BASE_URL + url
+
+        ws.append([name, url])
+
+    # Save file
+    filename = "acu_course_international.xlsx"
+    wb.save(filename)
+
+    print(f"\n🎉 DONE! Saved Excel file: {filename}")
+
+
+if __name__ == "__main__":
+    main()
