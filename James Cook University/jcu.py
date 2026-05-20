@@ -154,7 +154,7 @@ WHERE cricos_course_code = '{cricos}';
     with open("jcu_scraped_all.sql", "w", encoding="utf-8") as f:
         f.write("\n".join(sqls))
 
-    print("\n🎯 Done! Saved final outputs:")
+    print("\nDone! Saved final outputs:")
     print("- jcu_scraped_all.xlsx")
     print("- jcu_scraped_all.sql")
 

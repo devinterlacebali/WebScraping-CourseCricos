@@ -164,7 +164,7 @@ WHERE cricos_course_code = '{esc_sql(cricos)}';
     with open("vu_scraped_all.sql", "w", encoding="utf-8") as f:
         f.write("\n".join(sqls))
 
-    print("\n🎯 Done! Saved all results:\n- vu_scraped_all.xlsx\n- vu_scraped_all.sql")
+    print("\nDone! Saved all results:\n- vu_scraped_all.xlsx\n- vu_scraped_all.sql")
 
 
 if __name__ == "__main__":

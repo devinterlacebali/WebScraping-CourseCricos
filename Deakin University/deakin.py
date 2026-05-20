@@ -165,7 +165,7 @@ WHERE cricos_course_code = '{esc_sql(cricos)}';
     with open("deakin_scraped_all.sql", "w", encoding="utf-8") as f:
         f.write("\n\n".join(sqls))
 
-    print("\n🎯 Done! Saved:\n- deakin_scraped_all.xlsx\n- deakin_scraped_all.sql")
+    print("\nDone! Saved:\n- deakin_scraped_all.xlsx\n- deakin_scraped_all.sql")
 
 
 if __name__ == "__main__":

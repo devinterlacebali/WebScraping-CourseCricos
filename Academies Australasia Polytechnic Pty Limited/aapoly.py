@@ -216,7 +216,7 @@ async def main():
         f.write(";\n".join(s.strip().rstrip(";") for s in sqls) + ";\n")
 
     pd.DataFrame(results).to_csv("aapoly_scraped.csv", index=False, encoding="utf-8")
-    print("\n🎯 Done! Saved -> aapoly_update.sql & aapoly_scraped.csv")
+    print("\nDone! Saved -> aapoly_update.sql & aapoly_scraped.csv")
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -162,7 +162,7 @@ WHERE cricos_course_code = '{esc(cricos)}';
     with open("utas_scraped_all.sql", "w", encoding="utf-8") as f:
         f.write("\n\n".join(sqls))
 
-    print("\n🎯 Done! Saved:\n- utas_scraped_all.xlsx\n- utas_scraped_all.sql")
+    print("\nDone! Saved:\n- utas_scraped_all.xlsx\n- utas_scraped_all.sql")
 
 if __name__ == "__main__":
     asyncio.run(main())

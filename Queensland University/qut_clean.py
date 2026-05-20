@@ -196,7 +196,7 @@ WHERE cricos_course_code = '{esc_sql(cricos)}';
     pd.DataFrame(all_data).to_excel("qut_scraped_all.xlsx", index=False)
     with open("qut_scraped_all.sql", "w", encoding="utf-8") as f:
         f.write("\n".join(sqls))
-    print("\n🎯 Done! Saved final outputs:\n- qut_scraped_all.xlsx\n- qut_scraped_all.sql")
+    print("\nDone! Saved final outputs:\n- qut_scraped_all.xlsx\n- qut_scraped_all.sql")
 
 
 if __name__ == "__main__":

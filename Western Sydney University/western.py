@@ -111,4 +111,4 @@ WHERE cricos_course_code = {repr(cricos_code)};
 
     browser.close()
 
-print("\n🎯 Done! All SQL updates saved to:", OUTPUT_SQL)
+print("\nDone! All SQL updates saved to:", OUTPUT_SQL)
