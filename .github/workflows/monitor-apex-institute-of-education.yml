@@ -1,0 +1,44 @@
+name: "Monitor: Apex Institute of Education"
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: monitor-apex-institute-of-education
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
+
+      - name: Run monitor
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python monitor_changes.py --name "Apex Institute of Education" --scraper "Apex Institute of Education/apex.py" --sql "Apex Institute of Education/apex_courses_update.sql" --snapshot "Apex Institute of Education/snapshot.json"
+
+      - name: Commit snapshot & changes SQL
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "Apex Institute of Education/snapshot.json"
+          git add "Apex Institute of Education"/*_changes_*.sql || true
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "chore: snapshot & changes for Apex Institute of Education [skip ci]"
+            git push
+          fi

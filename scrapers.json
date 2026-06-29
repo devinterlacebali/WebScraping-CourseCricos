@@ -1,0 +1,282 @@
+[
+  {
+    "id": "academies-australasia-polytechnic-pty-limited",
+    "name": "Academies Australasia Polytechnic Pty Limited",
+    "scraper": "Academies Australasia Polytechnic Pty Limited/aapoly.py",
+    "sql": "Academies Australasia Polytechnic Pty Limited/aapoly_update.sql",
+    "snapshot": "Academies Australasia Polytechnic Pty Limited/snapshot.json",
+    "dir": "Academies Australasia Polytechnic Pty Limited"
+  },
+  {
+    "id": "acknowledge-education",
+    "name": "Acknowledge Education",
+    "scraper": "Acknowledge Education/acknowlede.py",
+    "sql": "Acknowledge Education/acknowledge_courses_update.sql",
+    "snapshot": "Acknowledge Education/snapshot.json",
+    "dir": "Acknowledge Education"
+  },
+  {
+    "id": "adelaide-university",
+    "name": "Adelaide University",
+    "scraper": "Adelaide University/adelaide.py",
+    "sql": "Adelaide University/adelaide_update.sql",
+    "snapshot": "Adelaide University/snapshot.json",
+    "dir": "Adelaide University"
+  },
+  {
+    "id": "apex-institute-of-education",
+    "name": "Apex Institute of Education",
+    "scraper": "Apex Institute of Education/apex.py",
+    "sql": "Apex Institute of Education/apex_courses_update.sql",
+    "snapshot": "Apex Institute of Education/snapshot.json",
+    "dir": "Apex Institute of Education"
+  },
+  {
+    "id": "auscanus-institute-of-australia",
+    "name": "Auscanus Institute of Australia",
+    "scraper": "Auscanus Institute of Australia/auscanus.py",
+    "sql": "Auscanus Institute of Australia/auscanus_update.sql",
+    "snapshot": "Auscanus Institute of Australia/snapshot.json",
+    "dir": "Auscanus Institute of Australia"
+  },
+  {
+    "id": "australian-catholic-university",
+    "name": "Australian Catholic University",
+    "scraper": "Australian Catholic University/acu.py",
+    "sql": "Australian Catholic University/acu_courses_update.sql",
+    "snapshot": "Australian Catholic University/snapshot.json",
+    "dir": "Australian Catholic University"
+  },
+  {
+    "id": "australian-health-and-science-institute",
+    "name": "Australian Health and Science Institute",
+    "scraper": "Australian Health and Science Institute/ahsi.py",
+    "sql": "Australian Health and Science Institute/ahsi_update.sql",
+    "snapshot": "Australian Health and Science Institute/snapshot.json",
+    "dir": "Australian Health and Science Institute"
+  },
+  {
+    "id": "australian-institute-of-higher-education",
+    "name": "Australian Institute of Higher Education",
+    "scraper": "Australian Institute of Higher Education/aih.py",
+    "sql": "Australian Institute of Higher Education/aih_output.sql",
+    "snapshot": "Australian Institute of Higher Education/snapshot.json",
+    "dir": "Australian Institute of Higher Education"
+  },
+  {
+    "id": "australian-national-university",
+    "name": "Australian National University",
+    "scraper": "Australian National University/anu.py",
+    "sql": "Australian National University/anu_courses_update.sql",
+    "snapshot": "Australian National University/snapshot.json",
+    "dir": "Australian National University"
+  },
+  {
+    "id": "brighton-pacific-college",
+    "name": "Brighton Pacific College",
+    "scraper": "Brighton Pacific College/aibt.py",
+    "sql": "Brighton Pacific College/aibt_courses_update.sql",
+    "snapshot": "Brighton Pacific College/snapshot.json",
+    "dir": "Brighton Pacific College"
+  },
+  {
+    "id": "canberra-institute-of-education-and-technology",
+    "name": "Canberra Institute of Education and Technology",
+    "scraper": "Canberra Institute of Education and Technology/ciet.py",
+    "sql": "Canberra Institute of Education and Technology/ciet_update.sql",
+    "snapshot": "Canberra Institute of Education and Technology/snapshot.json",
+    "dir": "Canberra Institute of Education and Technology"
+  },
+  {
+    "id": "canberra-university",
+    "name": "Canberra University",
+    "scraper": "Canberra University/canberra.py",
+    "sql": "Canberra University/canberra_scraped_all.sql",
+    "snapshot": "Canberra University/snapshot.json",
+    "dir": "Canberra University"
+  },
+  {
+    "id": "charles-darwin-university",
+    "name": "Charles Darwin University",
+    "scraper": "Charles Darwin University/cdu.py",
+    "sql": "Charles Darwin University/cdu_update.sql",
+    "snapshot": "Charles Darwin University/snapshot.json",
+    "dir": "Charles Darwin University"
+  },
+  {
+    "id": "charles-sturt-university",
+    "name": "Charles Sturt University",
+    "scraper": "Charles Sturt University/csu.py",
+    "sql": "Charles Sturt University/csu_update.sql",
+    "snapshot": "Charles Sturt University/snapshot.json",
+    "dir": "Charles Sturt University"
+  },
+  {
+    "id": "crown-institute-of-higher-education",
+    "name": "Crown Institute of Higher Education",
+    "scraper": "Crown Institute of Higher Education/cihe.py",
+    "sql": "Crown Institute of Higher Education/cihe_courses_update.sql",
+    "snapshot": "Crown Institute of Higher Education/snapshot.json",
+    "dir": "Crown Institute of Higher Education"
+  },
+  {
+    "id": "deakin-university",
+    "name": "Deakin University",
+    "scraper": "Deakin University/deakin.py",
+    "sql": "Deakin University/deakin_scraped_all.sql",
+    "snapshot": "Deakin University/snapshot.json",
+    "dir": "Deakin University"
+  },
+  {
+    "id": "federation-university",
+    "name": "Federation University",
+    "scraper": "Federation University/federation.py",
+    "sql": "Federation University/federation_update.sql",
+    "snapshot": "Federation University/snapshot.json",
+    "dir": "Federation University"
+  },
+  {
+    "id": "greenwich-university",
+    "name": "Greenwich University",
+    "scraper": "Greenwich University/greenwich.py",
+    "sql": "Greenwich University/greenwich_update.sql",
+    "snapshot": "Greenwich University/snapshot.json",
+    "dir": "Greenwich University"
+  },
+  {
+    "id": "griffin-college",
+    "name": "Griffin College",
+    "scraper": "Griffin College/griffin.py",
+    "sql": "Griffin College/griffin_output.sql",
+    "snapshot": "Griffin College/snapshot.json",
+    "dir": "Griffin College"
+  },
+  {
+    "id": "institute-management-commerce",
+    "name": "Institute Management Commerce",
+    "scraper": "Institute Management Commerce/imc.py",
+    "sql": "Institute Management Commerce/imc_update.sql",
+    "snapshot": "Institute Management Commerce/snapshot.json",
+    "dir": "Institute Management Commerce"
+  },
+  {
+    "id": "james-cook-university",
+    "name": "James Cook University",
+    "scraper": "James Cook University/jcu.py",
+    "sql": "James Cook University/jcu_scraped_all.sql",
+    "snapshot": "James Cook University/snapshot.json",
+    "dir": "James Cook University"
+  },
+  {
+    "id": "laneway-education",
+    "name": "Laneway Education",
+    "scraper": "Laneway Education/laneway.py",
+    "sql": "Laneway Education/laneway_output.sql",
+    "snapshot": "Laneway Education/snapshot.json",
+    "dir": "Laneway Education"
+  },
+  {
+    "id": "lead-college",
+    "name": "Lead College",
+    "scraper": "Lead College/leadcollege.py",
+    "sql": "Lead College/leadcollege_courses_update.sql",
+    "snapshot": "Lead College/snapshot.json",
+    "dir": "Lead College"
+  },
+  {
+    "id": "newcastle-university",
+    "name": "Newcastle University",
+    "scraper": "Newcastle University/newcastle.py",
+    "sql": "Newcastle University/newcastle_update.sql",
+    "snapshot": "Newcastle University/snapshot.json",
+    "dir": "Newcastle University"
+  },
+  {
+    "id": "notre-dame-university",
+    "name": "Notre Dame University",
+    "scraper": "Notre Dame University/notredame.py",
+    "sql": "Notre Dame University/notredame_scraped_all.sql",
+    "snapshot": "Notre Dame University/snapshot.json",
+    "dir": "Notre Dame University"
+  },
+  {
+    "id": "queensland-university",
+    "name": "Queensland University",
+    "scraper": "Queensland University/qut.py",
+    "sql": "Queensland University/qut_scraped_all.sql",
+    "snapshot": "Queensland University/snapshot.json",
+    "dir": "Queensland University"
+  },
+  {
+    "id": "skills-australia-institute-western-australia-college-lnternational",
+    "name": "Skills Australia Institute, Western Australia College lnternational",
+    "scraper": "Skills Australia Institute, Western Australia College lnternational/skillsaustralia.py",
+    "sql": "Skills Australia Institute, Western Australia College lnternational/skills_output.sql",
+    "snapshot": "Skills Australia Institute, Western Australia College lnternational/snapshot.json",
+    "dir": "Skills Australia Institute, Western Australia College lnternational"
+  },
+  {
+    "id": "southern-cross-university",
+    "name": "Southern Cross University",
+    "scraper": "Southern Cross University/scu.py",
+    "sql": "Southern Cross University/scu_scraped_all.sql",
+    "snapshot": "Southern Cross University/snapshot.json",
+    "dir": "Southern Cross University"
+  },
+  {
+    "id": "sunshine-coast-university",
+    "name": "Sunshine Coast University",
+    "scraper": "Sunshine Coast University/usc.py",
+    "sql": "Sunshine Coast University/usc_scraped_all.sql",
+    "snapshot": "Sunshine Coast University/snapshot.json",
+    "dir": "Sunshine Coast University"
+  },
+  {
+    "id": "tasmania-university",
+    "name": "Tasmania University",
+    "scraper": "Tasmania University/utas.py",
+    "sql": "Tasmania University/utas_scraped_all.sql",
+    "snapshot": "Tasmania University/snapshot.json",
+    "dir": "Tasmania University"
+  },
+  {
+    "id": "the-university-of-adelaide",
+    "name": "The University Of Adelaide",
+    "scraper": "The University Of Adelaide/adelaide_real.py",
+    "sql": "The University Of Adelaide/adelaide_update.sql",
+    "snapshot": "The University Of Adelaide/snapshot.json",
+    "dir": "The University Of Adelaide"
+  },
+  {
+    "id": "torrens-university",
+    "name": "Torrens University",
+    "scraper": "Torrens University/torrens.py",
+    "sql": "Torrens University/torrens_scraped_all.sql",
+    "snapshot": "Torrens University/snapshot.json",
+    "dir": "Torrens University"
+  },
+  {
+    "id": "victoria-university",
+    "name": "Victoria University",
+    "scraper": "Victoria University/vu.py",
+    "sql": "Victoria University/vu_scraped_all.sql",
+    "snapshot": "Victoria University/snapshot.json",
+    "dir": "Victoria University"
+  },
+  {
+    "id": "victorian-institute-of-technology",
+    "name": "Victorian Institute of Technology",
+    "scraper": "Victorian Institute of Technology/vit.py",
+    "sql": "Victorian Institute of Technology/vit_update.sql",
+    "snapshot": "Victorian Institute of Technology/snapshot.json",
+    "dir": "Victorian Institute of Technology"
+  },
+  {
+    "id": "western-sydney-university",
+    "name": "Western Sydney University",
+    "scraper": "Western Sydney University/western.py",
+    "sql": "Western Sydney University/wsu_update_courses.sql",
+    "snapshot": "Western Sydney University/snapshot.json",
+    "dir": "Western Sydney University"
+  }
+]

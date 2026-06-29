@@ -1,0 +1,44 @@
+name: "Monitor: Academies Australasia Polytechnic Pty Limited"
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: monitor-academies-australasia-polytechnic-pty-limited
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
+
+      - name: Run monitor
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python monitor_changes.py --name "Academies Australasia Polytechnic Pty Limited" --scraper "Academies Australasia Polytechnic Pty Limited/aapoly.py" --sql "Academies Australasia Polytechnic Pty Limited/aapoly_update.sql" --snapshot "Academies Australasia Polytechnic Pty Limited/snapshot.json"
+
+      - name: Commit snapshot & changes SQL
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "Academies Australasia Polytechnic Pty Limited/snapshot.json"
+          git add "Academies Australasia Polytechnic Pty Limited"/*_changes_*.sql || true
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "chore: snapshot & changes for Academies Australasia Polytechnic Pty Limited [skip ci]"
+            git push
+          fi
