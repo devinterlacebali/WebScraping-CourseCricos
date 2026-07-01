@@ -5,3 +5,7 @@ playwright
 requests
 urllib3
 pdfplumber
+scrapling
+curl-cffi
+patchright
+msgspec

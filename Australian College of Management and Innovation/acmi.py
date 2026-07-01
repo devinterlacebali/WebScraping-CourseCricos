@@ -1,10 +1,22 @@
 import re
-import asyncio
 import pandas as pd
 import sys
 import os
-from bs4 import BeautifulSoup
-from playwright.async_api import async_playwright, TimeoutError as PlaywrightTimeout
+from scrapling import StealthyFetcher
+
+PROVIDER_CODE = "03800K"
+
+MONTHS = {
+    "jan": "January", "feb": "February", "mar": "March", "apr": "April",
+    "may": "May", "jun": "June", "jul": "July", "aug": "August",
+    "sep": "September", "sept": "September", "oct": "October",
+    "nov": "November", "dec": "December", "january": "January",
+    "february": "February", "march": "March", "april": "April", "june": "June",
+    "july": "July", "august": "August", "september": "September",
+    "october": "October", "november": "November", "december": "December",
+}
+MONTH_ORDER = ["January", "February", "March", "April", "May", "June",
+               "July", "August", "September", "October", "November", "December"]
 
 # ===============================================================
 # CLEAN HTML AND STRING HELPERS
@@ -17,44 +29,53 @@ def clean_html(html: str) -> str:
     html = html.replace("'", "''")  # SQL safe
     return html.strip()
 
+def clean_numeric_fee(val: str) -> str:
+    if not val or str(val).strip().lower() in ("nan", "null", "n/a", "", "none"):
+        return "NULL"
+    val_clean = re.sub(r"[^\d\.]", "", str(val))
+    if not val_clean:
+        return "NULL"
+    return val_clean
+
 # ===============================================================
 # EXTRACTION HELPERS
 # ===============================================================
-def get_accordion_body_by_title(soup, title_pattern):
+def get_accordion_body_by_title(page, title_pattern):
     pattern = re.compile(title_pattern, re.I)
     
-    # Try finding class accordion-button or accordion-header first
-    for btn in soup.find_all(class_=re.compile(r"accordion-button|accordion-header", re.I)):
-        if pattern.search(btn.get_text()):
-            parent = btn.find_parent(class_="accordion-item")
-            if parent:
-                body = parent.select_one(".accordion-collapse") or parent.select_one(".accordion-body")
+    # Iterate all elements with class accordion-button or accordion-header
+    for btn in page.css('.accordion-button, .accordion-header'):
+        btn_text = btn.get_all_text() or btn.text or ""
+        if pattern.search(btn_text):
+            target = btn.attrib.get('data-bs-target') or btn.attrib.get('href')
+            if target:
+                body = page.css(target)
                 if body:
-                    return body
-                    
-    # Fallback to search any button, h2, h3, h4, a
-    for tag in soup.find_all(["button", "h2", "h3", "h4", "a"]):
-        if pattern.search(tag.get_text()):
-            parent = tag.find_parent(class_="accordion-item")
-            if parent:
-                body = parent.select_one(".accordion-collapse") or parent.select_one(".accordion-body")
-                if body:
-                    return body
-            sib = tag.find_next_sibling()
-            if sib:
-                return sib
+                    return body[0]
+            
+            # Fallback: search parent accordion-item
+            parent = btn.parent
+            depth = 0
+            while parent and depth < 5:
+                cls = parent.attrib.get('class') or ""
+                if 'accordion-item' in cls:
+                    body = parent.css('.accordion-collapse, .accordion-body')
+                    if body:
+                        return body[0]
+                parent = parent.parent
+                depth += 1
     return None
 
-def extract_description(soup):
-    body = get_accordion_body_by_title(soup, r"About|Description")
+def extract_description(page):
+    body = get_accordion_body_by_title(page, r"About|Description")
     if body:
-        return clean_html(str(body))
+        return clean_html(body.html_content)
     return ""
 
-def extract_duration(soup):
-    body = get_accordion_body_by_title(soup, r"Duration")
+def extract_duration(page):
+    body = get_accordion_body_by_title(page, r"Duration")
     if body:
-        text = body.get_text(" ", strip=True)
+        text = body.get_all_text() or body.text or ""
         m = re.search(r"\b(\d+)\s*weeks?\b", text, re.I)
         if m:
             return f"{m.group(1)} weeks"
@@ -64,22 +85,38 @@ def extract_duration(soup):
         return clean_html(text)
     return ""
 
-def extract_fee(soup):
-    body = get_accordion_body_by_title(soup, r"Fees")
+def extract_fees(page):
+    body = get_accordion_body_by_title(page, r"Fees")
+    tuition = "NULL"
+    materials = "NULL"
+    enrolment = "NULL"
     if body:
-        text = body.get_text(" ", strip=True)
-        m = re.search(r"Tuition Fees?\s*(?:AUD\s*)?\$?\s*([\d,]+)", text, re.I)
-        if m:
-            return m.group(1).replace(",", "")
+        text = body.get_all_text() or body.text or ""
+        # Extract tuition fee
+        m_tuition = re.search(r"Tuition Fees?\s*(?:AUD\s*)?\$?\s*([\d,]+)", text, re.I)
+        if m_tuition:
+            tuition = clean_numeric_fee(m_tuition.group(1))
+        
+        # Extract material fee
+        m_mat = re.search(r"Material\s*Fees?\s*(?:AUD\s*)?\$?\s*([\d,]+)", text, re.I)
+        if m_mat:
+            materials = clean_numeric_fee(m_mat.group(1))
+            
+        # Extract application / enrolment fee
+        m_enr = re.search(r"(?:Application|Enrolment)\s*Fees?\s*(?:\(Non-refundable\))?\s*(?:AUD\s*)?\$?\s*([\d,]+)", text, re.I)
+        if m_enr:
+            enrolment = clean_numeric_fee(m_enr.group(1))
+            
+    return tuition, materials, enrolment
+
+def extract_requirements(page):
+    body = get_accordion_body_by_title(page, r"Requirement")
+    if body:
+        return clean_html(body.html_content)
     return ""
 
-def extract_requirements(soup):
-    body = get_accordion_body_by_title(soup, r"Requirement")
-    if body:
-        return clean_html(str(body))
-    return ""
-
-def extract_cricos(soup, text_content):
+def extract_cricos(page):
+    text_content = page.get_all_text() or page.text or ""
     matches = re.findall(r"\b([0-9]{6,7}[A-Z])\b", text_content)
     # Exclude provider code 03800K
     matches = [m for m in matches if m != "03800K"]
@@ -87,74 +124,69 @@ def extract_cricos(soup, text_content):
         return matches[0]
     return "UNKNOWN"
 
+def extract_intake_months(page):
+    body = get_accordion_body_by_title(page, r"Intake")
+    if not body:
+        return []
+    text = body.get_all_text() or body.text or ""
+    found = []
+    for tok in re.findall(r"[A-Za-z]{3,9}", text):
+        key = tok.lower()
+        if key in MONTHS:
+            val = MONTHS[key]
+            if val not in found:
+                found.append(val)
+    return found
+
 # ===============================================================
 # SCRAPER CORE FUNCTION
 # ===============================================================
-async def scrape_acmi(url, browser, retry=3):
+def scrape_acmi(url, retry=3):
     for attempt in range(retry):
         try:
-            page = await browser.new_page()
-            # Set extra headers to avoid 406
-            await page.set_extra_http_headers({
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-            })
-            await page.goto(url, timeout=90000)
-            await page.wait_for_load_state("load")
-
-            html = await page.content()
-            soup = BeautifulSoup(html, "html.parser")
-            text_content = soup.get_text(" ")
-
+            # StealthyFetcher handles cookies, headers, and anti-bot automatically
+            page = StealthyFetcher.fetch(url, headless=True)
+            
+            tuition, materials, enrolment = extract_fees(page)
+            intake_months = extract_intake_months(page)
+            
             data = {
                 "url": url,
-                "course_description": extract_description(soup),
-                "total_course_duration": extract_duration(soup),
-                "offshore_tuition_fee": extract_fee(soup),
-                "entry_requirements": extract_requirements(soup),
-                "cricos_course_code": extract_cricos(soup, text_content),
-                "apply_form": url
+                "course_description": extract_description(page),
+                "total_course_duration": extract_duration(page),
+                "offshore_tuition_fee": tuition,
+                "onshore_tuition_fee": tuition,
+                "enrolment_fee": enrolment,
+                "materials_fee": materials,
+                "entry_requirements": extract_requirements(page),
+                "cricos_course_code": extract_cricos(page),
+                "apply_form": url,
+                "intake_months": intake_months
             }
-
-            await page.close()
-
-            # SQL script generation
-            sql = f"""UPDATE courses SET
-    course_description = '{data["course_description"]}',
-    total_course_duration = '{data["total_course_duration"]}',
-    offshore_tuition_fee = '{data["offshore_tuition_fee"]}',
-    entry_requirements = '{data["entry_requirements"]}',
-    apply_form = '{data["apply_form"]}',
-    created_at = NOW(),
-    updated_at = NOW()
-WHERE cricos_course_code = '{data["cricos_course_code"]}';"""
 
             print(f"\n--- Scraped {url} ---")
             print(f"CRICOS: {data['cricos_course_code']}")
             print(f"Duration: {data['total_course_duration']}")
-            print(f"Fee: {data['offshore_tuition_fee']}")
+            print(f"Offshore Fee: {data['offshore_tuition_fee']}")
+            print(f"Onshore Fee: {data['onshore_tuition_fee']}")
+            print(f"Materials Fee: {data['materials_fee']}")
+            print(f"Enrolment Fee: {data['enrolment_fee']}")
+            print(f"Intake Months: {data['intake_months']}")
             sys.stdout.flush()
 
-            return sql, data
+            return data
 
-        except PlaywrightTimeout:
-            print(f"[TIMEOUT] Retrying {url} ({attempt+1}/{retry})")
-            await page.close()
-            await asyncio.sleep(2)
         except Exception as e:
-            print(f"[ERROR] {url}: {e}")
-            try:
-                await page.close()
-            except:
-                pass
-            await asyncio.sleep(1)
+            print(f"[ERROR] {url} (Attempt {attempt+1}/{retry}): {e}")
+            import time
+            time.sleep(1)
 
-    return None, None
+    return None
 
 # ===============================================================
 # MAIN LOOP
 # ===============================================================
-async def main():
-    # Make sure we use the correct path relative to project root or current dir
+def main():
     excel_path = "Australian College of Management and Innovation/acmi.xlsx"
     if not os.path.exists(excel_path):
         excel_path = "acmi.xlsx"
@@ -166,21 +198,72 @@ async def main():
     if not os.path.exists("Australian College of Management and Innovation"):
         out_file = "acmi_courses_update.sql"
 
-    sql_out = []
+    results = []
 
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        for idx, url in enumerate(urls, 1):
-            print(f"[{idx}/{len(urls)}] Scraping: {url}")
-            sql, data = await scrape_acmi(url, browser)
-            if sql:
-                sql_out.append(sql)
-        await browser.close()
+    for idx, row in df.iterrows():
+        url = row["url"]
+        title = row["title"]
+        print(f"[{idx+1}/{len(df)}] Scraping: {url}")
+        res = scrape_acmi(url)
+        if res:
+            res["title"] = title
+            results.append(res)
 
+    # Determine global unique intake months
+    all_months = set()
+    for d in results:
+        all_months.update(d["intake_months"])
+    intake_date = ", ".join(m for m in MONTH_ORDER if m in all_months)
+
+    # Save to SQL script
     with open(out_file, "w", encoding="utf-8") as f:
-        f.write("\n\n".join(sql_out))
+        f.write(f"""-- Update provider institution details
+UPDATE provider_institution SET
+    intake_date = '{intake_date}',
+    updated_at = NOW()
+WHERE cricos_provider_code = '{PROVIDER_CODE}';
+
+""")
+        for d in results:
+            if d["cricos_course_code"] == "UNKNOWN":
+                f.write(f"-- ⚠️ Skipped (no/unreliable CRICOS course code): {d['url']}\n\n")
+                continue
+            
+            f.write(f"""UPDATE courses SET
+    course_description = '{d["course_description"]}',
+    total_course_duration = '{d["total_course_duration"]}',
+    offshore_tuition_fee = {d["offshore_tuition_fee"]},
+    onshore_tuition_fee = {d["onshore_tuition_fee"]},
+    enrolment_fee = {d["enrolment_fee"]},
+    materials_fee = {d["materials_fee"]},
+    entry_requirements = '{d["entry_requirements"]}',
+    apply_form = '{d["apply_form"]}',
+    updated_at = NOW()
+WHERE cricos_course_code = '{d["cricos_course_code"]}';
+""")
+
+    # Save to Excel spreadsheet (AIBI style columns)
+    excel_records = []
+    for d in results:
+        excel_records.append({
+            "cricos": d["cricos_course_code"],
+            "title": d["title"],
+            "url": d["url"],
+            "total_course_duration": d["total_course_duration"],
+            "offshore_tuition_fee": d["offshore_tuition_fee"],
+            "onshore_tuition_fee": d["onshore_tuition_fee"],
+            "enrolment_fee": d["enrolment_fee"],
+            "materials_fee": d["materials_fee"],
+            "intake": ", ".join(d["intake_months"]),
+            "course_description": d["course_description"],
+            "entry_requirements": d["entry_requirements"],
+        })
+    out_df = pd.DataFrame(excel_records)
+    out_df.to_excel(excel_path, index=False)
 
     print(f"\n=== DONE! SQL saved to {out_file} ===")
+    print(f"=== Excel saved to {excel_path} ===")
+    print(f"Global Intake Months: {intake_date}")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
