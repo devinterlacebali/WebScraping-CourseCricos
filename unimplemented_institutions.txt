@@ -1,22 +1,16 @@
 UNIMPLEMENTED INSTITUTIONS LIST
 ===============================
 
-Total Unimplemented: 716
+Total Unimplemented: 715
 
 No     | CRICOS Code  | Institution / Trading Name                                                                           | Website URL
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1      | 03635G       | Brighton College Pty Ltd                                                                             | https://brighton.edu.au/
 2      | 03639C       | Skyline International College (MG Australia Group Pty Ltd)                                           | https://sic.edu.au/
 3      | 03690M       | Western Sydney College (International College of Australia Pty Ltd)                                  | https://overseasstudentsaustralia.com/apps/institutions/institution/international-college-of-australia-pty-ltd/
-4      | 03700C       | Mint Training Pty Ltd                                                                                | http://www.minttraining.edu.au/
-5      | 03705J       | The Institute of International Studies (TIIS) (The Institute of International Studies (TIIS)...      | https://www.tiis.edu.au/
-6      | 03717E       | Richmond School of Business (Richmond School of Business Pty Ltd)                                    | www.rsb.edu.au
-7      | 03724F       | Australian Polytechnic College (Mondairs PTY LTD)                                                    | https://australianpolytechnic.edu.au/
 8      | 03732F       | Leaders Institute Pty Ltd, Australian Agribusiness Institute, Australian Business Institute ...      | http://www.leaders.edu.au
-9      | 03753A       | Aspen College (Aspen Education Group Pty Ltd)                                                        | https://www.aspencollege.edu.au/
 10     | 03763K       | Adelaide Institute of Higher Education Pty Ltd (AIHE) (Adelaide Institute of Higher Educatio...      | www.aihe.sa.edu.au
 11     | 03778C       | Southern Academy of Health Sciences (Victorian Institute of Education Pty ltd)                       | www.vie.edu.au
-12     | 03783F       | Active Transition Training and Melbourne Metropolitan College (Active Transition Training Pt...      | https://mmc.edu.au/
 13     | 03800K       | Australian College of Management and Innovation Pty Ltd                                              | https://acmi.wa.edu.au/
 14     | 03844J       | AIBI Higher Education Pty Ltd (Australian Institute of Business Intelligence Pty Ltd)                | www.aibi.edu.au
 15     | 03854G       | Australian Federation College (LEARNVAULT PTY LTD)                                                   | www.afcollege.edu.au

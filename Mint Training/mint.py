@@ -6,7 +6,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
-# Force UTF-8 encoding for stdout and stderr on Windows
+# Force UTF-8 encoding for stdout and stderr on Windows to support emojis in console
 if sys.platform.startswith("win"):
     try:
         sys.stdout.reconfigure(encoding="utf-8")
@@ -32,34 +32,37 @@ def clean_numeric_fee(val: str) -> str:
     val_clean = re.sub(r"[^\d\.]", "", val)
     return val_clean if val_clean else "NULL"
 
-# === DYNAMIC TAB EXTRACTOR ===
-def extract_tab_content(soup, keyword: str, fallback_id: str) -> str:
-    nav_tabs = soup.find(class_="nav-tabs-main")
-    target_id = None
-    if nav_tabs:
-        for a in nav_tabs.find_all("a", href=True):
-            text = a.get_text(" ", strip=True)
-            if keyword.lower() in text.lower():
-                target_id = a["href"].strip().lstrip("#")
-                break
-                
-    if not target_id:
-        target_id = fallback_id
-        
-    pane = soup.find(id=target_id)
-    if pane:
-        # Clone pane to avoid modifying original soup
-        pane_clone = BeautifulSoup(str(pane), "html.parser")
-        
-        # Decompose scripts and styles
-        for tag in pane_clone.find_all(["style", "script", "noscript"]):
-            tag.decompose()
-            
-        # Extract the details-description container if present, otherwise use the pane itself
-        desc_div = pane_clone.find(class_="details-description")
-        target_el = desc_div if desc_div else pane_clone
-        
-        return clean_html(str(target_el))
+# === EXTRACT COURSE DESCRIPTION ===
+def extract_course_description(soup) -> str:
+    editors = soup.find_all(class_="elementor-widget-text-editor")
+    for div in editors:
+        text = div.get_text(" ", strip=True)
+        if any(k in text for k in ["Course Overview", "Brief:", "This qualification reflects", "This nationally accredited qualification"]):
+            container = div.find(class_="elementor-widget-container")
+            if container:
+                # Clean style tags
+                for style in container.find_all("style"):
+                    style.decompose()
+                return clean_html(str(container))
+    return ""
+
+# === EXTRACT ENTRY REQUIREMENTS ===
+def extract_entry_requirements(soup) -> str:
+    editors = soup.find_all(class_="elementor-widget-text-editor")
+    req_blocks = []
+    for div in editors:
+        text = div.get_text(" ", strip=True)
+        if any(k in text for k in ["Entry Requirement", "Age Requirements", "Academic Requirements", "English Language Requirements", "Minimum Requirements", "Basic computer skills", "Age:", "English Language:"]):
+            container = div.find(class_="elementor-widget-container")
+            if container:
+                # Clean style tags
+                for style in container.find_all("style"):
+                    style.decompose()
+                html_str = str(container)
+                if html_str not in req_blocks:
+                    req_blocks.append(html_str)
+    if req_blocks:
+        return clean_html(" <br/> ".join(req_blocks))
     return ""
 
 # === SCRAPE PER COURSE ===
@@ -67,7 +70,7 @@ async def scrape_course(row, browser):
     url = str(row["url"]).strip()
     cricos = str(row["cricos"]).strip()
     duration = str(row["duration"]).strip()
-    fee = clean_numeric_fee(str(row["fee"]))
+    fee = str(row["fee"]).strip()
     enrolment_fee = clean_numeric_fee(str(row.get("enrolment_fee", "")))
     materials_fee = clean_numeric_fee(str(row.get("materials_fee", "")))
     
@@ -86,18 +89,18 @@ async def scrape_course(row, browser):
     
     try:
         page = await browser.new_page()
-        # Use domcontentloaded wait for speed and reliability
-        await page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        await page.goto(url, wait_until="networkidle", timeout=90000)
+        # Wait a bit for Elementor dynamic content
         await page.wait_for_timeout(3000)
         html = await page.content()
         soup = BeautifulSoup(html, "html.parser")
         
-        # 1. Course Description (Overview)
-        desc_html = extract_tab_content(soup, "overview", "course-overview")
+        # Extract course description
+        desc_html = extract_course_description(soup)
         data["course_description"] = desc_html
         
-        # 2. Entry Requirements
-        entry_html = extract_tab_content(soup, "entry", "details-100")
+        # Extract entry requirements
+        entry_html = extract_entry_requirements(soup)
         data["entry_requirements"] = entry_html
         
         await page.close()
@@ -113,17 +116,23 @@ async def scrape_course(row, browser):
 
 # === MAIN ===
 async def main():
-    excel_path = "Western Sydney College/wsc.xlsx"
-    sql_path = "Western Sydney College/wsc_courses_update.sql"
+    excel_path = "Mint Training/mint.xlsx"
+    sql_path = "Mint Training/mint_courses_update.sql"
     
     if not os.path.exists(excel_path):
-        print(f"❌ Excel file not found at: {excel_path}")
-        return
+        # Support running from within Mint Training directory or root directory
+        if os.path.exists("mint.xlsx"):
+            excel_path = "mint.xlsx"
+            sql_path = "mint_courses_update.sql"
+        else:
+            print(f"❌ Excel file not found at: {excel_path}")
+            return
         
     df = pd.read_excel(excel_path)
     results = []
     
     async with async_playwright() as p:
+        # Launch browser in headless mode
         headless_env = os.environ.get("SCRAPER_HEADLESS", "True")
         headless_val = True if headless_env.lower() in ("true", "1") else False
         
@@ -136,14 +145,14 @@ async def main():
             
         await browser.close()
         
-    # Write SQL updates
+    # Write to SQL
     with open(sql_path, "w", encoding="utf-8") as f:
         # 1. Update provider institution details at the top
         f.write(f"""-- Update provider institution details
 UPDATE provider_institution SET
-    intake_date = 'January, February, April, May, July, August, October, November',
+    intake_date = 'January, February, March, April, May, June, July, August, September, October, November, December',
     updated_at = NOW()
-WHERE cricos_provider_code = '03690M';
+WHERE cricos_provider_code = '03700C';
 
 """)
         # 2. Update courses details
@@ -151,7 +160,7 @@ WHERE cricos_provider_code = '03690M';
             f.write(f"""UPDATE courses SET
     course_description = '{d["course_description"]}',
     total_course_duration = '{d["total_course_duration"]}',
-    offshore_tuition_fee = {d["offshore_tuition_fee"]},
+    offshore_tuition_fee = '{d["offshore_tuition_fee"]}',
     enrolment_fee = {d["enrolment_fee"]},
     materials_fee = {d["materials_fee"]},
     entry_requirements = '{d["entry_requirements"]}',

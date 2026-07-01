@@ -8,6 +8,14 @@
     "dir": "Academies Australasia Polytechnic Pty Limited"
   },
   {
+    "id": "academique",
+    "name": "Academique",
+    "scraper": "Academique/academique.py",
+    "sql": "Academique/Academique_courses_update.sql",
+    "snapshot": "Academique/snapshot.json",
+    "dir": "Academique"
+  },
+  {
     "id": "acknowledge-education",
     "name": "Acknowledge Education",
     "scraper": "Acknowledge Education/acknowlede.py",
@@ -24,6 +32,22 @@
     "dir": "Adelaide University"
   },
   {
+    "id": "albright_institute_of_business_and_language_albright_institute_of_english",
+    "name": "Albright Institute of Business and Language; Albright Institute of English",
+    "scraper": "Albright Institute of Business and Language; Albright Institute of English/albright_institute_of_business_and_language_albright_institute_of_english.py",
+    "sql": "Albright Institute of Business and Language; Albright Institute of English/Albright Institute of Business and Language; Albright Institute of English_courses_update.sql",
+    "snapshot": "Albright Institute of Business and Language; Albright Institute of English/snapshot.json",
+    "dir": "Albright Institute of Business and Language; Albright Institute of English"
+  },
+  {
+    "id": "alliance_college",
+    "name": "Alliance College",
+    "scraper": "Alliance College/alliance_college.py",
+    "sql": "Alliance College/Alliance College_courses_update.sql",
+    "snapshot": "Alliance College/snapshot.json",
+    "dir": "Alliance College"
+  },
+  {
     "id": "apex-institute-of-education",
     "name": "Apex Institute of Education",
     "scraper": "Apex Institute of Education/apex.py",
@@ -32,12 +56,28 @@
     "dir": "Apex Institute of Education"
   },
   {
+    "id": "asia_pacific_international_college",
+    "name": "Asia Pacific International College",
+    "scraper": "Asia Pacific International College/asia_pacific_international_college.py",
+    "sql": "Asia Pacific International College/Asia Pacific International College_courses_update.sql",
+    "snapshot": "Asia Pacific International College/snapshot.json",
+    "dir": "Asia Pacific International College"
+  },
+  {
     "id": "auscanus-institute-of-australia",
     "name": "Auscanus Institute of Australia",
     "scraper": "Auscanus Institute of Australia/auscanus.py",
     "sql": "Auscanus Institute of Australia/auscanus_update.sql",
     "snapshot": "Auscanus Institute of Australia/snapshot.json",
     "dir": "Auscanus Institute of Australia"
+  },
+  {
+    "id": "australia_institute_of_business_and_technology",
+    "name": "Australia Institute of Business and Technology",
+    "scraper": "Australia Institute of Business and Technology/australia_institute_of_business_and_technology.py",
+    "sql": "Australia Institute of Business and Technology/Australia Institute of Business and Technology_courses_update.sql",
+    "snapshot": "Australia Institute of Business and Technology/snapshot.json",
+    "dir": "Australia Institute of Business and Technology"
   },
   {
     "id": "australian-catholic-university",
@@ -72,12 +112,84 @@
     "dir": "Australian National University"
   },
   {
+    "id": "australian_careers_college",
+    "name": "Australian Careers College",
+    "scraper": "Australian Careers College/australian_careers_college.py",
+    "sql": "Australian Careers College/Australian Careers College_courses_update.sql",
+    "snapshot": "Australian Careers College/snapshot.json",
+    "dir": "Australian Careers College"
+  },
+  {
+    "id": "australian_college_of_sport_fitness_australian_learning_group",
+    "name": "Australian College of Sport & Fitness, Australian Learning Group",
+    "scraper": "Australian College of Sport & Fitness, Australian Learning Group/australian_college_of_sport_fitness_australian_learning_group.py",
+    "sql": "Australian College of Sport & Fitness, Australian Learning Group/Australian College of Sport & Fitness, Australian Learning Group_courses_update.sql",
+    "snapshot": "Australian College of Sport & Fitness, Australian Learning Group/snapshot.json",
+    "dir": "Australian College of Sport & Fitness, Australian Learning Group"
+  },
+  {
+    "id": "australian_college_of_technology_and_business",
+    "name": "Australian College of Technology and Business",
+    "scraper": "Australian College of Technology and Business/australian_college_of_technology_and_business.py",
+    "sql": "Australian College of Technology and Business/Australian College of Technology and Business_courses_update.sql",
+    "snapshot": "Australian College of Technology and Business/snapshot.json",
+    "dir": "Australian College of Technology and Business"
+  },
+  {
+    "id": "australian_health_and_management_institute",
+    "name": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE",
+    "scraper": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE/australian_health_and_management_institute.py",
+    "sql": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE/AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE_courses_update.sql",
+    "snapshot": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE/snapshot.json",
+    "dir": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE"
+  },
+  {
+    "id": "australian_technical_college_western_australia",
+    "name": "Australian Technical College Western Australia",
+    "scraper": "Australian Technical College Western Australia/australian_technical_college_western_australia.py",
+    "sql": "Australian Technical College Western Australia/Australian Technical College Western Australia_courses_update.sql",
+    "snapshot": "Australian Technical College Western Australia/snapshot.json",
+    "dir": "Australian Technical College Western Australia"
+  },
+  {
+    "id": "australis_college",
+    "name": "Australis College",
+    "scraper": "Australis College/australis_college.py",
+    "sql": "Australis College/Australis College_courses_update.sql",
+    "snapshot": "Australis College/snapshot.json",
+    "dir": "Australis College"
+  },
+  {
+    "id": "brighton-college",
+    "name": "Brighton College",
+    "scraper": "Brighton College/brighton.py",
+    "sql": "Brighton College/brighton_courses_update.sql",
+    "snapshot": "Brighton College/snapshot.json",
+    "dir": "Brighton College"
+  },
+  {
     "id": "brighton-pacific-college",
     "name": "Brighton Pacific College",
     "scraper": "Brighton Pacific College/aibt.py",
     "sql": "Brighton Pacific College/aibt_courses_update.sql",
     "snapshot": "Brighton Pacific College/snapshot.json",
     "dir": "Brighton Pacific College"
+  },
+  {
+    "id": "brisbane_college_of_horticulture",
+    "name": "Brisbane College of Horticulture",
+    "scraper": "Brisbane College of Horticulture/brisbane_college_of_horticulture.py",
+    "sql": "Brisbane College of Horticulture/Brisbane College of Horticulture_courses_update.sql",
+    "snapshot": "Brisbane College of Horticulture/snapshot.json",
+    "dir": "Brisbane College of Horticulture"
+  },
+  {
+    "id": "cambridge_college_australia_tradetech_australia",
+    "name": "Cambridge College Australia; TradeTech Australia",
+    "scraper": "Cambridge College Australia; TradeTech Australia/cambridge_college_australia_tradetech_australia.py",
+    "sql": "Cambridge College Australia; TradeTech Australia/Cambridge College Australia; TradeTech Australia_courses_update.sql",
+    "snapshot": "Cambridge College Australia; TradeTech Australia/snapshot.json",
+    "dir": "Cambridge College Australia; TradeTech Australia"
   },
   {
     "id": "canberra-institute-of-education-and-technology",
@@ -94,6 +206,14 @@
     "sql": "Canberra University/canberra_scraped_all.sql",
     "snapshot": "Canberra University/snapshot.json",
     "dir": "Canberra University"
+  },
+  {
+    "id": "central_australian_college",
+    "name": "Central Australian College",
+    "scraper": "Central Australian College/central_australian_college.py",
+    "sql": "Central Australian College/Central Australian College_courses_update.sql",
+    "snapshot": "Central Australian College/snapshot.json",
+    "dir": "Central Australian College"
   },
   {
     "id": "charles-darwin-university",
@@ -120,12 +240,36 @@
     "dir": "Crown Institute of Higher Education"
   },
   {
+    "id": "danford_college",
+    "name": "Danford College",
+    "scraper": "Danford College/danford_college.py",
+    "sql": "Danford College/Danford College_courses_update.sql",
+    "snapshot": "Danford College/snapshot.json",
+    "dir": "Danford College"
+  },
+  {
     "id": "deakin-university",
     "name": "Deakin University",
     "scraper": "Deakin University/deakin.py",
     "sql": "Deakin University/deakin_scraped_all.sql",
     "snapshot": "Deakin University/snapshot.json",
     "dir": "Deakin University"
+  },
+  {
+    "id": "durban_international_college",
+    "name": "Durban International College",
+    "scraper": "Durban International College/durban_international_college.py",
+    "sql": "Durban International College/Durban International College_courses_update.sql",
+    "snapshot": "Durban International College/snapshot.json",
+    "dir": "Durban International College"
+  },
+  {
+    "id": "equals_international",
+    "name": "EQUALS International",
+    "scraper": "EQUALS International/equals_international.py",
+    "sql": "EQUALS International/EQUALS International_courses_update.sql",
+    "snapshot": "EQUALS International/snapshot.json",
+    "dir": "EQUALS International"
   },
   {
     "id": "federation-university",
@@ -136,12 +280,28 @@
     "dir": "Federation University"
   },
   {
+    "id": "frontier_leadership",
+    "name": "Frontier Leadership",
+    "scraper": "Frontier Leadership/frontier_leadership.py",
+    "sql": "Frontier Leadership/Frontier Leadership_courses_update.sql",
+    "snapshot": "Frontier Leadership/snapshot.json",
+    "dir": "Frontier Leadership"
+  },
+  {
     "id": "greenwich-university",
     "name": "Greenwich University",
     "scraper": "Greenwich University/greenwich.py",
     "sql": "Greenwich University/greenwich_update.sql",
     "snapshot": "Greenwich University/snapshot.json",
     "dir": "Greenwich University"
+  },
+  {
+    "id": "greenwich_english_college_greenwich_management_college",
+    "name": "Greenwich English College, Greenwich Management College",
+    "scraper": "Greenwich English College, Greenwich Management College/greenwich_english_college_greenwich_management_college.py",
+    "sql": "Greenwich English College, Greenwich Management College/Greenwich English College, Greenwich Management College_courses_update.sql",
+    "snapshot": "Greenwich English College, Greenwich Management College/snapshot.json",
+    "dir": "Greenwich English College, Greenwich Management College"
   },
   {
     "id": "griffin-college",
@@ -152,6 +312,30 @@
     "dir": "Griffin College"
   },
   {
+    "id": "holmes_institute",
+    "name": "Holmes Institute",
+    "scraper": "Holmes Institute/holmes_institute.py",
+    "sql": "Holmes Institute/Holmes Institute_courses_update.sql",
+    "snapshot": "Holmes Institute/snapshot.json",
+    "dir": "Holmes Institute"
+  },
+  {
+    "id": "ikon_institute_of_australia",
+    "name": "Ikon Institute of Australia",
+    "scraper": "Ikon Institute of Australia/ikon_institute_of_australia.py",
+    "sql": "Ikon Institute of Australia/Ikon Institute of Australia_courses_update.sql",
+    "snapshot": "Ikon Institute of Australia/snapshot.json",
+    "dir": "Ikon Institute of Australia"
+  },
+  {
+    "id": "imagine_education_australia",
+    "name": "Imagine Education Australia",
+    "scraper": "Imagine Education Australia/imagine_education_australia.py",
+    "sql": "Imagine Education Australia/Imagine Education Australia_courses_update.sql",
+    "snapshot": "Imagine Education Australia/snapshot.json",
+    "dir": "Imagine Education Australia"
+  },
+  {
     "id": "institute-management-commerce",
     "name": "Institute Management Commerce",
     "scraper": "Institute Management Commerce/imc.py",
@@ -160,12 +344,28 @@
     "dir": "Institute Management Commerce"
   },
   {
+    "id": "institute_of_health_and_nursing_australia",
+    "name": "Institute of Health and Nursing Australia",
+    "scraper": "Institute of Health and Nursing Australia/institute_of_health_and_nursing_australia.py",
+    "sql": "Institute of Health and Nursing Australia/Institute of Health and Nursing Australia_courses_update.sql",
+    "snapshot": "Institute of Health and Nursing Australia/snapshot.json",
+    "dir": "Institute of Health and Nursing Australia"
+  },
+  {
     "id": "james-cook-university",
     "name": "James Cook University",
     "scraper": "James Cook University/jcu.py",
     "sql": "James Cook University/jcu_scraped_all.sql",
     "snapshot": "James Cook University/snapshot.json",
     "dir": "James Cook University"
+  },
+  {
+    "id": "kent_institute_australia",
+    "name": "Kent Institute Australia",
+    "scraper": "Kent Institute Australia/kent_institute_australia.py",
+    "sql": "Kent Institute Australia/Kent Institute Australia_courses_update.sql",
+    "snapshot": "Kent Institute Australia/snapshot.json",
+    "dir": "Kent Institute Australia"
   },
   {
     "id": "laneway-education",
@@ -184,6 +384,22 @@
     "dir": "Lead College"
   },
   {
+    "id": "macallan_college",
+    "name": "Macallan College",
+    "scraper": "Macallan College/macallan_college.py",
+    "sql": "Macallan College/Macallan College_courses_update.sql",
+    "snapshot": "Macallan College/snapshot.json",
+    "dir": "Macallan College"
+  },
+  {
+    "id": "mint-training",
+    "name": "Mint Training Pty Ltd",
+    "scraper": "Mint Training/mint.py",
+    "sql": "Mint Training/mint_courses_update.sql",
+    "snapshot": "Mint Training/snapshot.json",
+    "dir": "Mint Training"
+  },
+  {
     "id": "newcastle-university",
     "name": "Newcastle University",
     "scraper": "Newcastle University/newcastle.py",
@@ -192,12 +408,52 @@
     "dir": "Newcastle University"
   },
   {
+    "id": "nortwest",
+    "name": "Nortwest",
+    "scraper": "Nortwest/nortwest.py",
+    "sql": "Nortwest/Nortwest_courses_update.sql",
+    "snapshot": "Nortwest/snapshot.json",
+    "dir": "Nortwest"
+  },
+  {
     "id": "notre-dame-university",
     "name": "Notre Dame University",
     "scraper": "Notre Dame University/notredame.py",
     "sql": "Notre Dame University/notredame_scraped_all.sql",
     "snapshot": "Notre Dame University/snapshot.json",
     "dir": "Notre Dame University"
+  },
+  {
+    "id": "nova_institute_of_technology",
+    "name": "Nova Institute of Technology",
+    "scraper": "Nova Institute of Technology/nova_institute_of_technology.py",
+    "sql": "Nova Institute of Technology/Nova Institute of Technology_courses_update.sql",
+    "snapshot": "Nova Institute of Technology/snapshot.json",
+    "dir": "Nova Institute of Technology"
+  },
+  {
+    "id": "oceania_college_of_technology",
+    "name": "Oceania College of Technology",
+    "scraper": "Oceania College of Technology/oceania_college_of_technology.py",
+    "sql": "Oceania College of Technology/Oceania College of Technology_courses_update.sql",
+    "snapshot": "Oceania College of Technology/snapshot.json",
+    "dir": "Oceania College of Technology"
+  },
+  {
+    "id": "paragon_polytechnic",
+    "name": "Paragon Polytechnic",
+    "scraper": "Paragon Polytechnic/paragon_polytechnic.py",
+    "sql": "Paragon Polytechnic/Paragon Polytechnic_courses_update.sql",
+    "snapshot": "Paragon Polytechnic/snapshot.json",
+    "dir": "Paragon Polytechnic"
+  },
+  {
+    "id": "queensford_college_q_learning",
+    "name": "Queensford College, Q Learning",
+    "scraper": "Queensford College, Q Learning/queensford_college_q_learning.py",
+    "sql": "Queensford College, Q Learning/Queensford College, Q Learning_courses_update.sql",
+    "snapshot": "Queensford College, Q Learning/snapshot.json",
+    "dir": "Queensford College, Q Learning"
   },
   {
     "id": "queensland-university",
@@ -216,6 +472,22 @@
     "dir": "Skills Australia Institute, Western Australia College lnternational"
   },
   {
+    "id": "skills_institute_australia",
+    "name": "Skills Institute Australia",
+    "scraper": "Skills Institute Australia/skills_institute_australia.py",
+    "sql": "Skills Institute Australia/Skills Institute Australia_courses_update.sql",
+    "snapshot": "Skills Institute Australia/snapshot.json",
+    "dir": "Skills Institute Australia"
+  },
+  {
+    "id": "skyline-international-college",
+    "name": "Skyline International College",
+    "scraper": "Skyline International College/skyline.py",
+    "sql": "Skyline International College/skyline_courses_update.sql",
+    "snapshot": "Skyline International College/snapshot.json",
+    "dir": "Skyline International College"
+  },
+  {
     "id": "southern-cross-university",
     "name": "Southern Cross University",
     "scraper": "Southern Cross University/scu.py",
@@ -224,12 +496,44 @@
     "dir": "Southern Cross University"
   },
   {
+    "id": "spencer_college_spencer_college",
+    "name": "Spencer College; Spencer College",
+    "scraper": "Spencer College; Spencer College/spencer_college_spencer_college.py",
+    "sql": "Spencer College; Spencer College/Spencer College; Spencer College_courses_update.sql",
+    "snapshot": "Spencer College; Spencer College/snapshot.json",
+    "dir": "Spencer College; Spencer College"
+  },
+  {
+    "id": "stanley_college",
+    "name": "Stanley College",
+    "scraper": "Stanley College/stanley_college.py",
+    "sql": "Stanley College/Stanley College_courses_update.sql",
+    "snapshot": "Stanley College/snapshot.json",
+    "dir": "Stanley College"
+  },
+  {
+    "id": "step_into_training_services_sits",
+    "name": "Step Into Training Services (SITS)",
+    "scraper": "Step Into Training Services (SITS)/step_into_training_services_sits.py",
+    "sql": "Step Into Training Services (SITS)/Step Into Training Services (SITS)_courses_update.sql",
+    "snapshot": "Step Into Training Services (SITS)/snapshot.json",
+    "dir": "Step Into Training Services (SITS)"
+  },
+  {
     "id": "sunshine-coast-university",
     "name": "Sunshine Coast University",
     "scraper": "Sunshine Coast University/usc.py",
     "sql": "Sunshine Coast University/usc_scraped_all.sql",
     "snapshot": "Sunshine Coast University/snapshot.json",
     "dir": "Sunshine Coast University"
+  },
+  {
+    "id": "sydney_city_college_of_management",
+    "name": "Sydney City College of Management",
+    "scraper": "Sydney City College of Management/sydney_city_college_of_management.py",
+    "sql": "Sydney City College of Management/Sydney City College of Management_courses_update.sql",
+    "snapshot": "Sydney City College of Management/snapshot.json",
+    "dir": "Sydney City College of Management"
   },
   {
     "id": "tasmania-university",
@@ -248,36 +552,20 @@
     "dir": "The University Of Adelaide"
   },
   {
-    "id": "torrens-university",
-    "name": "Torrens University",
-    "scraper": "Torrens University/torrens.py",
-    "sql": "Torrens University/torrens_scraped_all.sql",
-    "snapshot": "Torrens University/snapshot.json",
-    "dir": "Torrens University"
+    "id": "the_canberra_training_school_canberra_business_and_technology_college",
+    "name": "The Canberra Training School , Canberra Business and Technology College",
+    "scraper": "The Canberra Training School , Canberra Business and Technology College/the_canberra_training_school_canberra_business_and_technology_college.py",
+    "sql": "The Canberra Training School , Canberra Business and Technology College/The Canberra Training School , Canberra Business and Technology College_courses_update.sql",
+    "snapshot": "The Canberra Training School , Canberra Business and Technology College/snapshot.json",
+    "dir": "The Canberra Training School , Canberra Business and Technology College"
   },
   {
-    "id": "victoria-university",
-    "name": "Victoria University",
-    "scraper": "Victoria University/vu.py",
-    "sql": "Victoria University/vu_scraped_all.sql",
-    "snapshot": "Victoria University/snapshot.json",
-    "dir": "Victoria University"
-  },
-  {
-    "id": "victorian-institute-of-technology",
-    "name": "Victorian Institute of Technology",
-    "scraper": "Victorian Institute of Technology/vit.py",
-    "sql": "Victorian Institute of Technology/vit_update.sql",
-    "snapshot": "Victorian Institute of Technology/snapshot.json",
-    "dir": "Victorian Institute of Technology"
-  },
-  {
-    "id": "western-sydney-university",
-    "name": "Western Sydney University",
-    "scraper": "Western Sydney University/western.py",
-    "sql": "Western Sydney University/wsu_update_courses.sql",
-    "snapshot": "Western Sydney University/snapshot.json",
-    "dir": "Western Sydney University"
+    "id": "the_centre_of_excellence",
+    "name": "The Centre of Excellence",
+    "scraper": "The Centre of Excellence/the_centre_of_excellence.py",
+    "sql": "The Centre of Excellence/The Centre of Excellence_courses_update.sql",
+    "snapshot": "The Centre of Excellence/snapshot.json",
+    "dir": "The Centre of Excellence"
   },
   {
     "id": "the_university_of_newcastle_uon_the_university_of_newcastle_language_centre_sydney",
@@ -288,12 +576,44 @@
     "dir": "The University of Newcastle (UoN), The University of Newcastle Language Centre, Sydney"
   },
   {
-    "id": "kent_institute_australia",
-    "name": "Kent Institute Australia",
-    "scraper": "Kent Institute Australia/kent_institute_australia.py",
-    "sql": "Kent Institute Australia/Kent Institute Australia_courses_update.sql",
-    "snapshot": "Kent Institute Australia/snapshot.json",
-    "dir": "Kent Institute Australia"
+    "id": "the_university_of_notre_dame_australia",
+    "name": "The University of Notre Dame Australia",
+    "scraper": "The University of Notre Dame Australia/the_university_of_notre_dame_australia.py",
+    "sql": "The University of Notre Dame Australia/The University of Notre Dame Australia_courses_update.sql",
+    "snapshot": "The University of Notre Dame Australia/snapshot.json",
+    "dir": "The University of Notre Dame Australia"
+  },
+  {
+    "id": "top_education_institute_australian_national_institute_of_management_and_commerce",
+    "name": "Top Education Institute, Australian National Institute of Management and Commerce",
+    "scraper": "Top Education Institute, Australian National Institute of Management and Commerce/top_education_institute_australian_national_institute_of_management_and_commerce.py",
+    "sql": "Top Education Institute, Australian National Institute of Management and Commerce/Top Education Institute, Australian National Institute of Management and Commerce_courses_update.sql",
+    "snapshot": "Top Education Institute, Australian National Institute of Management and Commerce/snapshot.json",
+    "dir": "Top Education Institute, Australian National Institute of Management and Commerce"
+  },
+  {
+    "id": "torrens-university",
+    "name": "Torrens University",
+    "scraper": "Torrens University/torrens.py",
+    "sql": "Torrens University/torrens_scraped_all.sql",
+    "snapshot": "Torrens University/snapshot.json",
+    "dir": "Torrens University"
+  },
+  {
+    "id": "trinity_institute_australia",
+    "name": "Trinity Institute (Australia)",
+    "scraper": "Trinity Institute (Australia)/trinity_institute_australia.py",
+    "sql": "Trinity Institute (Australia)/Trinity Institute (Australia)_courses_update.sql",
+    "snapshot": "Trinity Institute (Australia)/snapshot.json",
+    "dir": "Trinity Institute (Australia)"
+  },
+  {
+    "id": "universal_business_school_sydney_ubss_group_colleges_australia",
+    "name": "Universal Business School Sydney (UBSS), Group Colleges Australia",
+    "scraper": "Universal Business School Sydney (UBSS), Group Colleges Australia/universal_business_school_sydney_ubss_group_colleges_australia.py",
+    "sql": "Universal Business School Sydney (UBSS), Group Colleges Australia/Universal Business School Sydney (UBSS), Group Colleges Australia_courses_update.sql",
+    "snapshot": "Universal Business School Sydney (UBSS), Group Colleges Australia/snapshot.json",
+    "dir": "Universal Business School Sydney (UBSS), Group Colleges Australia"
   },
   {
     "id": "university_of_canberra",
@@ -312,284 +632,12 @@
     "dir": "University of Tasmania (UTAS)"
   },
   {
-    "id": "the_university_of_notre_dame_australia",
-    "name": "The University of Notre Dame Australia",
-    "scraper": "The University of Notre Dame Australia/the_university_of_notre_dame_australia.py",
-    "sql": "The University of Notre Dame Australia/The University of Notre Dame Australia_courses_update.sql",
-    "snapshot": "The University of Notre Dame Australia/snapshot.json",
-    "dir": "The University of Notre Dame Australia"
-  },
-  {
     "id": "university_of_the_sunshine_coast",
     "name": "University of the Sunshine Coast",
     "scraper": "University of the Sunshine Coast/university_of_the_sunshine_coast.py",
     "sql": "University of the Sunshine Coast/University of the Sunshine Coast_courses_update.sql",
     "snapshot": "University of the Sunshine Coast/snapshot.json",
     "dir": "University of the Sunshine Coast"
-  },
-  {
-    "id": "alliance_college",
-    "name": "Alliance College",
-    "scraper": "Alliance College/alliance_college.py",
-    "sql": "Alliance College/Alliance College_courses_update.sql",
-    "snapshot": "Alliance College/snapshot.json",
-    "dir": "Alliance College"
-  },
-  {
-    "id": "cambridge_college_australia_tradetech_australia",
-    "name": "Cambridge College Australia; TradeTech Australia",
-    "scraper": "Cambridge College Australia; TradeTech Australia/cambridge_college_australia_tradetech_australia.py",
-    "sql": "Cambridge College Australia; TradeTech Australia/Cambridge College Australia; TradeTech Australia_courses_update.sql",
-    "snapshot": "Cambridge College Australia; TradeTech Australia/snapshot.json",
-    "dir": "Cambridge College Australia; TradeTech Australia"
-  },
-  {
-    "id": "top_education_institute_australian_national_institute_of_management_and_commerce",
-    "name": "Top Education Institute, Australian National Institute of Management and Commerce",
-    "scraper": "Top Education Institute, Australian National Institute of Management and Commerce/top_education_institute_australian_national_institute_of_management_and_commerce.py",
-    "sql": "Top Education Institute, Australian National Institute of Management and Commerce/Top Education Institute, Australian National Institute of Management and Commerce_courses_update.sql",
-    "snapshot": "Top Education Institute, Australian National Institute of Management and Commerce/snapshot.json",
-    "dir": "Top Education Institute, Australian National Institute of Management and Commerce"
-  },
-  {
-    "id": "universal_business_school_sydney_ubss_group_colleges_australia",
-    "name": "Universal Business School Sydney (UBSS), Group Colleges Australia",
-    "scraper": "Universal Business School Sydney (UBSS), Group Colleges Australia/universal_business_school_sydney_ubss_group_colleges_australia.py",
-    "sql": "Universal Business School Sydney (UBSS), Group Colleges Australia/Universal Business School Sydney (UBSS), Group Colleges Australia_courses_update.sql",
-    "snapshot": "Universal Business School Sydney (UBSS), Group Colleges Australia/snapshot.json",
-    "dir": "Universal Business School Sydney (UBSS), Group Colleges Australia"
-  },
-  {
-    "id": "holmes_institute",
-    "name": "Holmes Institute",
-    "scraper": "Holmes Institute/holmes_institute.py",
-    "sql": "Holmes Institute/Holmes Institute_courses_update.sql",
-    "snapshot": "Holmes Institute/snapshot.json",
-    "dir": "Holmes Institute"
-  },
-  {
-    "id": "greenwich_english_college_greenwich_management_college",
-    "name": "Greenwich English College, Greenwich Management College",
-    "scraper": "Greenwich English College, Greenwich Management College/greenwich_english_college_greenwich_management_college.py",
-    "sql": "Greenwich English College, Greenwich Management College/Greenwich English College, Greenwich Management College_courses_update.sql",
-    "snapshot": "Greenwich English College, Greenwich Management College/snapshot.json",
-    "dir": "Greenwich English College, Greenwich Management College"
-  },
-  {
-    "id": "win_english_centre_win_college",
-    "name": "WIN English Centre WIN College",
-    "scraper": "WIN English Centre WIN College/win_english_centre_win_college.py",
-    "sql": "WIN English Centre WIN College/WIN English Centre WIN College_courses_update.sql",
-    "snapshot": "WIN English Centre WIN College/snapshot.json",
-    "dir": "WIN English Centre WIN College"
-  },
-  {
-    "id": "imagine_education_australia",
-    "name": "Imagine Education Australia",
-    "scraper": "Imagine Education Australia/imagine_education_australia.py",
-    "sql": "Imagine Education Australia/Imagine Education Australia_courses_update.sql",
-    "snapshot": "Imagine Education Australia/snapshot.json",
-    "dir": "Imagine Education Australia"
-  },
-  {
-    "id": "warwick_institute_of_australia",
-    "name": "Warwick Institute of Australia",
-    "scraper": "Warwick Institute of Australia/warwick_institute_of_australia.py",
-    "sql": "Warwick Institute of Australia/Warwick Institute of Australia_courses_update.sql",
-    "snapshot": "Warwick Institute of Australia/snapshot.json",
-    "dir": "Warwick Institute of Australia"
-  },
-  {
-    "id": "equals_international",
-    "name": "EQUALS International",
-    "scraper": "EQUALS International/equals_international.py",
-    "sql": "EQUALS International/EQUALS International_courses_update.sql",
-    "snapshot": "EQUALS International/snapshot.json",
-    "dir": "EQUALS International"
-  },
-  {
-    "id": "nova_institute_of_technology",
-    "name": "Nova Institute of Technology",
-    "scraper": "Nova Institute of Technology/nova_institute_of_technology.py",
-    "sql": "Nova Institute of Technology/Nova Institute of Technology_courses_update.sql",
-    "snapshot": "Nova Institute of Technology/snapshot.json",
-    "dir": "Nova Institute of Technology"
-  },
-  {
-    "id": "durban_international_college",
-    "name": "Durban International College",
-    "scraper": "Durban International College/durban_international_college.py",
-    "sql": "Durban International College/Durban International College_courses_update.sql",
-    "snapshot": "Durban International College/snapshot.json",
-    "dir": "Durban International College"
-  },
-  {
-    "id": "danford_college",
-    "name": "Danford College",
-    "scraper": "Danford College/danford_college.py",
-    "sql": "Danford College/Danford College_courses_update.sql",
-    "snapshot": "Danford College/snapshot.json",
-    "dir": "Danford College"
-  },
-  {
-    "id": "queensford_college_q_learning",
-    "name": "Queensford College, Q Learning",
-    "scraper": "Queensford College, Q Learning/queensford_college_q_learning.py",
-    "sql": "Queensford College, Q Learning/Queensford College, Q Learning_courses_update.sql",
-    "snapshot": "Queensford College, Q Learning/snapshot.json",
-    "dir": "Queensford College, Q Learning"
-  },
-  {
-    "id": "australian_careers_college",
-    "name": "Australian Careers College",
-    "scraper": "Australian Careers College/australian_careers_college.py",
-    "sql": "Australian Careers College/Australian Careers College_courses_update.sql",
-    "snapshot": "Australian Careers College/snapshot.json",
-    "dir": "Australian Careers College"
-  },
-  {
-    "id": "stanley_college",
-    "name": "Stanley College",
-    "scraper": "Stanley College/stanley_college.py",
-    "sql": "Stanley College/Stanley College_courses_update.sql",
-    "snapshot": "Stanley College/snapshot.json",
-    "dir": "Stanley College"
-  },
-  {
-    "id": "asia_pacific_international_college",
-    "name": "Asia Pacific International College",
-    "scraper": "Asia Pacific International College/asia_pacific_international_college.py",
-    "sql": "Asia Pacific International College/Asia Pacific International College_courses_update.sql",
-    "snapshot": "Asia Pacific International College/snapshot.json",
-    "dir": "Asia Pacific International College"
-  },
-  {
-    "id": "australian_college_of_sport_fitness_australian_learning_group",
-    "name": "Australian College of Sport & Fitness, Australian Learning Group",
-    "scraper": "Australian College of Sport & Fitness, Australian Learning Group/australian_college_of_sport_fitness_australian_learning_group.py",
-    "sql": "Australian College of Sport & Fitness, Australian Learning Group/Australian College of Sport & Fitness, Australian Learning Group_courses_update.sql",
-    "snapshot": "Australian College of Sport & Fitness, Australian Learning Group/snapshot.json",
-    "dir": "Australian College of Sport & Fitness, Australian Learning Group"
-  },
-  {
-    "id": "spencer_college_spencer_college",
-    "name": "Spencer College; Spencer College",
-    "scraper": "Spencer College; Spencer College/spencer_college_spencer_college.py",
-    "sql": "Spencer College; Spencer College/Spencer College; Spencer College_courses_update.sql",
-    "snapshot": "Spencer College; Spencer College/snapshot.json",
-    "dir": "Spencer College; Spencer College"
-  },
-  {
-    "id": "australian_college_of_technology_and_business",
-    "name": "Australian College of Technology and Business",
-    "scraper": "Australian College of Technology and Business/australian_college_of_technology_and_business.py",
-    "sql": "Australian College of Technology and Business/Australian College of Technology and Business_courses_update.sql",
-    "snapshot": "Australian College of Technology and Business/snapshot.json",
-    "dir": "Australian College of Technology and Business"
-  },
-  {
-    "id": "central_australian_college",
-    "name": "Central Australian College",
-    "scraper": "Central Australian College/central_australian_college.py",
-    "sql": "Central Australian College/Central Australian College_courses_update.sql",
-    "snapshot": "Central Australian College/snapshot.json",
-    "dir": "Central Australian College"
-  },
-  {
-    "id": "brisbane_college_of_horticulture",
-    "name": "Brisbane College of Horticulture",
-    "scraper": "Brisbane College of Horticulture/brisbane_college_of_horticulture.py",
-    "sql": "Brisbane College of Horticulture/Brisbane College of Horticulture_courses_update.sql",
-    "snapshot": "Brisbane College of Horticulture/snapshot.json",
-    "dir": "Brisbane College of Horticulture"
-  },
-  {
-    "id": "nortwest",
-    "name": "Nortwest",
-    "scraper": "Nortwest/nortwest.py",
-    "sql": "Nortwest/Nortwest_courses_update.sql",
-    "snapshot": "Nortwest/snapshot.json",
-    "dir": "Nortwest"
-  },
-  {
-    "id": "academique",
-    "name": "Academique",
-    "scraper": "Academique/academique.py",
-    "sql": "Academique/Academique_courses_update.sql",
-    "snapshot": "Academique/snapshot.json",
-    "dir": "Academique"
-  },
-  {
-    "id": "skills_institute_australia",
-    "name": "Skills Institute Australia",
-    "scraper": "Skills Institute Australia/skills_institute_australia.py",
-    "sql": "Skills Institute Australia/Skills Institute Australia_courses_update.sql",
-    "snapshot": "Skills Institute Australia/snapshot.json",
-    "dir": "Skills Institute Australia"
-  },
-  {
-    "id": "institute_of_health_and_nursing_australia",
-    "name": "Institute of Health and Nursing Australia",
-    "scraper": "Institute of Health and Nursing Australia/institute_of_health_and_nursing_australia.py",
-    "sql": "Institute of Health and Nursing Australia/Institute of Health and Nursing Australia_courses_update.sql",
-    "snapshot": "Institute of Health and Nursing Australia/snapshot.json",
-    "dir": "Institute of Health and Nursing Australia"
-  },
-  {
-    "id": "oceania_college_of_technology",
-    "name": "Oceania College of Technology",
-    "scraper": "Oceania College of Technology/oceania_college_of_technology.py",
-    "sql": "Oceania College of Technology/Oceania College of Technology_courses_update.sql",
-    "snapshot": "Oceania College of Technology/snapshot.json",
-    "dir": "Oceania College of Technology"
-  },
-  {
-    "id": "australia_institute_of_business_and_technology",
-    "name": "Australia Institute of Business and Technology",
-    "scraper": "Australia Institute of Business and Technology/australia_institute_of_business_and_technology.py",
-    "sql": "Australia Institute of Business and Technology/Australia Institute of Business and Technology_courses_update.sql",
-    "snapshot": "Australia Institute of Business and Technology/snapshot.json",
-    "dir": "Australia Institute of Business and Technology"
-  },
-  {
-    "id": "paragon_polytechnic",
-    "name": "Paragon Polytechnic",
-    "scraper": "Paragon Polytechnic/paragon_polytechnic.py",
-    "sql": "Paragon Polytechnic/Paragon Polytechnic_courses_update.sql",
-    "snapshot": "Paragon Polytechnic/snapshot.json",
-    "dir": "Paragon Polytechnic"
-  },
-  {
-    "id": "australian_technical_college_western_australia",
-    "name": "Australian Technical College Western Australia",
-    "scraper": "Australian Technical College Western Australia/australian_technical_college_western_australia.py",
-    "sql": "Australian Technical College Western Australia/Australian Technical College Western Australia_courses_update.sql",
-    "snapshot": "Australian Technical College Western Australia/snapshot.json",
-    "dir": "Australian Technical College Western Australia"
-  },
-  {
-    "id": "the_canberra_training_school_canberra_business_and_technology_college",
-    "name": "The Canberra Training School , Canberra Business and Technology College",
-    "scraper": "The Canberra Training School , Canberra Business and Technology College/the_canberra_training_school_canberra_business_and_technology_college.py",
-    "sql": "The Canberra Training School , Canberra Business and Technology College/The Canberra Training School , Canberra Business and Technology College_courses_update.sql",
-    "snapshot": "The Canberra Training School , Canberra Business and Technology College/snapshot.json",
-    "dir": "The Canberra Training School , Canberra Business and Technology College"
-  },
-  {
-    "id": "macallan_college",
-    "name": "Macallan College",
-    "scraper": "Macallan College/macallan_college.py",
-    "sql": "Macallan College/Macallan College_courses_update.sql",
-    "snapshot": "Macallan College/snapshot.json",
-    "dir": "Macallan College"
-  },
-  {
-    "id": "step_into_training_services_sits",
-    "name": "Step Into Training Services (SITS)",
-    "scraper": "Step Into Training Services (SITS)/step_into_training_services_sits.py",
-    "sql": "Step Into Training Services (SITS)/Step Into Training Services (SITS)_courses_update.sql",
-    "snapshot": "Step Into Training Services (SITS)/snapshot.json",
-    "dir": "Step Into Training Services (SITS)"
   },
   {
     "id": "vibe_college",
@@ -600,84 +648,28 @@
     "dir": "Vibe College"
   },
   {
-    "id": "the_centre_of_excellence",
-    "name": "The Centre of Excellence",
-    "scraper": "The Centre of Excellence/the_centre_of_excellence.py",
-    "sql": "The Centre of Excellence/The Centre of Excellence_courses_update.sql",
-    "snapshot": "The Centre of Excellence/snapshot.json",
-    "dir": "The Centre of Excellence"
+    "id": "victoria-university",
+    "name": "Victoria University",
+    "scraper": "Victoria University/vu.py",
+    "sql": "Victoria University/vu_scraped_all.sql",
+    "snapshot": "Victoria University/snapshot.json",
+    "dir": "Victoria University"
   },
   {
-    "id": "frontier_leadership",
-    "name": "Frontier Leadership",
-    "scraper": "Frontier Leadership/frontier_leadership.py",
-    "sql": "Frontier Leadership/Frontier Leadership_courses_update.sql",
-    "snapshot": "Frontier Leadership/snapshot.json",
-    "dir": "Frontier Leadership"
+    "id": "victorian-institute-of-technology",
+    "name": "Victorian Institute of Technology",
+    "scraper": "Victorian Institute of Technology/vit.py",
+    "sql": "Victorian Institute of Technology/vit_update.sql",
+    "snapshot": "Victorian Institute of Technology/snapshot.json",
+    "dir": "Victorian Institute of Technology"
   },
   {
-    "id": "albright_institute_of_business_and_language_albright_institute_of_english",
-    "name": "Albright Institute of Business and Language; Albright Institute of English",
-    "scraper": "Albright Institute of Business and Language; Albright Institute of English/albright_institute_of_business_and_language_albright_institute_of_english.py",
-    "sql": "Albright Institute of Business and Language; Albright Institute of English/Albright Institute of Business and Language; Albright Institute of English_courses_update.sql",
-    "snapshot": "Albright Institute of Business and Language; Albright Institute of English/snapshot.json",
-    "dir": "Albright Institute of Business and Language; Albright Institute of English"
-  },
-  {
-    "id": "trinity_institute_australia",
-    "name": "Trinity Institute (Australia)",
-    "scraper": "Trinity Institute (Australia)/trinity_institute_australia.py",
-    "sql": "Trinity Institute (Australia)/Trinity Institute (Australia)_courses_update.sql",
-    "snapshot": "Trinity Institute (Australia)/snapshot.json",
-    "dir": "Trinity Institute (Australia)"
-  },
-  {
-    "id": "australis_college",
-    "name": "Australis College",
-    "scraper": "Australis College/australis_college.py",
-    "sql": "Australis College/Australis College_courses_update.sql",
-    "snapshot": "Australis College/snapshot.json",
-    "dir": "Australis College"
-  },
-  {
-    "id": "ikon_institute_of_australia",
-    "name": "Ikon Institute of Australia",
-    "scraper": "Ikon Institute of Australia/ikon_institute_of_australia.py",
-    "sql": "Ikon Institute of Australia/Ikon Institute of Australia_courses_update.sql",
-    "snapshot": "Ikon Institute of Australia/snapshot.json",
-    "dir": "Ikon Institute of Australia"
-  },
-  {
-    "id": "australian_health_and_management_institute",
-    "name": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE",
-    "scraper": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE/australian_health_and_management_institute.py",
-    "sql": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE/AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE_courses_update.sql",
-    "snapshot": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE/snapshot.json",
-    "dir": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE"
-  },
-  {
-    "id": "sydney_city_college_of_management",
-    "name": "Sydney City College of Management",
-    "scraper": "Sydney City College of Management/sydney_city_college_of_management.py",
-    "sql": "Sydney City College of Management/Sydney City College of Management_courses_update.sql",
-    "snapshot": "Sydney City College of Management/snapshot.json",
-    "dir": "Sydney City College of Management"
-  },
-  {
-    "id": "brighton-college",
-    "name": "Brighton College",
-    "scraper": "Brighton College/brighton.py",
-    "sql": "Brighton College/brighton_courses_update.sql",
-    "snapshot": "Brighton College/snapshot.json",
-    "dir": "Brighton College"
-  },
-  {
-    "id": "skyline-international-college",
-    "name": "Skyline International College",
-    "scraper": "Skyline International College/skyline.py",
-    "sql": "Skyline International College/skyline_courses_update.sql",
-    "snapshot": "Skyline International College/snapshot.json",
-    "dir": "Skyline International College"
+    "id": "warwick_institute_of_australia",
+    "name": "Warwick Institute of Australia",
+    "scraper": "Warwick Institute of Australia/warwick_institute_of_australia.py",
+    "sql": "Warwick Institute of Australia/Warwick Institute of Australia_courses_update.sql",
+    "snapshot": "Warwick Institute of Australia/snapshot.json",
+    "dir": "Warwick Institute of Australia"
   },
   {
     "id": "western-sydney-college",
@@ -686,5 +678,93 @@
     "sql": "Western Sydney College/wsc_courses_update.sql",
     "snapshot": "Western Sydney College/snapshot.json",
     "dir": "Western Sydney College"
+  },
+  {
+    "id": "western-sydney-university",
+    "name": "Western Sydney University",
+    "scraper": "Western Sydney University/western.py",
+    "sql": "Western Sydney University/wsu_update_courses.sql",
+    "snapshot": "Western Sydney University/snapshot.json",
+    "dir": "Western Sydney University"
+  },
+  {
+    "id": "win_english_centre_win_college",
+    "name": "WIN English Centre WIN College",
+    "scraper": "WIN English Centre WIN College/win_english_centre_win_college.py",
+    "sql": "WIN English Centre WIN College/WIN English Centre WIN College_courses_update.sql",
+    "snapshot": "WIN English Centre WIN College/snapshot.json",
+    "dir": "WIN English Centre WIN College"
+  },
+  {
+    "id": "the-institute-of-international-studies-tiis",
+    "name": "The Institute of International Studies (TIIS)",
+    "scraper": "The Institute of International Studies (TIIS)/tiis.py",
+    "sql": "The Institute of International Studies (TIIS)/tiis_courses_update.sql",
+    "snapshot": "The Institute of International Studies (TIIS)/snapshot.json",
+    "dir": "The Institute of International Studies (TIIS)"
+  },
+  {
+    "id": "richmond-school-of-business",
+    "name": "Richmond School of Business",
+    "scraper": "Richmond School of Business/rsb.py",
+    "sql": "Richmond School of Business/rsb_courses_update.sql",
+    "snapshot": "Richmond School of Business/snapshot.json",
+    "dir": "Richmond School of Business"
+  },
+  {
+    "id": "australian-polytechnic-college",
+    "name": "Australian Polytechnic College",
+    "scraper": "Australian Polytechnic College/apc.py",
+    "sql": "Australian Polytechnic College/apc_courses_update.sql",
+    "snapshot": "Australian Polytechnic College/snapshot.json",
+    "dir": "Australian Polytechnic College"
+  },
+  {
+    "id": "leaders-institute",
+    "name": "Leaders Institute Pty Ltd",
+    "scraper": "Leaders Institute Pty Ltd/leaders.py",
+    "sql": "Leaders Institute Pty Ltd/leaders_courses_update.sql",
+    "snapshot": "Leaders Institute Pty Ltd/snapshot.json",
+    "dir": "Leaders Institute Pty Ltd"
+  },
+  {
+    "id": "adelaide-institute-higher-education",
+    "name": "Adelaide Institute of Higher Education",
+    "scraper": "Adelaide Institute of Higher Education/aihe.py",
+    "sql": "Adelaide Institute of Higher Education/aihe_courses_update.sql",
+    "snapshot": "Adelaide Institute of Higher Education/snapshot.json",
+    "dir": "Adelaide Institute of Higher Education"
+  },
+  {
+    "id": "aspen-college",
+    "name": "Aspen College",
+    "scraper": "Aspen College/aspen.py",
+    "sql": "Aspen College/aspen_courses_update.sql",
+    "snapshot": "Aspen College/snapshot.json",
+    "dir": "Aspen College"
+  },
+  {
+    "id": "southern-academy-health-sciences",
+    "name": "Southern Academy of Health Sciences",
+    "scraper": "Southern Academy of Health Sciences/vie.py",
+    "sql": "Southern Academy of Health Sciences/vie_courses_update.sql",
+    "snapshot": "Southern Academy of Health Sciences/snapshot.json",
+    "dir": "Southern Academy of Health Sciences"
+  },
+  {
+    "id": "melbourne-metropolitan-college",
+    "name": "Active Transition Training and Melbourne Metropolitan College",
+    "scraper": "Active Transition Training and Melbourne Metropolitan College/mmc.py",
+    "sql": "Active Transition Training and Melbourne Metropolitan College/mmc_courses_update.sql",
+    "snapshot": "Active Transition Training and Melbourne Metropolitan College/snapshot.json",
+    "dir": "Active Transition Training and Melbourne Metropolitan College"
+  },
+  {
+    "id": "aibi-higher-education",
+    "name": "AIBI Higher Education",
+    "scraper": "AIBI Higher Education/aibi.py",
+    "sql": "AIBI Higher Education/aibi_courses_update.sql",
+    "snapshot": "AIBI Higher Education/snapshot.json",
+    "dir": "AIBI Higher Education"
   }
 ]

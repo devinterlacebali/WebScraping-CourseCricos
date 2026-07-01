@@ -1,0 +1,67 @@
+{
+  "title":{
+    "0":"Advanced Diploma of Leadership and Management",
+    "1":"Advanced Diploma of Business",
+    "2":"Diploma of Leadership and Management",
+    "3":"Diploma of Business",
+    "4":"Diploma of Information Technology",
+    "5":"Certificate III in Bricklaying and Blocklaying",
+    "6":"Certificate III in Carpentry",
+    "7":"Advanced Diploma of Information Technology",
+    "8":"Graduate Diploma of Management (Learning)",
+    "9":"Advanced Diploma of Civil Construction Design",
+    "10":"Diploma of Building and Construction (Building)"
+  },
+  "cricos":{
+    "0":"107613D",
+    "1":"107612E",
+    "2":"104377B",
+    "3":"107611F",
+    "4":"112219E",
+    "5":"112916B",
+    "6":"112917A",
+    "7":"112220A",
+    "8":"107614C",
+    "9":"114257E",
+    "10":"112918M"
+  },
+  "url":{
+    "0":"https:\/\/rsb.edu.au\/services\/bsb60420-advanced-diploma-of-leadership-and-management-2\/",
+    "1":"https:\/\/rsb.edu.au\/services\/bsb60120-advanced-diploma-of-business-2\/",
+    "2":"https:\/\/rsb.edu.au\/services\/bsb50420-diploma-of-leadership-and-management-2\/",
+    "3":"https:\/\/rsb.edu.au\/services\/bsb50120-diploma-of-business-2\/",
+    "4":"https:\/\/rsb.edu.au\/services\/ict50220-diploma-of-information-technology\/",
+    "5":"https:\/\/rsb.edu.au\/services\/cpc33020-certificate-iii-in-bricklaying-and-blocklaying-2\/",
+    "6":"https:\/\/rsb.edu.au\/services\/cpc30220-certificate-iii-in-carpentry-2\/",
+    "7":"https:\/\/rsb.edu.au\/services\/ict60220-advanced-diploma-of-information-technology-telecommunications-network-engineering-cyber-security\/",
+    "8":"https:\/\/rsb.edu.au\/services\/bsb80120-graduate-diploma-of-management-learning\/",
+    "9":"https:\/\/rsb.edu.au\/services\/rii60520-advanced-diploma-of-civil-construction-design-2\/",
+    "10":"https:\/\/rsb.edu.au\/services\/cpc50220-diploma-of-building-and-construction-building\/"
+  },
+  "duration":{
+    "0":"78 weeks",
+    "1":"65 weeks",
+    "2":"52 weeks",
+    "3":"52 weeks",
+    "4":"78 weeks",
+    "5":"52 weeks",
+    "6":"52 weeks",
+    "7":"104 weeks",
+    "8":"52 weeks",
+    "9":"104 weeks",
+    "10":"52 weeks"
+  },
+  "fee_text":{
+    "0":"Campus\nSydney and Melbourne\nCourse Tuition Fee\n$11,250",
+    "1":"Campus\nSydney and Melbourne\nCourse Tuition Fee\n$11,250",
+    "2":"Campus\nSydney and Melbourne\nCourse Tuition Fee\n$8,000",
+    "3":"Campus\nSydney and Melbourne\nCourse Tuition Fee\n$8,000",
+    "4":"Campus\nSydney and Melbourne\nCourse Tuition Fee\n$12,400",
+    "5":"Campus\nSydney and Melbourne\nCourse Tuition Fee\n$34,000",
+    "6":"Campus\nSydney and Melbourne\nCourse Tuition Fee\n$34,550",
+    "7":"Campus\nSydney and Melbourne\nCourse Tuition Fee\n$22,000",
+    "8":"Campus\nSydney and Melbourne\nCourse Tuition Fee\n$8,000",
+    "9":"Campus\nSydney and Melbourne\nCourse Tuition Fee\n$25,000",
+    "10":"Campus\nSydney and Melbourne\nCourse Tuition Fee\n$20,000"
+  }
+}

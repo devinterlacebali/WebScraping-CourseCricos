@@ -32,73 +32,106 @@ def clean_numeric_fee(val: str) -> str:
     val_clean = re.sub(r"[^\d\.]", "", val)
     return val_clean if val_clean else "NULL"
 
-# === DYNAMIC TAB EXTRACTOR ===
-def extract_tab_content(soup, keyword: str, fallback_id: str) -> str:
-    nav_tabs = soup.find(class_="nav-tabs-main")
-    target_id = None
-    if nav_tabs:
-        for a in nav_tabs.find_all("a", href=True):
-            text = a.get_text(" ", strip=True)
-            if keyword.lower() in text.lower():
-                target_id = a["href"].strip().lstrip("#")
-                break
-                
-    if not target_id:
-        target_id = fallback_id
-        
-    pane = soup.find(id=target_id)
-    if pane:
-        # Clone pane to avoid modifying original soup
-        pane_clone = BeautifulSoup(str(pane), "html.parser")
-        
-        # Decompose scripts and styles
-        for tag in pane_clone.find_all(["style", "script", "noscript"]):
-            tag.decompose()
-            
-        # Extract the details-description container if present, otherwise use the pane itself
-        desc_div = pane_clone.find(class_="details-description")
-        target_el = desc_div if desc_div else pane_clone
-        
-        return clean_html(str(target_el))
+# === EXTRACT COURSE DESCRIPTION ===
+def extract_course_description(soup) -> str:
+    # Look for the elementor-widget-wrap containing Overview heading
+    for h in soup.find_all(["h1", "h2", "h3", "h4", "h5"]):
+        if "overview" in h.get_text().lower():
+            wrap = h.find_parent(class_="elementor-widget-wrap")
+            if wrap:
+                wrap_clone = BeautifulSoup(str(wrap), "html.parser")
+                for tag in wrap_clone.find_all(["style", "script", "noscript"]):
+                    tag.decompose()
+                return clean_html(str(wrap_clone))
     return ""
 
+# === SCRAPE CRITERIA PAGE ===
+async def scrape_criteria(browser):
+    url = "https://www.tiis.edu.au/criteria/"
+    page = await browser.new_page()
+    try:
+        print(f"Fetching admission criteria from: {url}")
+        await page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        await page.wait_for_timeout(3000)
+        html = await page.content()
+        soup = BeautifulSoup(html, "html.parser")
+        
+        entry1_div = soup.find(id="entry1")
+        entry2_div = soup.find(id="entry2")
+        
+        english_header = soup.find(id="english-proficiency")
+        english_wrap = None
+        if english_header:
+            english_wrap = english_header.find_parent(class_="elementor-widget-wrap")
+            
+        return {
+            "postgrad_entry": str(entry1_div) if entry1_div else "",
+            "undergrad_entry": str(entry2_div) if entry2_div else "",
+            "english": str(english_wrap) if english_wrap else ""
+        }
+    except Exception as e:
+        print(f"❌ Error scraping criteria page: {e}")
+        return {"postgrad_entry": "", "undergrad_entry": "", "english": ""}
+    finally:
+        await page.close()
+
+# === BUILD ENTRY REQUIREMENTS ===
+def build_entry_requirements(title: str, criteria_data) -> str:
+    title_lower = title.lower()
+    entry_html = ""
+    if "bachelor" in title_lower:
+        entry_html = criteria_data["undergrad_entry"]
+    else:
+        entry_html = criteria_data["postgrad_entry"]
+        
+    combined = f"""<div class="entry-requirements-container">
+    <div class="academic-requirements">
+        {entry_html}
+    </div>
+    <div class="english-requirements">
+        {criteria_data["english"]}
+    </div>
+</div>"""
+    
+    soup = BeautifulSoup(combined, "html.parser")
+    for tag in soup.find_all(["style", "script", "noscript"]):
+        tag.decompose()
+        
+    return clean_html(str(soup))
+
 # === SCRAPE PER COURSE ===
-async def scrape_course(row, browser):
+async def scrape_course(row, browser, criteria_data):
     url = str(row["url"]).strip()
     cricos = str(row["cricos"]).strip()
     duration = str(row["duration"]).strip()
     fee = clean_numeric_fee(str(row["fee"]))
     enrolment_fee = clean_numeric_fee(str(row.get("enrolment_fee", "")))
     materials_fee = clean_numeric_fee(str(row.get("materials_fee", "")))
+    title = str(row["title"]).strip()
     
     data = {
         "cricos": cricos,
-        "title": str(row["title"]).strip(),
+        "title": title,
         "url": url,
         "course_description": "",
         "total_course_duration": duration,
         "offshore_tuition_fee": fee,
         "enrolment_fee": enrolment_fee,
         "materials_fee": materials_fee,
-        "entry_requirements": "",
+        "entry_requirements": build_entry_requirements(title, criteria_data),
         "apply_form": url,
     }
     
     try:
         page = await browser.new_page()
-        # Use domcontentloaded wait for speed and reliability
         await page.goto(url, wait_until="domcontentloaded", timeout=60000)
         await page.wait_for_timeout(3000)
         html = await page.content()
         soup = BeautifulSoup(html, "html.parser")
         
-        # 1. Course Description (Overview)
-        desc_html = extract_tab_content(soup, "overview", "course-overview")
+        # Extract course description (overview)
+        desc_html = extract_course_description(soup)
         data["course_description"] = desc_html
-        
-        # 2. Entry Requirements
-        entry_html = extract_tab_content(soup, "entry", "details-100")
-        data["entry_requirements"] = entry_html
         
         await page.close()
         print(f"✅ Scraped successfully: {url}")
@@ -113,8 +146,8 @@ async def scrape_course(row, browser):
 
 # === MAIN ===
 async def main():
-    excel_path = "Western Sydney College/wsc.xlsx"
-    sql_path = "Western Sydney College/wsc_courses_update.sql"
+    excel_path = "The Institute of International Studies (TIIS)/tiis.xlsx"
+    sql_path = "The Institute of International Studies (TIIS)/tiis_courses_update.sql"
     
     if not os.path.exists(excel_path):
         print(f"❌ Excel file not found at: {excel_path}")
@@ -129,9 +162,12 @@ async def main():
         
         browser = await p.chromium.launch(headless=headless_val)
         
+        # Scrape criteria first
+        criteria_data = await scrape_criteria(browser)
+        
         for idx, row in df.iterrows():
             print(f"\n[{idx+1}/{len(df)}] Scraping: {row['url']}")
-            course_data = await scrape_course(row, browser)
+            course_data = await scrape_course(row, browser, criteria_data)
             results.append(course_data)
             
         await browser.close()
@@ -141,9 +177,9 @@ async def main():
         # 1. Update provider institution details at the top
         f.write(f"""-- Update provider institution details
 UPDATE provider_institution SET
-    intake_date = 'January, February, April, May, July, August, October, November',
+    intake_date = 'January, March, May, July, September, November',
     updated_at = NOW()
-WHERE cricos_provider_code = '03690M';
+WHERE cricos_provider_code = '03705J';
 
 """)
         # 2. Update courses details

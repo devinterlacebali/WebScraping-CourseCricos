@@ -24,6 +24,14 @@ def clean_html(html: str) -> str:
     html = html.replace("'", "''")
     return html.strip()
 
+# === CLEAN NUMERIC FEE ===
+def clean_numeric_fee(val: str) -> str:
+    if not val or val.lower() in ("nan", "null", "n/a", ""):
+        return "NULL"
+    # remove any $, commas, spaces, or /week
+    val_clean = re.sub(r"[^\d\.]", "", val)
+    return val_clean if val_clean else "NULL"
+
 # === EXTRACT SECTION CONTENT ===
 def extract_section_html(soup, class_name):
     # Find all sections with the specified class name
@@ -54,6 +62,8 @@ async def scrape_course(row, browser):
     cricos = str(row["cricos"]).strip()
     duration = str(row["duration"]).strip()
     fee = str(row["fee"]).strip()
+    enrolment_fee = clean_numeric_fee(str(row.get("enrolment_fee", "")))
+    materials_fee = clean_numeric_fee(str(row.get("materials_fee", "")))
     
     data = {
         "cricos": cricos,
@@ -62,6 +72,8 @@ async def scrape_course(row, browser):
         "course_description": "",
         "total_course_duration": duration,
         "offshore_tuition_fee": fee,
+        "enrolment_fee": enrolment_fee,
+        "materials_fee": materials_fee,
         "entry_requirements": "",
         "apply_form": url,
     }
@@ -137,11 +149,22 @@ async def main():
         
     # Write to SQL
     with open(sql_path, "w", encoding="utf-8") as f:
+        # 1. Update provider institution details at the top
+        f.write(f"""-- Update provider institution details
+UPDATE provider_institution SET
+    intake_date = 'February, July, November',
+    updated_at = NOW()
+WHERE cricos_provider_code = '03744B';
+
+""")
+        # 2. Update courses details
         for d in results:
             f.write(f"""UPDATE courses SET
     course_description = '{d["course_description"]}',
     total_course_duration = '{d["total_course_duration"]}',
     offshore_tuition_fee = '{d["offshore_tuition_fee"]}',
+    enrolment_fee = {d["enrolment_fee"]},
+    materials_fee = {d["materials_fee"]},
     entry_requirements = '{d["entry_requirements"]}',
     apply_form = '{d["apply_form"]}',
     updated_at = NOW()
