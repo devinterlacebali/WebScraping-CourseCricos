@@ -1,0 +1,10 @@
+# Secrets / local env
+.env
+.openrouter_key
+
+# AI formatter cache
+.ai_format_cache.json
+
+# Python
+__pycache__/
+*.pyc

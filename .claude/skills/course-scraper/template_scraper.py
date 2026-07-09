@@ -54,7 +54,17 @@ def clean_numeric_fee(val) -> str:
     n = float(v)
     return str(int(n)) if n.is_integer() else str(n)
 
+ALLOWED_TAGS = {"p", "ul", "ol", "li", "strong", "b", "em", "i", "a", "br", "h5",
+                "table", "thead", "tbody", "tr", "td", "th"}
+
 def sanitise(html: str) -> str:
+    """Flatten wrapper divs/spans into clean, minimal semantic HTML.
+
+    Page builders (Elementor/Bricks/...) nest content in many empty <div>s which
+    render as messy blocks once stored in the DB. Flatten them: wrapper divs are
+    unwrapped, text-only divs become <p>, unknown tags are unwrapped, empties are
+    dropped, and only ALLOWED_TAGS survive.
+    """
     frag = BeautifulSoup(html, "html.parser")
     for t in frag.find_all(["style", "script", "noscript", "form", "iframe", "img", "svg", "button"]):
         t.decompose()
@@ -62,6 +72,30 @@ def sanitise(html: str) -> str:
         for a in list(t.attrs):
             if a != "href":
                 del t[a]
+    for t in frag.find_all("span"):
+        t.unwrap()
+    while True:
+        div = frag.find("div")
+        if div is None:
+            break
+        if div.find(["p", "ul", "ol", "li", "div", "table", "h5"]):
+            div.unwrap()
+        else:
+            div.name = "p"
+    # Bold short label paragraphs ending in ':' (e.g. "Academic requirement:")
+    for p in frag.find_all("p"):
+        s = p.get_text(strip=True)
+        if s.endswith(":") and len(s) < 60 and not p.find(["strong", "b", "a"]):
+            p.string = ""
+            strong = frag.new_tag("strong")
+            strong.string = s
+            p.append(strong)
+    for t in frag.find_all(True):
+        if t.name not in ALLOWED_TAGS:
+            t.unwrap()
+    for t in frag.find_all(["p", "li", "strong", "b", "em", "i"]):
+        if not t.get_text(strip=True) and not t.find("br"):
+            t.decompose()
     return str(frag)
 
 def norm_title(s):
@@ -89,9 +123,10 @@ def extract_entry_requirements(page):
     return ""
 
 def extract_duration(full_text):
-    # TODO: adapt to the site's wording ("78 weeks", "3 years full time", ...).
-    m = re.search(r"(\d+(?:\.\d+)?\s*(?:weeks?|years?|months?))", full_text, re.IGNORECASE)
-    return re.sub(r"\s+", " ", m.group(1)).lower() if m else ""
+    # course_duration_per_week is a NUMBER of weeks (unquoted in SQL). Convert years/
+    # months to weeks if the site quotes those. TODO: adapt to the site's wording.
+    m = re.search(r"(\d+)\s*weeks?", full_text, re.IGNORECASE)
+    return m.group(1) if m else ""
 
 def extract_fees(page, full_text, duration):
     # TODO: offshore = international, onshore = domestic. Return TOTAL course fees.
@@ -116,7 +151,7 @@ def scrape_course(row):
     title = str(row["title"]).strip()
 
     d = {"cricos": cricos, "title": title, "url": url, "course_description": "",
-         "total_course_duration": "", "offshore_tuition_fee": "NULL",
+         "course_duration_per_week": "", "offshore_tuition_fee": "NULL",
          "onshore_tuition_fee": "NULL", "enrolment_fee": "NULL", "materials_fee": "NULL",
          "entry_requirements": "", "apply_form": url, "intake_months": []}
     try:
@@ -124,8 +159,8 @@ def scrape_course(row):
         full = re.sub(r"\s+", " ", page.get_all_text())
         d["course_description"] = clean_html(extract_course_description(page))
         d["entry_requirements"] = clean_html(extract_entry_requirements(page))
-        d["total_course_duration"] = extract_duration(full)
-        d["offshore_tuition_fee"], d["onshore_tuition_fee"], d["enrolment_fee"], d["materials_fee"] = extract_fees(page, full, d["total_course_duration"])
+        d["course_duration_per_week"] = extract_duration(full)
+        d["offshore_tuition_fee"], d["onshore_tuition_fee"], d["enrolment_fee"], d["materials_fee"] = extract_fees(page, full, d["course_duration_per_week"])
         d["intake_months"] = extract_intake_months(page, full)
         # d["cricos"] = d["cricos"] or extract_cricos(full)   # enable if the page code is trustworthy
         print(f"✅ {url}")
@@ -157,7 +192,7 @@ def main():
                 continue
             f.write(f"""UPDATE courses SET
     course_description = '{d["course_description"]}',
-    total_course_duration = '{d["total_course_duration"]}',
+    course_duration_per_week = {d["course_duration_per_week"] or "NULL"},
     offshore_tuition_fee = {d["offshore_tuition_fee"]},
     onshore_tuition_fee = {d["onshore_tuition_fee"]},
     enrolment_fee = {d["enrolment_fee"]},
@@ -173,7 +208,7 @@ WHERE cricos_course_code = '{d["cricos"]}';
         return v[:32000]
     pd.DataFrame([{
         "cricos": d["cricos"], "title": d["title"], "url": d["url"],
-        "total_course_duration": d["total_course_duration"],
+        "course_duration_per_week": int(d["course_duration_per_week"]) if str(d["course_duration_per_week"]).isdigit() else "",
         "offshore_tuition_fee": cell(d["offshore_tuition_fee"]),
         "onshore_tuition_fee": cell(d["onshore_tuition_fee"]),
         "enrolment_fee": cell(d["enrolment_fee"]),

@@ -766,5 +766,37 @@
     "sql": "AIBI Higher Education/aibi_courses_update.sql",
     "snapshot": "AIBI Higher Education/snapshot.json",
     "dir": "AIBI Higher Education"
+  },
+  {
+    "id": "australian-federation-college",
+    "name": "Australian Federation College",
+    "scraper": "Australian Federation College/afc.py",
+    "sql": "Australian Federation College/afc_courses_update.sql",
+    "snapshot": "Australian Federation College/snapshot.json",
+    "dir": "Australian Federation College"
+  },
+  {
+    "id": "astral-skills-institute",
+    "name": "Astral Skills Institute of Australia",
+    "scraper": "Astral Skills Institute of Australia/asia.py",
+    "sql": "Astral Skills Institute of Australia/asia_courses_update.sql",
+    "snapshot": "Astral Skills Institute of Australia/snapshot.json",
+    "dir": "Astral Skills Institute of Australia"
+  },
+  {
+    "id": "rockford-college",
+    "name": "Rockford College",
+    "scraper": "Rockford College/rockford.py",
+    "sql": "Rockford College/rockford_courses_update.sql",
+    "snapshot": "Rockford College/snapshot.json",
+    "dir": "Rockford College"
+  },
+  {
+    "id": "reach-community-college",
+    "name": "Reach Community College",
+    "scraper": "Reach Community College/reach.py",
+    "sql": "Reach Community College/reach_courses_update.sql",
+    "snapshot": "Reach Community College/snapshot.json",
+    "dir": "Reach Community College"
   }
 ]

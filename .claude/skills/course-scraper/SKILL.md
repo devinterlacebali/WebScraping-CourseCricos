@@ -53,7 +53,7 @@ WHERE cricos_provider_code = '<PROVIDER_CODE>';
 
 UPDATE courses SET
     course_description = '<h4>Section</h4>...',  -- sanitised HTML, ' escaped to ''
-    total_course_duration = '78 weeks',
+    course_duration_per_week = 78,               -- NUMBER of weeks (unquoted), or NULL
     offshore_tuition_fee = 65000,                -- INTERNATIONAL, numeric or NULL
     onshore_tuition_fee = 34270,                 -- DOMESTIC, numeric or NULL
     enrolment_fee = 250,
@@ -88,8 +88,11 @@ xlsx `cricos` blank so the user can fill it and re-run.
   to `""`. Users pasting codes sometimes include stray `|`/newlines — sanitise with
   `re.search(r'[0-9A-Z]{5,8}', cell)`.
 - **SQL-escape** single quotes (`'` → `''`) in every text field via `clean_html`.
-- **Sanitise HTML**: drop `script/style/noscript/form/iframe/img/svg`, strip `class/style/
-  id/data-*/aria-*` attributes, keep `href`. Wrap each section under `<h4>Section</h4>`.
+- **Sanitise HTML**: page builders nest content in many empty `<div>`s that render as
+  a messy block in the DB. **Flatten to minimal semantic HTML** (see `sanitise()` in
+  `template_scraper.py`): unwrap wrapper `<div>`/`<span>`, turn text-only `<div>`→`<p>`,
+  drop unknown tags & empty elements, keep only `p/ul/ol/li/strong/em/a/br/h5/table`,
+  keep `href`. Wrap each section under `<h4>Section</h4>`.
 - **Excel caps cells at 32,767 chars** — truncate long description/entry HTML to ~32,000.
 - **Windows**: `python` resolves to the project `venv`; reconfigure stdout/stderr to UTF-8
   at the top of every scraper.
@@ -116,7 +119,7 @@ Run: `python "<Institution>/<slug>.py"` (headless HTTP; no env vars needed).
 
 - [ ] Every real course scraped; count of `UPDATE courses SET` == expected.
 - [ ] `offshore` (international) **and** `onshore` (domestic) fees populated (or NULL with reason).
-- [ ] `total_course_duration`, `enrolment_fee`, `materials_fee`, `apply_form` set.
+- [ ] `course_duration_per_week`, `enrolment_fee`, `materials_fee`, `apply_form` set.
 - [ ] `course_description` + `entry_requirements` non-empty, clean HTML, correct course.
 - [ ] Provider `intake_date` = union of course intakes; `cricos_provider_code` correct.
 - [ ] Courses with no/duplicate CRICOS flagged as `-- ⚠️ Skipped`, xlsx cricos left blank.
