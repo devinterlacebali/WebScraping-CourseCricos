@@ -798,5 +798,29 @@
     "sql": "Reach Community College/reach_courses_update.sql",
     "snapshot": "Reach Community College/snapshot.json",
     "dir": "Reach Community College"
+  },
+  {
+    "id": "canberra-institute-of-technology",
+    "name": "Canberra Institute of Technology",
+    "scraper": "Canberra Institute of Technology/cit.py",
+    "sql": "Canberra Institute of Technology/cit_courses_update.sql",
+    "snapshot": "Canberra Institute of Technology/snapshot.json",
+    "dir": "Canberra Institute of Technology"
+  },
+  {
+    "id": "macquarie-university",
+    "name": "Macquarie University (Macquarie)",
+    "scraper": "Macquarie University (Macquarie)/macquarie.py",
+    "sql": "Macquarie University (Macquarie)/macquarie_update.sql",
+    "snapshot": "Macquarie University (Macquarie)/snapshot.json",
+    "dir": "Macquarie University (Macquarie)"
+  },
+  {
+    "id": "university-of-new-england",
+    "name": "University of New England",
+    "scraper": "University of New England/une.py",
+    "sql": "University of New England/une_courses_update.sql",
+    "snapshot": "University of New England/snapshot.json",
+    "dir": "University of New England"
   }
 ]
