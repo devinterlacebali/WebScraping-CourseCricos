@@ -822,5 +822,69 @@
     "sql": "University of New England/une_courses_update.sql",
     "snapshot": "University of New England/snapshot.json",
     "dir": "University of New England"
+  },
+  {
+    "id": "gordon-institute-of-tafe",
+    "name": "Gordon Institute of TAFE",
+    "scraper": "Gordon Institute of TAFE/gordon.py",
+    "sql": "Gordon Institute of TAFE/gordon_courses_update.sql",
+    "snapshot": "Gordon Institute of TAFE/snapshot.json",
+    "dir": "Gordon Institute of TAFE"
+  },
+  {
+    "id": "holmesglen-institute",
+    "name": "Holmesglen Institute",
+    "scraper": "Holmesglen Institute/holmesglen.py",
+    "sql": "Holmesglen Institute/holmesglen_courses_update.sql",
+    "snapshot": "Holmesglen Institute/snapshot.json",
+    "dir": "Holmesglen Institute"
+  },
+  {
+    "id": "monash-university",
+    "name": "Monash University",
+    "scraper": "Monash University/monash.py",
+    "sql": "Monash University/monash_courses_update.sql",
+    "snapshot": "Monash University/snapshot.json",
+    "dir": "Monash University"
+  },
+  {
+    "id": "the-university-of-sydney",
+    "name": "The University of Sydney",
+    "scraper": "The University of Sydney/usyd.py",
+    "sql": "The University of Sydney/usyd_courses_update.sql",
+    "snapshot": "The University of Sydney/snapshot.json",
+    "dir": "The University of Sydney"
+  },
+  {
+    "id": "tafe-sa",
+    "name": "TAFE SA",
+    "scraper": "TAFE SA/tafesa.py",
+    "sql": "TAFE SA/tafesa_courses_update.sql",
+    "snapshot": "TAFE SA/snapshot.json",
+    "dir": "TAFE SA"
+  },
+  {
+    "id": "the-university-of-queensland",
+    "name": "The University of Queensland",
+    "scraper": "The University of Queensland/uq.py",
+    "sql": "The University of Queensland/uq_courses_update.sql",
+    "snapshot": "The University of Queensland/snapshot.json",
+    "dir": "The University of Queensland"
+  },
+  {
+    "id": "university-of-wollongong",
+    "name": "University of Wollongong (UoW)",
+    "scraper": "University of Wollongong (UoW)/uow.py",
+    "sql": "University of Wollongong (UoW)/uow_courses_update.sql",
+    "snapshot": "University of Wollongong (UoW)/snapshot.json",
+    "dir": "University of Wollongong (UoW)"
+  },
+  {
+    "id": "university-of-technology-sydney",
+    "name": "University of Technology Sydney (UTS)",
+    "scraper": "University of Technology Sydney (UTS)/uts.py",
+    "sql": "University of Technology Sydney (UTS)/uts_courses_update.sql",
+    "snapshot": "University of Technology Sydney (UTS)/snapshot.json",
+    "dir": "University of Technology Sydney (UTS)"
   }
 ]
