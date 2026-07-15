@@ -275,7 +275,7 @@
     "id": "federation-university",
     "name": "Federation University",
     "scraper": "Federation University/federation.py",
-    "sql": "Federation University/federation_update.sql",
+    "sql": "Federation University/federation_courses_update.sql",
     "snapshot": "Federation University/snapshot.json",
     "dir": "Federation University"
   },
@@ -886,5 +886,13 @@
     "sql": "University of Technology Sydney (UTS)/uts_courses_update.sql",
     "snapshot": "University of Technology Sydney (UTS)/snapshot.json",
     "dir": "University of Technology Sydney (UTS)"
+  },
+  {
+    "id": "the-university-of-newcastle",
+    "name": "The University of Newcastle (UoN)",
+    "scraper": "The University of Newcastle (UoN)/newcastle.py",
+    "sql": "The University of Newcastle (UoN)/newcastle_courses_update.sql",
+    "snapshot": "The University of Newcastle (UoN)/snapshot.json",
+    "dir": "The University of Newcastle (UoN)"
   }
 ]
