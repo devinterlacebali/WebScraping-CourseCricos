@@ -1,0 +1,231 @@
+{
+  "availability": true,
+  "data": {
+    "awardTitle": "Bachelor of Business",
+    "advertisedTitle": "Bachelor of Business",
+    "totalCreditPoints": 360,
+    "offerYear": 2026,
+    "studentType": "International",
+    "locationDisplayName": "Melbourne",
+    "deliveryModeCode": "MM",
+    "deliveryModeDescription": "Multi-Modal",
+    "cricosCourseCode": "019479E",
+    "isFlexibleLocation": true,
+    "majors": [
+      {
+        "name": "Agribusiness",
+        "code": "MAJOR-AGRBUS",
+        "description": "<p>Agribusiness has historically been a part of Australia\u2019s social fabric and a major driver of economic growth. The Agribusiness major investigates the past, present and future of agricultural production, and its influence\u00a0on Australia and the world.</p>\n<p>Understand the key role of food and fibre production and trade in the economic fabric of pre-colonial and post-colonial Australia, and the use of data analytics and artificial intelligence (AI) models to simulate the supply chain processes in the real world. Explore the effective and efficient management of agribusinesses, agrifinance and risk management, and how to tackle environmental and resource degradation issues using economic principles and methods. Use these skills to develop new ideas, products and business opportunities.</p>",
+        "streams": [
+          ""
+        ]
+      },
+      {
+        "name": "Digital business",
+        "code": "MJR-DIB01",
+        "description": "<p>Businesses are increasingly using digital technology to generate sustainable competitive advantage by creating innovative business models, exceptional customer experiences and efficient internal capabilities.\u00a0Explore AI-powered marketing, with a focus on data-driven strategies.</p>\n<p>Learn the fundamentals of digital business, such as digital disruption, data-driven decision-making, social media and visualisation, customer analytics, supply chain analytics and digitalisation, and how to effectively lead and manage disruption, change and development in an organisation.</p>",
+        "streams": [
+          ""
+        ]
+      },
+      {
+        "name": "Economics",
+        "code": "MAJOR-ECO-2",
+        "description": "<p>The Economics major will give you valuable insights into the application of economic principles to develop government policy, business solutions and understand the choices people make. Engage with contemporary economic issues through simulations, live case studies, and stakeholder-informed projects that mirror the challenges faced by governments, central banks, and consultancies.</p>\n<p>Develop skills in critical thinking, empirical analysis, and real-world policy engagement. Learn how to analyse important issues such as poverty, inequality, inflation, unemployment, environmental issues, innovation, digital transformation, international competition, trade and economic development \u2013 many of which relate to the United Nations Sustainable Development Goals. Gain the analytical tools to interpret macroeconomic trends, assess the effectiveness of fiscal and monetary interventions, and navigate the institutional frameworks that shape economic policymaking.</p>",
+        "streams": [
+          ""
+        ]
+      },
+      {
+        "name": "Finance",
+        "code": "MJR-FIN01",
+        "description": "<p>Open doors with skills every business needs and discover what&#39;s truly possible in the world of finance. In this major, you&#39;ll develop a comprehensive understanding of corporate finance, investment valuation, portfolio management and risk management. Learn from experts in our financial trading room and solve financial problems with the tools industry professionals use in their daily work. Graduates are well-prepared to start their careers in areas such as corporate finance, funds management, or the banking and financial services sector. You&#39;ll also gain the confidence and capability to manage your own business, personal investments, and superannuation, or advance into postgraduate studies.</p>",
+        "streams": [
+          ""
+        ]
+      },
+      {
+        "name": "Human resource management",
+        "code": "MAJOR-HRM-1",
+        "description": "<p>Nurturing, development and managing talent is critical to the success of any organisation.</p>\n<p>In this major, you&#39;ll gain an understanding of the theories, concepts and processes that drives human resource management to achieve positive organisational outcomes. Explore topics such as strategic human resource management, recruitment and selection practices, employment relations, performance management, international human resource management, rewards and benefits, human analytics, change management, and the link between employee attitudes, wellbeing and performance.</p>",
+        "streams": [
+          ""
+        ]
+      },
+      {
+        "name": "International business",
+        "code": "MJR-INTBUS-1",
+        "description": "<p>The Major in International Business equips you with the knowledge and skills to build a career in organisations that operate across borders in a fast-changing world. Explore how businesses navigate modern challenges \u2014 from digital transformation and the integration of technologies like AI, big data, and blockchain, to the pressures of an increasingly complex global trade environment shaped by shifting geopolitics, new trade barriers, and emerging markets. You will learn to analyse these dynamics and help businesses respond with informed, strategic decisions.</p>\n<p>This multidisciplinary major draws on perspectives from economics, finance, management, and marketing, all with a global lens. You will investigate contemporary topics including smart value chains, digital business models, cultural diversity, corporate social responsibility, international development, and sustainability. The major also offers insights into international trade and finance to help you examine how global market trends, governments, and institutions influence business strategy and performance.</p>\n<p>Develop a practical understanding of how firms operate in local and global markets. You will engage directly with industry, both through applied classroom activities and field-based experiences, and have opportunities to complete part of your degree overseas to broaden your international outlook. Through connections with the Export Council of Australia and global industry experts, you will gain insights, mentoring, and support to help shape your international career</p>",
+        "streams": [
+          ""
+        ]
+      },
+      {
+        "name": "Management",
+        "code": "MAJOR-MGT-1",
+        "description": "<p>Want to become a confident business leader? The Management major helps you build essential skills like communication, teamwork, ethics, global mindset, business know-how, and AI literacy. You\u2019ll learn how to solve problems, make smart decisions, and drive innovation \u2013 skills every organisation needs.</p>\n<p>Get hands-on experience using AI tools to spot business trends and lead in a digital world. Work on real business cases in interactive workshops \u2013 not just theory. You\u2019ll pitch ideas, present solutions, and tackle challenges just like you would in the workplace.</p>",
+        "streams": [
+          ""
+        ]
+      },
+      {
+        "name": "Marketing",
+        "code": "MAJOR-MKT-1",
+        "description": "<p>The Marketing major equips you with foundational and emerging knowledge across key areas such as integrated marketing communications, consumer behaviour, brand management, marketing research, social marketing, international marketing, and marketing strategy. The future-focused curriculum also explores AI-powered marketing, including automation, personalised targeting, and predictive analytics, preparing you to navigate the evolving data-driven landscape.</p>\n<p>This dynamic major develops a broad and practical set of marketing capabilities to help you recognise market challenges, seize emerging opportunities, and create effective AI-aware strategies. Through hands-on industry projects and experience with cutting-edge marketing tools, you will strengthen your problem-solving skills while fostering creative storytelling and data-driven decision-making capabilities.</p>",
+        "streams": [
+          ""
+        ]
+      },
+      {
+        "name": "Tourism and event management",
+        "code": "MJR-THS01",
+        "description": "<p>In the Tourism and Hospitality and Event Management major, you&#39;ll gain real-world experience through hotel management simulation and industry placements, preparing flexible, multiskilled graduates to lead in the dynamic tourism, hospitality, and events sectors.</p>\n<p>You&#39;ll also explore innovations through the lens of ethical and sustainable practices and future predictions of sector-related employment opportunities.</p>",
+        "streams": [
+          ""
+        ]
+      }
+    ],
+    "specialisations": [],
+    "virtualRollover": {
+      "enabled": false,
+      "instance": false,
+      "indicativeFees": false,
+      "startDates": false
+    },
+    "relatedCourses": {
+      "nestedCourses": {
+        "120": [
+          "Diploma in Business"
+        ]
+      }
+    },
+    "startDates": "Semester 1 (March 2026), Semester 2 (July 2026), Summer (November 2026)",
+    "duration": "3 years full-time",
+    "prerequisite": "",
+    "courseDescription": "<p>Develop solid foundations in modern business. La Trobe&#39;s Bachelor of Business is an AI-integrated course, embedding artificial intelligence concepts and tools across the curriculum to prepare students for the evolving demands of the business world, ensuring you&#39;ll graduate with future-ready skills to enhance your employability in an increasingly digital workplace.</p><p>In this flexible degree, you&#39;ll explore the fundamentals of business with the option to pair your major with a minor, take two minors instead of a second major, or combine a minor with four electives \u2013 giving you plenty of options to shape your degree around your interests.</p><p>The Bachelor of Business equips you to tackle current and future business challenges. This course places a strong emphasis on entrepreneurship and core business principles, equipping you with the skills and mindset to lead teams, drive innovation, or start your own business.</p><p>Study a business degree that empowers you to make a positive social impact and contribute to a sustainable future with a course curriculum guided by the Principles for Responsible Management Education (PRME) and integrates the United Nation&#39;s Sustainable Development Goals (SDGs).</p><p>By studying La Trobe&#39;s Bachelor of Business, you will:</p><ul><li>apply your learning into the real world through industry placements and work-integrated learning projects.</li><li>fit study around your life with the flexibility to study online, on campus, or a mix of both through StudyFlex</li><li>gain a strong foundation in core business disciplines in marketing, management, economics, accounting, and finance</li><li>develop a blended fundamentals and technical skillset in leadership, communication, critical thinking, digital literacy, business structures, modern business software, business strategies and more</li><li>depending on your campus, choose from majors in agribusiness, digital business, economics, finance, human resource management, international business, management, marketing, or tourism and event management</li><li>get taught by academics and teachers with a mix of theoretical knowledge and practical experience in smaller class sizes, giving you more personalised support and stronger connections to your peers and teachers.</li></ul><p class=\"footnote\">The qualification awarded on graduation is recognised in the Australian Qualifications Framework (AQF) as Level 7 - Bachelor Degree.</p>",
+    "entryReq": {
+      "rse": {
+        "isEligible": true,
+        "ineligibleMsg": "",
+        "admCriAtarStmt": "",
+        "prerequisite": "<p><span>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</span></p>",
+        "admCriInAddToAtar": "",
+        "selRankAdj": "",
+        "otherAdmOpts": ""
+      },
+      "higherEd": {
+        "isEligible": true,
+        "ineligibleMsg": "",
+        "prerequisite": "",
+        "admCri": ""
+      },
+      "vet": {
+        "isEligible": true,
+        "ineligibleMsg": "",
+        "prerequisite": "",
+        "admCri": ""
+      },
+      "wle": {
+        "isEligible": true,
+        "ineligibleMsg": "",
+        "prerequisite": "",
+        "admCri": ""
+      },
+      "prerequisite": "",
+      "academicEntReq": "",
+      "essentialRequirementsInherent": "",
+      "engReq": "<p><span>6.0 IELTS (Academic) with no individual band less than 6.0.</span></p>",
+      "hasEngReqAlt": true
+    },
+    "vtacCodes": null,
+    "courseStructure": "<section id=\"course-structure\" class=\"sublayout-1\"><div class=\"ds-block\"> <p><b>To qualify for the award of Bachelor of Business, students must complete a total of 360 credit points across 3 years.</b></p></div><div class=\"ds-block ds-block--full-width course-structure-content\"><div class=\"ds-tabs\"><div class=\"ds-tabs-nav ds-block\" role=\"tablist\"><button class=\"ds-tabs-nav__tab\" role=\"tab\" aria-selected=\"true\" aria-controls=\"tab1\" id=\"tab1trigger\" >Year 1</button><button class=\"ds-tabs-nav__tab\" role=\"tab\" aria-selected=\"false\" aria-controls=\"tab2\" id=\"tab2trigger\" >Year 2</button><button class=\"ds-tabs-nav__tab\" role=\"tab\" aria-selected=\"false\" aria-controls=\"tab3\" id=\"tab3trigger\" >Year 3</button></div><div class=\"ds-content-chunk\" data-bg-color=\"lightest\"><div id=\"tab1\" class=\"ds-block ds-tab-content__body\" role=\"tabpanel\" aria-labelledby=\"tab1trigger\"> <p class=\"lead\"> Year 1 requires the completion of <b><a class=\"pls-explain\" title=\"A credit point is a unit of measurement to indicate the relative study load of subjects, courses, majors, minors, specialisations and other academic items.<br><br>For example, to be eligible for the award of a standard Bachelor's degree, a student must complete 360 credit points.\">120 credit points</a></b> including:</p> <ul> <li><b>90 credit points</b> from Core</li> <li><b>15 credit points</b> from chosen Major</li> <li><b>15 credit points</b> from chosen Major or minor</li></ul></div><div id=\"tab2\" class=\"ds-block ds-tab-content__body\" role=\"tabpanel\" aria-labelledby=\"tab2trigger\" hidden=\"hidden\"> <p class=\"lead\"> Year 2 requires the completion of <b><a class=\"pls-explain\" title=\"A credit point is a unit of measurement to indicate the relative study load of subjects, courses, majors, minors, specialisations and other academic items.<br><br>For example, to be eligible for the award of a standard Bachelor's degree, a student must complete 360 credit points.\">120 credit points</a></b> including:</p> <ul> <li><b>15 credit points</b> from Core</li> <li><b>15 credit points</b> from chosen Prescribed electives</li> <li><b>45 credit points</b> from chosen Major</li> <li><b>45 credit points</b> from chosen Major or minor</li></ul></div><div id=\"tab3\" class=\"ds-block ds-tab-content__body\" role=\"tabpanel\" aria-labelledby=\"tab3trigger\" hidden=\"hidden\"> <p class=\"lead\"> Year 3 requires the completion of <b><a class=\"pls-explain\" title=\"A credit point is a unit of measurement to indicate the relative study load of subjects, courses, majors, minors, specialisations and other academic items.<br><br>For example, to be eligible for the award of a standard Bachelor's degree, a student must complete 360 credit points.\">120 credit points</a></b> including:</p> <ul> <li><b>60 credit points</b> from chosen Major</li> <li><b>15 credit points</b> from chosen Electives or major or minor</li> <li><b>30 credit points</b> from chosen Electives or major or minor</li> <li><b>15 credit points</b> from chosen Electives or major or minor</li></ul></div></div></div></div><div class=\"ds-block\"><h4>Study options</h4></div><div class=\"ds-block\" style=\"margin-top: 1rem;\"> <h5>This is a StudyFlex course</h5> <p>Whether your course is considered on campus, online or a mix of both, a StudyFlex course provides:</p><ul> <li>at least one third of its subjects on campus or online; and/or</li> <li>at least two StudyFlex majors - that is two eight-subject sequences that offer at least half of their subjects on campus or online.</li> </ul> <p><a href=\"https://www.latrobe.edu.au/courses/studyflex\">Learn more about StudyFlex</a></p></div><div class=\"ds-block\" style=\"margin-top: 1rem;\"> <h5>Design your own degree: open access majors and minors available</h5> <p>La Trobe's open access majors and minors mean you could customise your degree with cross-disciplinary studies, work-integrated learning and study overseas.</p> <p>Whatever you're studying, if there's enough spare credit points in your course structure and room in your timetable, you could choose an open access major or minor from your course\u2019s discipline or a completely different discipline \u2013 mix business with science or arts with IT or combine a range of disciplines to design a degree to match your interests and truly find your niche.</p> <p><a href=\"https://www.latrobe.edu.au/courses/undergraduate-open-access-majors-and-minors\">View our open access majors and minors</a></p></div><div class=\"ds-block\"><div class=\"ds-accordion\"> <h5> <button id=\"check-course-struct-1\" class=\"ds-accordion__trigger\" aria-expanded=\"false\" aria-controls=\"course-struct-1\"> <span class=\"ds-accordion__title\"> Core subjects </span> </button> </h5> <div id=\"course-struct-1\" class=\"ds-accordion__content\" role=\"region\" aria-labelledby=\"check-course-struct-1\"> <div class=\"ds-table-wrapper\"> <p> Core subjects are required subjects in your course. You need to complete these subjects to attain your degree. </p> <table class=\"ds-table--striped\"> <thead> <tr> <th> Subject name</th> <th> Subject code</th> <th> Year</th> <th> Credit points</th> </tr> </thead> <tbody><tr> <td><a href=\"https://handbook.latrobe.edu.au/subjects/2026/LTU0AIM\" target=\"_blank\">ACADEMIC INTEGRITY MODULE</a></td> <td> LTU0AIM</td> <td> 1</td> <td> 0</td></tr><tr> <td><a href=\"https://handbook.latrobe.edu.au/subjects/2026/ABS0WOM\" target=\"_blank\">WOMINJEKA LA TROBE: INDIGENOUS CULTURAL LITERACY FOR HIGHER EDUCATION</a></td> <td> ABS0WOM</td> <td> 1</td> <td> 0</td></tr><tr> <td><a href=\"https://handbook.latrobe.edu.au/subjects/2026/ACC1001\" target=\"_blank\">ACCOUNTING FOR BUSINESS</a></td> <td> ACC1001</td> <td> 1</td> <td> 15</td></tr><tr> <td><a href=\"https://handbook.latrobe.edu.au/subjects/2026/BUS1003\" target=\"_blank\">DATA FUNDAMENTALS FOR BUSINESS DECISIONS</a></td> <td> BUS1003</td> <td> 1</td> <td> 15</td></tr><tr> <td><a href=\"https://handbook.latrobe.edu.au/subjects/2026/FIN1002\" target=\"_blank\">INTRODUCTION TO FINANCE </a></td> <td> FIN1002</td> <td> 1</td> <td> 15</td></tr><tr> <td><a href=\"https://handbook.latrobe.edu.au/subjects/2026/MGT1004\" target=\"_blank\">MANAGEMENT AND ORGANISATIONS</a></td> <td> MGT1004</td> <td> 1</td> <td> 15</td></tr><tr> <td><a href=\"https://handbook.latrobe.edu.au/subjects/2026/BUS1BUE\" target=\"_blank\">MARKETS, POLICY AND THE ECONOMY</a></td> <td> BUS1BUE</td> <td> 1</td> <td> 15</td></tr><tr> <td><a href=\"https://handbook.latrobe.edu.au/subjects/2026/MKT1MDP\" target=\"_blank\">PRINCIPLES AND PRACTICES OF MARKETING</a></td> <td> MKT1MDP</td> <td> 1</td> <td> 15</td></tr><tr> <td><a href=\"https://handbook.latrobe.edu.au/subjects/2026/BUS2008\" target=\"_blank\">ENTREPRENEURSHIP AND INNOVATION</a></td> <td> BUS2008</td> <td> 2</td> <td> 15</td></tr> </tbody></table></div></div></div><div class=\"ds-accordion\"> <h5> <button id=\"check-course-struct-2\" class=\"ds-accordion__trigger\" aria-expanded=\"false\" aria-controls=\"course-struct-2\"> <span class=\"ds-accordion__title\"> Majors </span><a class=\"tag tag-flex-loc pls-explain\" title=\"A StudyFlex major, minor or specialisation is a specified subject sequence in your course that offers at least half of its subjects on campus or online.\">StudyFlex available</a><a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access available</a> </button> </h5> <div id=\"course-struct-2\" class=\"ds-accordion__content\" role=\"region\" aria-labelledby=\"check-course-struct-2\" style=\"overflow: initial\"> <div class=\"ds-table-wrapper\"> <p class=\"h5\">Course majors</p> <p> A major is a sequence of related subjects studied in your course. To attain a major, this sequence must add up to 120 credit points. In some courses, you need to complete at least one major from your course's discipline to attain your degree. </p> <table class=\"ds-table--striped\"> <thead> <tr> <th>Course majors</th> <th>Major code</th> </tr> </thead> <tbody> <tr> <td style=\"position: relative;\"> <a href='https://handbook.latrobe.edu.au/aos/2026/MAJOR-AGRBUS' target=\"_blank\">Agribusiness</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MAJOR-AGRBUS</td> </tr> <tr> <td style=\"position: relative;\"> <a href='https://handbook.latrobe.edu.au/aos/2026/MJR-DIB01' target=\"_blank\">Digital business</a> <a class=\"tag tag-flex-loc pls-explain\" title=\"A StudyFlex major, minor or specialisation is a specified subject sequence in your course that offers at least half of its subjects on campus or online.\">StudyFlex</a><a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MJR-DIB01</td> </tr> <tr> <td style=\"position: relative;\"> <a href='https://handbook.latrobe.edu.au/aos/2026/MAJOR-ECO-2' target=\"_blank\">Economics</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MAJOR-ECO-2</td> </tr> <tr> <td style=\"position: relative;\"> <a href='https://handbook.latrobe.edu.au/aos/2026/MJR-FIN01' target=\"_blank\">Finance</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MJR-FIN01</td> </tr> <tr> <td style=\"position: relative;\"> <a href='https://handbook.latrobe.edu.au/aos/2026/MAJOR-HRM-1' target=\"_blank\">Human resource management</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MAJOR-HRM-1</td> </tr> <tr> <td style=\"position: relative;\"> <a href='https://handbook.latrobe.edu.au/aos/2026/MJR-INTBUS-1' target=\"_blank\">International business</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MJR-INTBUS-1</td> </tr> <tr> <td style=\"position: relative;\"> <a href='https://handbook.latrobe.edu.au/aos/2026/MAJOR-MGT-1' target=\"_blank\">Management</a> <a class=\"tag tag-flex-loc pls-explain\" title=\"A StudyFlex major, minor or specialisation is a specified subject sequence in your course that offers at least half of its subjects on campus or online.\">StudyFlex</a><a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MAJOR-MGT-1</td> </tr> <tr> <td style=\"position: relative;\"> <a href='https://handbook.latrobe.edu.au/aos/2026/MAJOR-MKT-1' target=\"_blank\">Marketing</a> <a class=\"tag tag-flex-loc pls-explain\" title=\"A StudyFlex major, minor or specialisation is a specified subject sequence in your course that offers at least half of its subjects on campus or online.\">StudyFlex</a><a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MAJOR-MKT-1</td> </tr> <tr> <td style=\"position: relative;\"> <a href='https://handbook.latrobe.edu.au/aos/2026/MJR-THS01' target=\"_blank\">Tourism and event management</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MJR-THS01</td> </tr> </tbody></table> <p class=\"h5\">Open access majors</p> <p> If there is room in your degree for more than one major, you may wish to complete an open access major from another discipline area.<br> <br> La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning.<br> <br> <a href=\"/courses/undergraduate-open-access-majors-and-minors\">View our open access majors</a> </p></div></div></div><div class=\"ds-accordion\"> <h5> <button id=\"check-course-struct-4\" class=\"ds-accordion__trigger\" aria-expanded=\"false\" aria-controls=\"course-struct-4\"> <span class=\"ds-accordion__title\"> Minors </span><a class=\"tag tag-flex-loc pls-explain\" title=\"A StudyFlex major, minor or specialisation is a specified subject sequence in your course that offers at least half of its subjects on campus or online.\">StudyFlex available</a><a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access available</a> </button> </h5> <div id=\"course-struct-4\" class=\"ds-accordion__content\" role=\"region\" aria-labelledby=\"check-course-struct-4\" style=\"overflow: initial\"> <div class=\"ds-table-wrapper\"> <p class=\"h5\">Course minors</p> <p> A minor is an optional sequence of related subjects studied in your course. To attain a minor, this sequence must add up to 60 credit points. A minor can be undertaken in a similar or different interest area in your course or major's discipline and, in some cases, taken from a different discipline. Up to two minors can be chosen in place of an optional second major or standalone elective subjects. </p> <p class=\"h5\">Open access minors</p> <p> <a href=\"/courses/undergraduate-open-access-majors-and-minors\">View our open access minors</a> </p> <table class=\"ds-table--striped\"> <thead> <tr> <th>Course minors</th> <th>Minor code</th> </tr> </thead> <tbody> <tr> <td style=\"position: relative;\"> <a href=\"https://handbook.latrobe.edu.au/aos/2026/MNR-ACC02\" target=\"_blank\">Accounting for business management</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MNR-ACC02</td> </tr> <tr> <td style=\"position: relative;\"> <a href=\"https://handbook.latrobe.edu.au/aos/2026/MIN-AGR01\" target=\"_blank\">Agribusiness</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MIN-AGR01</td> </tr> <tr> <td style=\"position: relative;\"> <a href=\"https://handbook.latrobe.edu.au/aos/2026/MIN-DIG01\" target=\"_blank\">Digital business</a> <a class=\"tag tag-flex-loc pls-explain\" title=\"A StudyFlex major, minor or specialisation is a specified subject sequence in your course that offers at least half of its subjects on campus or online.\">StudyFlex</a><a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MIN-DIG01</td> </tr> <tr> <td style=\"position: relative;\"> <a href=\"https://handbook.latrobe.edu.au/aos/2026/MINOR-MKT-3\" target=\"_blank\">Digital marketing</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MINOR-MKT-3</td> </tr> <tr> <td style=\"position: relative;\"> <a href=\"https://handbook.latrobe.edu.au/aos/2026/MINOR-ECO-1\" target=\"_blank\">Economics</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MINOR-ECO-1</td> </tr> <tr> <td style=\"position: relative;\"> <a href=\"https://handbook.latrobe.edu.au/aos/2026/MINOR-HRM-3\" target=\"_blank\">Human resources management</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MINOR-HRM-3</td> </tr> <tr> <td style=\"position: relative;\"> <a href=\"https://handbook.latrobe.edu.au/aos/2026/MNR-INTBUS-1\" target=\"_blank\">International business</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MNR-INTBUS-1</td> </tr> <tr> <td style=\"position: relative;\"> <a href=\"https://handbook.latrobe.edu.au/aos/2026/MIN-INV01\" target=\"_blank\">Investment</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MIN-INV01</td> </tr> <tr> <td style=\"position: relative;\"> <a href=\"https://handbook.latrobe.edu.au/aos/2026/MINOR-MGT-3\" target=\"_blank\">Management</a> <a class=\"tag tag-flex-loc pls-explain\" title=\"A StudyFlex major, minor or specialisation is a specified subject sequence in your course that offers at least half of its subjects on campus or online.\">StudyFlex</a><a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MINOR-MGT-3</td> </tr> <tr> <td style=\"position: relative;\"> <a href=\"https://handbook.latrobe.edu.au/aos/2026/MNR-THS01\" target=\"_blank\">Tourism and event management</a> <a class=\"tag tag-open-access pls-explain\" title=\"La Trobe open access majors and minors offer an opportunity to customise your degree with cross-discipline studies and work integrated learning. You can enrol in an open access major or minor if there is sufficient space in your course.\">Open access</a> </td> <td> MNR-THS01</td> </tr> </tbody></table></div></div></div> <div class=\"ds-accordion\"> <h5> <button id=\"check-course-struct-7\" class=\"ds-accordion__trigger\" aria-expanded=\"false\" aria-controls=\"course-struct-7\"> <span class=\"ds-accordion__title\"> Elective subjects </span> </button> </h5> <div id=\"course-struct-7\" class=\"ds-accordion__content\" role=\"region\" aria-labelledby=\"check-course-struct-7\"> <div class=\"ds-table-wrapper\"> <p> A range of standalone elective subjects is available in this course. Some electives are recommended for your course, but you may also be able to choose from a range of University-wide electives or electives from other interest areas or disciplines. Note these electives may have their own prerequisites and other requirements. Please refer to the <a href=\"https://handbook.latrobe.edu.au/courses/2026/LBB\" target='_blank'>La Trobe University Handbook</a> for the subjects available. </p> </div> </div> </div><div class=\"ds-accordion\"> <h5> <button id=\"check-course-struct-11\" class=\"ds-accordion__trigger\" aria-expanded=\"false\" aria-controls=\"course-struct-11\"> <span class=\"ds-accordion__title\"> Prescribed elective subjects </span> </button> </h5> <div id=\"course-struct-11\" class=\"ds-accordion__content\" role=\"region\" aria-labelledby=\"check-course-struct-11\"> <div class=\"ds-table-wrapper\"> <p> A prescribed elective is an elective tied to your discipline, course, major or activity. You\u2019ll choose your electives from a curated list of subjects, enabling you to tailor your studies while staying aligned with your course goals. </p> <table class=\"ds-table--striped\"> <thead> <tr> <th>Subject name</th> <th>Subject code</th> <th>Year</th> <th>Credit points</th> </tr> </thead> <tbody><tr> <td><a href=\"https://handbook.latrobe.edu.au/subjects/2026/LTU2003\" target=\"_blank\">INDUSTRY PLACEMENT</a></td> <td> LTU2003</td> <td> 2</td> <td> 15</td></tr><tr> <td><a href=\"https://handbook.latrobe.edu.au/subjects/2026/LTU2006\" target=\"_blank\">INDUSTRY PROJECT</a></td> <td> LTU2006</td> <td> 2</td> <td> 15</td></tr><tr> <td><a href=\"https://handbook.latrobe.edu.au/subjects/2026/BUS2009\" target=\"_blank\">SUSTAINABILITY</a></td> <td> BUS2009</td> <td> 2</td> <td> 15</td></tr> </tbody></table></div></div></div></div></section>",
+    "workBasedLearning": "<p><strong><em>Elective placement opportunities (Work Based Learning)</em></strong><br />During this course, you will have the opportunity to participate in a Work Based Learning (WBL) placement experience, designed to allow you to extend your formal academic learning beyond the classroom. The WBL experience will provide the opportunity to bring your learning from the university into a work environment and test out your knowledge in a professional real-world environment. Some courses include compulsory WBL subjects, however, we also offer a range of elective WBL subjects, both cross-discipline and subject-specific. La Trobe University will source placements for some subjects, while others will require you to source your own placement. If you are required to source your own placement, dedicated staff will guide and support you through the process. Elective WBL subjects generally involve an application process and Subject Coordinator approval. The location and number of hours undertaken can vary considerably depending on the activity and the discipline area. Please refer to the individual subject entries for more information. Regional students are eligible to access additional support under the <a href=\"https://www.latrobe.edu.au/study/regional-reward\" rel=\"nofollow\">Regional Reward</a> program. WBL is available to all onshore students.</p>",
+    "handbookLinkHtml": "<a href=\"https://handbook.latrobe.edu.au/courses/2026/LBB\" target='_blank'>Melbourne</a>",
+    "intendedLearningOutcomes": "<ul><li>Communicate effectively with a diverse set of stakeholders employing a variety of communication methods and digital technologies.</li><li>Adopt a cultural lens to examine and engage with diverse global contexts.</li><li>Utilise and interpret research to draw connections across diverse fields of knowledge, applying critical analysis and creative thinking to address complex business and social challenges</li><li>Lead others and collaborate effectively as a member of a diverse team</li><li>Deploy personal competencies and ethical decision-making to implement sustainable and socially responsible solutions</li><li>Apply disciplinary knowledge and skills to commence a career in business</li></ul>",
+    "careerOpportunities": "<p>After graduation, you could work across a wide range of sectors including government, corporate, finance, retail, IT and not-for-profit \u2013 or even start your own business. Possible roles include:</p><ul><li>financial analyst</li><li>business development manager</li><li>marketing manager</li><li>human resources manager</li><li>corporate consultant</li><li>economic or market analyst.</li><li>hotel or event manager</li></ul>",
+    "professionalRecognition": "<p>The Marketing major in the Bachelor of Business at the Melbourne (Bundoora) campus, Bendigo campus, Sydney campus and Online is accredited by the Australian Marketing Institute (AMI). The Human resource management major in the Bachelor of Business at the Melbourne (Bundoora) and Sydney campuses is accredited by the Australian Human Resources Institute (AHRI). Professional membership may require an application to the professional body and may have additional or ongoing requirements beyond completion of the degree. Please contact the relevant professional bodies for details.</p>",
+    "feesLegacy": {
+      "overview": "A$43 000 per 120 credit points. <br>Note: 120 credit points represents full-time study for one year.",
+      "showFeeLegislationMsg": false,
+      "amountDescription": "A$43 000 per 120 credit points. <br>Note: 120 credit points represents full-time study for one year.",
+      "essentialRequirementsSelection": "",
+      "eligibleForCspLoan": false,
+      "eligibleForErpLoan": false,
+      "additionalFees": null
+    },
+    "fees": {
+      "rawFees": [
+        {
+          "_feeSource": "standard",
+          "Fee_Type": "Domestic",
+          "Cohorts": "Domestic Applicants",
+          "Additional_Context": "CSP",
+          "Fee_Amount": "14968.00",
+          "Discounted_Fee_Amount": "",
+          "Fee_Currency": "",
+          "Pricing_Basis": "per 120 credit points.",
+          "Advertised_Fee_Description": "",
+          "_virtualRollover": false
+        },
+        {
+          "_feeSource": "standard",
+          "Fee_Type": "International",
+          "Cohorts": "Onshore International Applicants",
+          "Additional_Context": "NA",
+          "Fee_Amount": "43000.00",
+          "Discounted_Fee_Amount": "",
+          "Fee_Currency": "",
+          "Pricing_Basis": "per 120 credit points.",
+          "Advertised_Fee_Description": "",
+          "_virtualRollover": false
+        }
+      ],
+      "showFeeLegislationMsg": false,
+      "essentialRequirementsSelection": "",
+      "eligibleForCspLoan": false,
+      "eligibleForErpLoan": false
+    }
+  },
+  "content": {
+    "atarDistributionReport": null
+  },
+  "softContent": {
+    "contactCta": {
+      "primaryCta": {
+        "link": "https://student-latrobe.studylink.com",
+        "text": "Apply now"
+      },
+      "secondaryCta": {
+        "link": "https://consultation.latrobe.edu.au/s/home-international",
+        "text": "Book a 1:1 consultation"
+      },
+      "overwriteHeadline": "<h2>Turn business thinking into AI-powered action</h2>\r\n<h3 style=\"color: black;\">Applications now open</h3>\r\n<ul><li>Explore management, marketing, finance, economics and entrepreneurship.</li><li>Apply generative AI ethically to analyse real business challenges.</li><li>Shape your degree through majors, minors, core options and electives.</li><li>Build practical skills through industry projects and work integrated learning.</li></ul>\r\n",
+      "headline": "<p class=\"h2\">Applications now open</p>",
+      "subheadline": "<p>There's never been a better time to build new skills and follow your passion. Apply now to secure your place at La Trobe.</p>",
+      "contactCallBtn": {
+        "show": true,
+        "link": "tel:+61394791993",
+        "text": "Call (+61 3) 9479 1993"
+      },
+      "contactConsultBtn": {
+        "show": true,
+        "link": "https://consultation.latrobe.edu.au/s/home-international",
+        "text": "Book a one-on-one"
+      },
+      "contactChatBtn": {
+        "show": true,
+        "link": "https://www.latrobe.edu.au/contact/chat",
+        "text": "Live chat"
+      },
+      "contactAskBtn": {
+        "show": true,
+        "link": "https://www.latrobe.edu.au/international/international/ask-a-question",
+        "text": "Ask a question"
+      },
+      "howToApplyVtacStatusText": "Apply through VTAC",
+      "howToApplyUacStatusText": "Apply through UAC"
+    },
+    "atarPeriod": "",
+    "feeAdditionalDescription": ""
+  }
+}

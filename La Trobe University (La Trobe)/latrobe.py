@@ -1,13 +1,14 @@
 """
-Deakin University course scraper (Playwright + BeautifulSoup).
+La Trobe University course scraper (Playwright + BeautifulSoup).
 
-Scrapes course description, duration, fees, entry requirements, cricos code, and intakes.
-Aligns with the repository's new scraping structure and DB updates.
+Scrapes course details by navigating directly to La Trobe's JSON API endpoints using fresh contexts to bypass Cloudflare.
+Aligns with the repository's scraping structure and DB updates.
 """
 import os
 import re
 import sys
 import csv
+import json
 import asyncio
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -29,9 +30,9 @@ except ImportError:
     def format_requirements(text):
         return ""
 
-PROVIDER_CODE = "00113B"
-SLUG = "deakin"
-DIR = "Deakin University"
+PROVIDER_CODE = "00115M"
+SLUG = "latrobe"
+DIR = "La Trobe University (La Trobe)"
 EXCEL_PATH = f"{DIR}/{SLUG}.xlsx"
 SQL_PATH = f"{DIR}/{SLUG}_courses_update.sql"
 
@@ -116,71 +117,65 @@ def extract_duration_weeks(duration_str: str) -> str:
     if match:
         months = float(match.group(1))
         return str(int(round(months * 4.33)))
+    match = re.search(r"([0-9.]+)\s*week", duration_str, re.IGNORECASE)
+    if match:
+        return str(int(round(float(match.group(1)))))
     return ""
 
 # --- parsing functions -----------------------------------------------------
-def extract_course_description(soup):
-    desc_section = soup.select_one("section#course-overview")
-    return sanitise(str(desc_section)) if desc_section else ""
+def extract_course_description(c_data):
+    desc = c_data.get("courseDescription") or ""
+    return sanitise(desc) if desc else ""
 
-def extract_duration(soup):
-    keyfacts_section = soup.find("section", class_="content-box")
-    if keyfacts_section:
-        dur_tag = keyfacts_section.find("h3", string=re.compile("Duration", re.I))
-        if dur_tag:
-            p_tag = dur_tag.find_next("p")
-            if p_tag:
-                return p_tag.get_text(strip=True)
-    return ""
-
-def extract_fees(soup):
-    fee_section = soup.select_one("section#fees-and-scholarships")
-    fee_val = ""
-    if fee_section:
-        text = fee_section.get_text(" ", strip=True)
-        m = re.search(r"\$\s*([\d,]+)", text)
+def extract_fees(c_data):
+    fees_data = c_data.get("fees") or {}
+    raw_fees = fees_data.get("rawFees") or []
+    
+    offshore_fee = ""
+    for item in raw_fees:
+        if item.get("Fee_Type") == "International":
+            offshore_fee = item.get("Fee_Amount") or ""
+            break
+            
+    # Fallback to feesLegacy
+    if not offshore_fee:
+        fees_legacy = c_data.get("feesLegacy") or {}
+        desc = fees_legacy.get("amountDescription") or fees_legacy.get("overview") or ""
+        m = re.search(r"\$\s*([\d,]+)", desc)
         if m:
-            fee_val = m.group(1).replace(",", "")
-    return fee_val
+            offshore_fee = m.group(1).replace(",", "")
+            
+    return offshore_fee
 
-def extract_intake_months(soup):
-    text = soup.get_text(" ", strip=True)
+def extract_intake_months(c_data):
+    start_dates = c_data.get("startDates") or ""
     found_months = []
-    patterns = [
-        r"(?:Start date:|Start in|Trimester \d\s*-\s*)\s*([A-Za-z]+)",
-        r"Trimester \d\s*\(([^)]+)\)"
-    ]
-    for pattern in patterns:
-        for match in re.finditer(pattern, text, re.IGNORECASE):
-            val = match.group(1).strip().lower()
-            if val in MONTHS:
-                m = MONTHS[val]
-                if m not in found_months:
-                    found_months.append(m)
-    # Fallback checking if March, July, November appear
+    for key in MONTHS:
+        if re.search(r"\b" + key + r"\b", start_dates, re.IGNORECASE):
+            m = MONTHS[key]
+            if m not in found_months:
+                found_months.append(m)
+                
     if not found_months:
+        # Fallback common intakes
         for m_name in ["March", "July", "November"]:
-            if re.search(r"\b" + m_name + r"\b", text, re.IGNORECASE):
+            if re.search(r"\b" + m_name + r"\b", start_dates, re.IGNORECASE):
                 found_months.append(m_name)
-    if not found_months:
-        found_months = ["March", "July", "November"]
     return found_months
 
-def extract_entry_requirements(soup):
-    entry_start = soup.select_one("section#entry-requirements")
-    fee_section = soup.select_one("section#fees-and-scholarships")
-    entry_html = ""
-    if entry_start and fee_section:
-        collected = []
-        for sib in entry_start.next_siblings:
-            if sib == fee_section:
-                break
-            if getattr(sib, "name", None) == "section":
-                collected.append(str(sib))
-        entry_html = str(entry_start) + "".join(collected)
-    elif entry_start:
-        entry_html = str(entry_start)
+def extract_entry_requirements(c_data):
+    entry_req = c_data.get("entryReq") or {}
+    rse = entry_req.get("rse") or {}
+    prereq = rse.get("prerequisite") or ""
+    eng_req = entry_req.get("engReq") or ""
+    
+    parts = []
+    if prereq and prereq.strip():
+        parts.append(f"<h4>Academic Requirements</h4>{prereq.strip()}")
+    if eng_req and eng_req.strip():
+        parts.append(f"<h4>English Language Requirements</h4>{eng_req.strip()}")
         
+    entry_html = "\n".join(parts)
     sanitised_entry = sanitise(entry_html)
     if not sanitised_entry:
         return ""
@@ -193,14 +188,9 @@ def extract_entry_requirements(soup):
         if formatted_html and formatted_html.strip():
             return formatted_html
     except Exception as e:
-        print(f"AI Formatting failed: {e}")
+        print(f"  AI Formatting failed: {e}")
         
     return sanitised_entry
-
-def extract_cricos(soup):
-    full_text = soup.get_text(" ", strip=True)
-    m = re.search(r"\b\d{6,7}[A-Za-z]?\b", full_text)
-    return m.group(0).strip() if m else ""
 
 # --- CRICOS Register Backfill ----------------------------------------------
 def _norm_title(s):
@@ -275,53 +265,105 @@ def backfill_from_register(results):
     return filled
 
 # --- scraping workflow ----------------------------------------------------
-async def block_resources(route):
-    if route.request.resource_type in ["image", "media", "font", "stylesheet"]:
-        await route.abort()
-    else:
-        await route.continue_()
+async def fetch_course_json_with_fresh_context(browser, url):
+    slug = url.split("/courses/")[-1]
+    
+    campuses = ["bu", "on", "sy", "be", "al", "sh"]
+    years = ["2026", "2027"]
+    student_types = ["international", "domestic"]
+    
+    # Try combinations
+    for year in years:
+        for s_type in student_types:
+            for campus in campuses:
+                # Create fresh context to avoid bot detection cookie build-up
+                context = await browser.new_context(
+                    user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+                )
+                page = await context.new_page()
+                
+                api_url = f"https://www.latrobe.edu.au/courses/data/{year}/{s_type}/{campus}/{slug}"
+                try:
+                    # Navigate directly to the JSON endpoint
+                    response = await page.goto(api_url, wait_until="domcontentloaded", timeout=20000)
+                    status = response.status if response else 0
+                    
+                    if status == 404:
+                        # Direct 404 is fast, move to next campus/year
+                        await context.close()
+                        continue
+                        
+                    if status == 403:
+                        # Cloudflare Turnstile block - wait 10 seconds for Playwright to solve
+                        await page.wait_for_timeout(10000)
+                        
+                    text = await page.evaluate("() => document.body.innerText")
+                    if "{" in text and "availability" in text:
+                        data = json.loads(text)
+                        if data.get("availability") is True:
+                            await context.close()
+                            return data, campus, year, s_type
+                except Exception:
+                    pass
+                finally:
+                    await context.close()
+                    
+    return None, None, None, None
 
-async def scrape_course(page, url):
+async def scrape_course(browser, url):
     url = url.strip()
     d = {"cricos": "", "title": "", "url": url, "course_description": "",
          "course_duration_per_week": "", "offshore_tuition_fee": "NULL",
          "onshore_tuition_fee": "NULL", "enrolment_fee": "NULL", "materials_fee": "NULL",
          "entry_requirements": "", "apply_form": url, "intake_months": [], "source": "page", "note": ""}
+         
     try:
-        await page.goto(url, wait_until="domcontentloaded", timeout=45000)
-        content = await page.content()
-        soup = BeautifulSoup(content, "html.parser")
-        
-        # Title
-        h1 = soup.find("h1")
-        d["title"] = h1.get_text(strip=True) if h1 else "Unknown Course"
-        
-        # CRICOS
-        cricos = extract_cricos(soup)
-        d["cricos"] = cricos
-        
-        # Description
-        d["course_description"] = clean_html(extract_course_description(soup))
-        
-        # Duration
-        dur_str = extract_duration(soup)
-        d["course_duration_per_week"] = extract_duration_weeks(dur_str)
-        
-        # Fees
-        fee = extract_fees(soup)
-        d["onshore_tuition_fee"] = clean_numeric_fee(fee)
-        d["offshore_tuition_fee"] = clean_numeric_fee(fee)
-        
-        # Entry Requirements
-        d["entry_requirements"] = clean_html(extract_entry_requirements(soup))
-        
-        # Intake Months
-        d["intake_months"] = extract_intake_months(soup)
-        
-        print(f"✅ {d['cricos'] or '—'} | {d['title']} | {url}")
+        data, campus, year, s_type = await fetch_course_json_with_fresh_context(browser, url)
+        if data:
+            c_data = data.get("data") or {}
+            
+            # Title
+            d["title"] = c_data.get("awardTitle") or "Unknown Course"
+            
+            # CRICOS
+            d["cricos"] = c_data.get("cricosCourseCode") or ""
+            
+            # Description
+            d["course_description"] = clean_html(extract_course_description(c_data))
+            
+            # Duration
+            dur_str = c_data.get("duration") or ""
+            d["course_duration_per_week"] = extract_duration_weeks(dur_str)
+            
+            # Fees
+            fee = extract_fees(c_data)
+            d["onshore_tuition_fee"] = clean_numeric_fee(fee)
+            d["offshore_tuition_fee"] = clean_numeric_fee(fee)
+            
+            # Entry Requirements
+            d["entry_requirements"] = clean_html(extract_entry_requirements(c_data))
+            
+            # Intake Months
+            d["intake_months"] = extract_intake_months(c_data)
+            
+            # Application Link
+            soft_content = data.get("softContent") or {}
+            contact_cta = soft_content.get("contactCta") or {}
+            primary_cta = contact_cta.get("primaryCta") or {}
+            cta_link = primary_cta.get("link")
+            if cta_link:
+                d["apply_form"] = cta_link
+                
+            d["note"] = f"Scraped from data API ({campus}/{year}/{s_type})"
+            print(f"✅ {d['cricos'] or '—'} | {d['title']} | {campus}/{year} | {url}")
+        else:
+            d["note"] = "API returned no data or 404 for all campuses"
+            print(f"❌ Failed: No data found for {url}")
+            
     except Exception as e:
         d["note"] = f"Error: {e}"
         print(f"❌ Error scraping {url}: {e}")
+        
     return d
 
 async def run_scraper():
@@ -336,11 +378,6 @@ async def run_scraper():
     results = []
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-        context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        )
-        page = await context.new_page()
-        await page.route("**/*", block_resources)
         
         for idx, row in enumerate(df.itertuples(), start=1):
             url = getattr(row, "url", "")
@@ -348,10 +385,13 @@ async def run_scraper():
             if not url:
                 continue
             print(f"[{idx}/{len(df)}] ", end="")
-            res = await scrape_course(page, url)
+            res = await scrape_course(browser, url)
             if not res["title"] or res["title"] == "Unknown Course":
                 res["title"] = title
             results.append(res)
+            
+            # Cooperative delay between course scrapings
+            await asyncio.sleep(0.5)
             
         await browser.close()
         
@@ -380,23 +420,31 @@ async def run_scraper():
                 reason = (d["note"] or "no CRICOS course code found").replace("\n", " ").replace("\r", "")
                 f.write(f"-- ⚠️ Skipped ({reason}): {d['title']} | {d['url']}\n\n")
                 continue
-            if d["cricos"] in emitted:
-                f.write(f"-- ⚠️ Skipped (CRICOS {d['cricos']} already emitted — duplicate slug): {d['title']} | {d['url']}\n\n")
-                continue
-            emitted.add(d["cricos"])
             
-            if d["source"] == "register":
-                f.write(f"""-- From CRICOS register: {d['title']}
+            # Find all valid CRICOS codes in the string (e.g. "Low cost: 0100699; High cost: 0100698" -> ["0100699", "0100698"])
+            codes = re.findall(r"\b\d{6}[A-Za-z]\b", d["cricos"])
+            if not codes:
+                codes = [d["cricos"]]
+                
+            for code in codes:
+                code_upper = code.upper().strip()
+                if code_upper in emitted:
+                    f.write(f"-- ⚠️ Skipped (CRICOS {code_upper} already emitted — duplicate code): {d['title']} | {d['url']}\n\n")
+                    continue
+                emitted.add(code_upper)
+                
+                if d["source"] == "register":
+                    f.write(f"""-- From CRICOS register fallback: {d['title']}
 UPDATE courses SET
     course_duration_per_week = {d["course_duration_per_week"] or "NULL"},
     offshore_tuition_fee = {clean_numeric_fee(d["offshore_tuition_fee"])},
     enrolment_fee = {clean_numeric_fee(d["enrolment_fee"])},
     apply_form = '{d["apply_form"]}',
     updated_at = NOW()
-WHERE cricos_course_code = '{d["cricos"]}';\n\n""")
-                continue
-                
-            f.write(f"""UPDATE courses SET
+WHERE cricos_course_code = '{code_upper}';\n\n""")
+                    continue
+                    
+                f.write(f"""UPDATE courses SET
     course_description = '{d["course_description"]}',
     course_duration_per_week = {d["course_duration_per_week"] or "NULL"},
     offshore_tuition_fee = {clean_numeric_fee(d["offshore_tuition_fee"])},
@@ -406,7 +454,7 @@ WHERE cricos_course_code = '{d["cricos"]}';\n\n""")
     entry_requirements = '{d["entry_requirements"]}',
     apply_form = '{d["apply_form"]}',
     updated_at = NOW()
-WHERE cricos_course_code = '{d["cricos"]}';\n\n""")
+WHERE cricos_course_code = '{code_upper}';\n\n""")
                 
     # Update Excel
     print(f"Writing Excel sheet to {EXCEL_PATH}...")

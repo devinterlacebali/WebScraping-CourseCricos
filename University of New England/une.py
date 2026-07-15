@@ -323,6 +323,7 @@ def main():
             if not d["cricos"]:
                 reason = (f"unreliable CRICOS '{d['raw_code']}'" if d.get("raw_code")
                           else "no CRICOS course code")
+                reason = reason.replace("\n", " ").replace("\r", "")
                 f.write(f"-- ⚠️ Skipped ({reason}): {d['title']} | {d['url']}\n\n")
                 continue
             written += 1

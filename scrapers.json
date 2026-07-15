@@ -1,5 +1,29 @@
 [
   {
+    "id": "university-of-melbourne",
+    "name": "The University of Melbourne (UniMelb)",
+    "scraper": "The University of Melbourne (UniMelb)/unimelb.py",
+    "sql": "The University of Melbourne (UniMelb)/unimelb_courses_update.sql",
+    "snapshot": "The University of Melbourne (UniMelb)/snapshot.json",
+    "dir": "The University of Melbourne (UniMelb)"
+  },
+  {
+    "id": "flinders-university",
+    "name": "Flinders University",
+    "scraper": "Flinders University/flinders.py",
+    "sql": "Flinders University/flinders_courses_update.sql",
+    "snapshot": "Flinders University/snapshot.json",
+    "dir": "Flinders University"
+  },
+  {
+    "id": "swinburne-university-of-technology",
+    "name": "Swinburne University of Technology",
+    "scraper": "Swinburne University of Technology/swinburne.py",
+    "sql": "Swinburne University of Technology/swinburne_courses_update.sql",
+    "snapshot": "Swinburne University of Technology/snapshot.json",
+    "dir": "Swinburne University of Technology"
+  },
+  {
     "id": "academies-australasia-polytechnic-pty-limited",
     "name": "Academies Australasia Polytechnic Pty Limited",
     "scraper": "Academies Australasia Polytechnic Pty Limited/aapoly.py",
@@ -894,5 +918,13 @@
     "sql": "The University of Newcastle (UoN)/newcastle_courses_update.sql",
     "snapshot": "The University of Newcastle (UoN)/snapshot.json",
     "dir": "The University of Newcastle (UoN)"
+  },
+  {
+    "id": "la-trobe-university",
+    "name": "La Trobe University (La Trobe)",
+    "scraper": "La Trobe University (La Trobe)/latrobe.py",
+    "sql": "La Trobe University (La Trobe)/latrobe_courses_update.sql",
+    "snapshot": "La Trobe University (La Trobe)/snapshot.json",
+    "dir": "La Trobe University (La Trobe)"
   }
 ]

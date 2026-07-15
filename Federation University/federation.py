@@ -399,7 +399,7 @@ def main():
         emitted = set()
         for d in results:
             if not d["cricos"]:
-                reason = d["note"] or "no CRICOS course code found"
+                reason = (d["note"] or "no CRICOS course code found").replace("\n", " ").replace("\r", "")
                 f.write(f"-- ⚠️ Skipped ({reason}): {d['title']} | {d['url']}\n\n")
                 continue
             if d["cricos"] in emitted:   # safety net: never repeat a WHERE code
