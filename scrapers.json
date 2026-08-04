@@ -1,5 +1,13 @@
 [
   {
+    "id": "rmit-university",
+    "name": "RMIT University (Royal Melbourne Institute of Technology)",
+    "scraper": "Royal Melbourne Institute of Technology/rmit.py",
+    "sql": "Royal Melbourne Institute of Technology/rmit_courses_update.sql",
+    "snapshot": "Royal Melbourne Institute of Technology/snapshot.json",
+    "dir": "Royal Melbourne Institute of Technology"
+  },
+  {
     "id": "university-of-melbourne",
     "name": "The University of Melbourne (UniMelb)",
     "scraper": "The University of Melbourne (UniMelb)/unimelb.py",
@@ -232,6 +240,14 @@
     "dir": "Canberra University"
   },
   {
+    "id": "central-queensland-university",
+    "name": "Central Queensland University (CQU)",
+    "scraper": "Central Queensland University/centralqueenslanduniversity.py",
+    "sql": "Central Queensland University/centralqueenslanduniversity_courses_update.sql",
+    "snapshot": "Central Queensland University/snapshot.json",
+    "dir": "Central Queensland University"
+  },
+  {
     "id": "central_australian_college",
     "name": "Central Australian College",
     "scraper": "Central Australian College/central_australian_college.py",
@@ -379,7 +395,7 @@
     "id": "james-cook-university",
     "name": "James Cook University",
     "scraper": "James Cook University/jcu.py",
-    "sql": "James Cook University/jcu_scraped_all.sql",
+    "sql": "James Cook University/jcu_courses_update.sql",
     "snapshot": "James Cook University/snapshot.json",
     "dir": "James Cook University"
   },
@@ -560,6 +576,30 @@
     "dir": "Sydney City College of Management"
   },
   {
+    "id": "university-of-tasmania",
+    "name": "University of Tasmania (UTas)",
+    "scraper": "University of Tasmania/utas.py",
+    "sql": "University of Tasmania/utas_courses_update.sql",
+    "xlsx": "University of Tasmania/utas.xlsx",
+    "dir": "University of Tasmania"
+  },
+  {
+    "id": "chisholm-institute",
+    "name": "Chisholm Institute",
+    "scraper": "Chisholm Institute/chisholm.py",
+    "sql": "Chisholm Institute/chisholm_courses_update.sql",
+    "xlsx": "Chisholm Institute/chisholm.xlsx",
+    "dir": "Chisholm Institute"
+  },
+  {
+    "id": "western-sydney-university",
+    "name": "Western Sydney University",
+    "scraper": "Western Sydney University/wsu.py",
+    "sql": "Western Sydney University/wsu_courses_update.sql",
+    "xlsx": "Western Sydney University/wsu.xlsx",
+    "dir": "Western Sydney University"
+  },
+  {
     "id": "tasmania-university",
     "name": "Tasmania University",
     "scraper": "Tasmania University/utas.py",
@@ -672,10 +712,11 @@
     "dir": "Vibe College"
   },
   {
-    "id": "victoria-university",
-    "name": "Victoria University",
+    "id": "victoria-university-all",
+    "name": "Victoria University (All)",
     "scraper": "Victoria University/vu.py",
     "sql": "Victoria University/vu_scraped_all.sql",
+    "xlsx": "Victoria University/vu_scraped_all.xlsx",
     "snapshot": "Victoria University/snapshot.json",
     "dir": "Victoria University"
   },
@@ -926,5 +967,1448 @@
     "sql": "La Trobe University (La Trobe)/latrobe_courses_update.sql",
     "snapshot": "La Trobe University (La Trobe)/snapshot.json",
     "dir": "La Trobe University (La Trobe)"
+  },
+  {
+    "id": "university-of-south-australia",
+    "name": "University of South Australia (UniSA)",
+    "scraper": "University of South Australia (UniSA)/unisa.py",
+    "sql": "University of South Australia (UniSA)/unisa_courses_update.sql",
+    "snapshot": "University of South Australia (UniSA)/snapshot.json",
+    "dir": "University of South Australia (UniSA)"
+  },
+  {
+    "id": "the-university-of-adelaide",
+    "name": "The University Of Adelaide (Adelaide)",
+    "scraper": "The University Of Adelaide/adelaide.py",
+    "sql": "The University Of Adelaide/adelaide_courses_update_fixed.sql",
+    "xlsx": "The University Of Adelaide/adelaide.xlsx",
+    "snapshot": "The University Of Adelaide/snapshot.json",
+    "dir": "The University Of Adelaide"
+  },
+  {
+    "id": "victoria-university",
+    "name": "Victoria University (VU)",
+    "scraper": "Victoria University/vu.py",
+    "sql": "Victoria University/vu_courses_update_fixed.sql",
+    "xlsx": "Victoria University/vu.xlsx",
+    "snapshot": "Victoria University/snapshot.json",
+    "dir": "Victoria University"
+  },
+  {
+    "id": "acknowledge-education",
+    "name": "Acknowledge Education (Acknowledge)",
+    "scraper": "Acknowledge Education/acknowledgeeducation.py",
+    "sql": "Acknowledge Education/acknowledgeeducation_courses_update.sql",
+    "snapshot": "Acknowledge Education/snapshot.json",
+    "dir": "Acknowledge Education"
+  },
+  {
+    "id": "murdoch-university",
+    "name": "Murdoch University",
+    "scraper": "Murdoch University/murdoch.py",
+    "sql": "Murdoch University/murdoch_courses_update.sql",
+    "snapshot": "Murdoch University/snapshot.json",
+    "dir": "Murdoch University"
+  },
+  {
+    "id": "the-university-of-western-australia",
+    "name": "The University of Western Australia (UWA)",
+    "scraper": "The University of Western Australia/uwa.py",
+    "sql": "The University of Western Australia/uwa_courses_update_fixed.sql",
+    "xlsx": "The University of Western Australia/uwa.xlsx",
+    "snapshot": "The University of Western Australia/snapshot.json",
+    "dir": "The University of Western Australia"
+  },
+  {
+    "id": "university-of-canberra",
+    "name": "University of Canberra",
+    "scraper": "University of Canberra/uc.py",
+    "sql": "University of Canberra/uc_courses_update.sql",
+    "snapshot": "University of Canberra/snapshot.json",
+    "dir": "University of Canberra"
+  },
+  {
+    "id": "queensland-university-of-technology",
+    "name": "Queensland University of Technology (QUT)",
+    "scraper": "Queensland University of Technology/qut.py",
+    "sql": "Queensland University of Technology/qut_courses_update.sql",
+    "snapshot": "Queensland University of Technology/snapshot.json",
+    "dir": "Queensland University of Technology"
+  },
+  {
+    "id": "central-queensland-university",
+    "name": "Central Queensland University (CQU)",
+    "scraper": "Central Queensland University/cqu.py",
+    "sql": "Central Queensland University/cqu_courses_update.sql",
+    "snapshot": "Central Queensland University/snapshot.json",
+    "dir": "Central Queensland University"
+  },
+  {
+    "id": "griffith-university",
+    "name": "Griffith University",
+    "scraper": "Griffith University/griffith.py",
+    "sql": "Griffith University/griffith_courses_update.sql",
+    "snapshot": "Griffith University/snapshot.json",
+    "dir": "Griffith University"
+  },
+  {
+    "id": "university-of-southern-queensland",
+    "name": "University of Southern Queensland (UniSQ)",
+    "scraper": "University of Southern Queensland/unisq.py",
+    "sql": "University of Southern Queensland/unisq_courses_update.sql",
+    "snapshot": "University of Southern Queensland/snapshot.json",
+    "dir": "University of Southern Queensland"
+  },
+  {
+    "id": "think-colleges",
+    "name": "Think: Colleges Pty Ltd",
+    "scraper": "Think Colleges/think.py",
+    "sql": "Think Colleges/think_courses_update.sql",
+    "snapshot": "Think Colleges/snapshot.json",
+    "dir": "Think Colleges"
+  },
+  {
+    "id": "edith-cowan-university",
+    "name": "Edith Cowan University (ECU)",
+    "scraper": "Edith Cowan University/ecu.py",
+    "sql": "Edith Cowan University/ecu_courses_update.sql",
+    "xlsx": "Edith Cowan University/ecu.xlsx",
+    "dir": "Edith Cowan University"
+  },
+  {
+    "id": "charles-darwin-university",
+    "name": "Charles Darwin University (CDU)",
+    "scraper": "Charles Darwin University/cdu.py",
+    "sql": "Charles Darwin University/cdu_courses_update.sql",
+    "xlsx": "Charles Darwin University/cdu.xlsx",
+    "dir": "Charles Darwin University"
+  },
+  {
+    "id": "curtin-university",
+    "name": "Curtin University",
+    "scraper": "Curtin University/curtin.py",
+    "sql": "Curtin University/curtin_courses_update.sql",
+    "xlsx": "Curtin University/curtin.xlsx",
+    "dir": "Curtin University"
+  },
+  {
+    "id": "notre-dame",
+    "name": "The University of Notre Dame Australia",
+    "scraper": "Notre Dame/notredame.py",
+    "sql": "Notre Dame/notredame_courses_update.sql",
+    "xlsx": "Notre Dame/notredame.xlsx",
+    "dir": "Notre Dame"
+  },
+  {
+    "id": "southern-cross-university-scu",
+    "name": "Southern Cross University (SCU)",
+    "scraper": "Southern Cross University/scu.py",
+    "sql": "Southern Cross University/scu_courses_update.sql",
+    "xlsx": "Southern Cross University/scu.xlsx",
+    "dir": "Southern Cross University"
+  },
+  {
+    "id": "university-of-the-sunshine-coast-usc",
+    "name": "University of the Sunshine Coast (UniSC)",
+    "scraper": "University of the Sunshine Coast/usc.py",
+    "sql": "University of the Sunshine Coast/usc_courses_update.sql",
+    "xlsx": "University of the Sunshine Coast/usc.xlsx",
+    "dir": "University of the Sunshine Coast"
+  },
+  {
+    "id": "box-hill-institute",
+    "name": "Box Hill Institute",
+    "scraper": "Box Hill Institute/boxhill.py",
+    "sql": "Box Hill Institute/boxhill_courses_update.sql",
+    "xlsx": "Box Hill Institute/boxhill.xlsx",
+    "dir": "Box Hill Institute"
+  },
+  {
+    "id": "uowc-ltd",
+    "name": "UOWC Ltd (UOW College Australia)",
+    "scraper": "UOWC Ltd/uowc.py",
+    "sql": "UOWC Ltd/uowc_courses_update.sql",
+    "xlsx": "UOWC Ltd/uowc.xlsx",
+    "dir": "UOWC Ltd"
+  },
+  {
+    "id": "avondale-university",
+    "name": "Avondale University",
+    "scraper": "Avondale University/avondale.py",
+    "sql": "Avondale University/avondale_courses_update.sql",
+    "xlsx": "Avondale University/avondale.xlsx",
+    "dir": "Avondale University"
+  },
+  {
+    "id": "menzies-institute-of-technology",
+    "name": "Menzies Institute of Technology",
+    "scraper": "Menzies Institute of Technology/menzies.py",
+    "sql": "Menzies Institute of Technology/menzies_courses_update.sql",
+    "xlsx": "Menzies Institute of Technology/menzies.xlsx",
+    "dir": "Menzies Institute of Technology"
+  },
+  {
+    "id": "etea",
+    "name": "ETEA (Education Training & Employment Australia)",
+    "scraper": "ETEA (Education Training & Employment Australia)/etea.py",
+    "sql": "ETEA (Education Training & Employment Australia)/etea_courses_update.sql",
+    "xlsx": "ETEA (Education Training & Employment Australia)/etea.xlsx",
+    "dir": "ETEA (Education Training & Employment Australia)"
+  },
+  {
+    "id": "scei",
+    "name": "SCEI (Southern Cross Education Institute)",
+    "scraper": "SCEI (Southern Cross Education Institute)/scei.py",
+    "sql": "SCEI (Southern Cross Education Institute)/scei_courses_update.sql",
+    "xlsx": "SCEI (Southern Cross Education Institute)/scei.xlsx",
+    "dir": "SCEI (Southern Cross Education Institute)"
+  },
+  {
+    "id": "queensford-college",
+    "name": "Queensford College",
+    "scraper": "Queensford College/queensford.py",
+    "sql": "Queensford College/queensford_courses_update.sql",
+    "xlsx": "Queensford College/queensford.xlsx",
+    "dir": "Queensford College"
+  },
+  {
+    "id": "ihna",
+    "name": "IHNA (Health Careers International)",
+    "scraper": "IHNA (Health Careers International)/ihna.py",
+    "sql": "IHNA (Health Careers International)/ihna_courses_update.sql",
+    "xlsx": "IHNA (Health Careers International)/ihna.xlsx",
+    "dir": "IHNA (Health Careers International)"
+  },
+  {
+    "id": "ihm",
+    "name": "IHM (Institute of Health & Management)",
+    "scraper": "IHM (Institute of Health & Management)/ihm.py",
+    "sql": "IHM (Institute of Health & Management)/ihm_courses_update.sql",
+    "xlsx": "IHM (Institute of Health & Management)/ihm.xlsx",
+    "dir": "IHM (Institute of Health & Management)"
+  },
+  {
+    "id": "strategix-training-group",
+    "name": "Strategix Training Group",
+    "scraper": "Strategix Training Group/strategix.py",
+    "sql": "Strategix Training Group/strategix_courses_update.sql",
+    "xlsx": "Strategix Training Group/strategix.xlsx",
+    "dir": "Strategix Training Group"
+  },
+  {
+    "id": "equals-international",
+    "name": "EQUALS International",
+    "scraper": "EQUALS International/equals.py",
+    "sql": "EQUALS International/equals_courses_update.sql",
+    "xlsx": "EQUALS International/equals.xlsx",
+    "dir": "EQUALS International"
+  },
+  {
+    "id": "stanley-international-college",
+    "name": "Stanley International College",
+    "scraper": "Stanley International College/stanley.py",
+    "sql": "Stanley International College/stanley_courses_update.sql",
+    "xlsx": "Stanley International College/stanley.xlsx",
+    "dir": "Stanley International College"
+  },
+  {
+    "id": "tafe-queensland",
+    "name": "TAFE Queensland",
+    "scraper": "TAFE Queensland/tafeqld.py",
+    "sql": "TAFE Queensland/tafeqld_courses_update.sql",
+    "xlsx": "TAFE Queensland/tafeqld.xlsx",
+    "dir": "TAFE Queensland"
+  },
+  {
+    "id": "tastafe",
+    "name": "TasTAFE",
+    "scraper": "TasTAFE/tastafe.py",
+    "sql": "TasTAFE/tastafe_courses_update.sql",
+    "xlsx": "TasTAFE/tastafe.xlsx",
+    "dir": "TasTAFE"
+  },
+  {
+    "id": "torrens-university",
+    "name": "Torrens University Australia",
+    "scraper": "Torrens University/torrens.py",
+    "sql": "Torrens University/torrens_courses_update.sql",
+    "xlsx": "Torrens University/torrens.xlsx",
+    "dir": "Torrens University"
+  },
+  {
+    "id": "yourlife",
+    "name": "YourLife Health and Learning",
+    "scraper": "YourLife Health and Learning/yourlife.py",
+    "sql": "YourLife Health and Learning/yourlife_courses_update.sql",
+    "xlsx": "YourLife Health and Learning/yourlife.xlsx",
+    "dir": "YourLife Health and Learning"
+  },
+  {
+    "id": "tred",
+    "name": "Tred Consultants (Tred College)",
+    "scraper": "Tred Consultants (Tred College)/tred.py",
+    "sql": "Tred Consultants (Tred College)/tred_courses_update.sql",
+    "xlsx": "Tred Consultants (Tred College)/tred.xlsx",
+    "dir": "Tred Consultants (Tred College)"
+  },
+  {
+    "id": "dept-education-sa",
+    "name": "Department for Education SA",
+    "scraper": "Department for Education SA/dept-education-sa.py",
+    "sql": "Department for Education SA/dept-education-sa_courses_update.sql",
+    "xlsx": "Department for Education SA/dept-education-sa.xlsx",
+    "dir": "Department for Education SA"
+  },
+  {
+    "id": "elc",
+    "name": "ELC Career College",
+    "scraper": "ELC Career College/elc.py",
+    "sql": "ELC Career College/elc_courses_update.sql",
+    "xlsx": "ELC Career College/elc.xlsx",
+    "dir": "ELC Career College"
+  },
+  {
+    "id": "alexander",
+    "name": "Alexander Language School",
+    "scraper": "Alexander Language School/alexander.py",
+    "sql": "Alexander Language School/alexander_courses_update.sql",
+    "xlsx": "Alexander Language School/alexander.xlsx",
+    "dir": "Alexander Language School"
+  },
+  {
+    "id": "sace",
+    "name": "SA College of English",
+    "scraper": "SA College of English/sace.py",
+    "sql": "SA College of English/sace_courses_update.sql",
+    "xlsx": "SA College of English/sace.xlsx",
+    "dir": "SA College of English"
+  },
+  {
+    "id": "ballarat-grammar",
+    "name": "Ballarat and Queen's Anglican Grammar",
+    "scraper": "Ballarat and Queen's Anglican Grammar/ballarat-grammar.py",
+    "sql": "Ballarat and Queen's Anglican Grammar/ballarat-grammar_courses_update.sql",
+    "xlsx": "Ballarat and Queen's Anglican Grammar/ballarat-grammar.xlsx",
+    "dir": "Ballarat and Queen's Anglican Grammar"
+  },
+  {
+    "id": "billanook",
+    "name": "Billanook College",
+    "scraper": "Billanook College/billanook.py",
+    "sql": "Billanook College/billanook_courses_update.sql",
+    "xlsx": "Billanook College/billanook.xlsx",
+    "dir": "Billanook College"
+  },
+  {
+    "id": "brighton-grammar",
+    "name": "Brighton Grammar School",
+    "scraper": "Brighton Grammar School/brighton-grammar.py",
+    "sql": "Brighton Grammar School/brighton-grammar_courses_update.sql",
+    "xlsx": "Brighton Grammar School/brighton-grammar.xlsx",
+    "dir": "Brighton Grammar School"
+  },
+  {
+    "id": "carey",
+    "name": "Carey Baptist Grammar School",
+    "scraper": "Carey Baptist Grammar School/carey.py",
+    "sql": "Carey Baptist Grammar School/carey_courses_update.sql",
+    "xlsx": "Carey Baptist Grammar School/carey.xlsx",
+    "dir": "Carey Baptist Grammar School"
+  },
+  {
+    "id": "caulfield",
+    "name": "Caulfield Grammar School",
+    "scraper": "Caulfield Grammar School/caulfield.py",
+    "sql": "Caulfield Grammar School/caulfield_courses_update.sql",
+    "xlsx": "Caulfield Grammar School/caulfield.xlsx",
+    "dir": "Caulfield Grammar School"
+  },
+  {
+    "id": "eltham",
+    "name": "Eltham College",
+    "scraper": "Eltham College/eltham.py",
+    "sql": "Eltham College/eltham_courses_update.sql",
+    "xlsx": "Eltham College/eltham.xlsx",
+    "dir": "Eltham College"
+  },
+  {
+    "id": "bond",
+    "name": "Bond University (UOWC)",
+    "scraper": "Bond University/bond.py",
+    "sql": "Bond University/bond_courses_update.sql",
+    "xlsx": "Bond University/bond.xlsx",
+    "dir": "Bond University"
+  },
+  {
+    "id": "yourlife",
+    "name": "YourLife Health and Learning",
+    "scraper": "YourLife Health and Learning/yourlife.py",
+    "sql": "YourLife Health and Learning/yourlife_courses_update.sql",
+    "xlsx": "YourLife Health and Learning/yourlife.xlsx",
+    "dir": "YourLife Health and Learning"
+  },
+  {
+    "id": "tred",
+    "name": "Tred Consultants (Tred College)",
+    "scraper": "Tred Consultants (Tred College)/tred.py",
+    "sql": "Tred Consultants (Tred College)/tred_courses_update.sql",
+    "xlsx": "Tred Consultants (Tred College)/tred.xlsx",
+    "dir": "Tred Consultants (Tred College)"
+  },
+  {
+    "id": "dept-education-sa",
+    "name": "Department for Education SA",
+    "scraper": "Department for Education SA/dept-education-sa.py",
+    "sql": "Department for Education SA/dept-education-sa_courses_update.sql",
+    "xlsx": "Department for Education SA/dept-education-sa.xlsx",
+    "dir": "Department for Education SA"
+  },
+  {
+    "id": "elc",
+    "name": "ELC Career College",
+    "scraper": "ELC Career College/elc.py",
+    "sql": "ELC Career College/elc_courses_update.sql",
+    "xlsx": "ELC Career College/elc.xlsx",
+    "dir": "ELC Career College"
+  },
+  {
+    "id": "alexander",
+    "name": "Alexander Language School",
+    "scraper": "Alexander Language School/alexander.py",
+    "sql": "Alexander Language School/alexander_courses_update.sql",
+    "xlsx": "Alexander Language School/alexander.xlsx",
+    "dir": "Alexander Language School"
+  },
+  {
+    "id": "sace",
+    "name": "SA College of English",
+    "scraper": "SA College of English/sace.py",
+    "sql": "SA College of English/sace_courses_update.sql",
+    "xlsx": "SA College of English/sace.xlsx",
+    "dir": "SA College of English"
+  },
+  {
+    "id": "ballarat-grammar",
+    "name": "Ballarat and Queen's Anglican Grammar",
+    "scraper": "Ballarat and Queen's Anglican Grammar/ballarat-grammar.py",
+    "sql": "Ballarat and Queen's Anglican Grammar/ballarat-grammar_courses_update.sql",
+    "xlsx": "Ballarat and Queen's Anglican Grammar/ballarat-grammar.xlsx",
+    "dir": "Ballarat and Queen's Anglican Grammar"
+  },
+  {
+    "id": "billanook",
+    "name": "Billanook College",
+    "scraper": "Billanook College/billanook.py",
+    "sql": "Billanook College/billanook_courses_update.sql",
+    "xlsx": "Billanook College/billanook.xlsx",
+    "dir": "Billanook College"
+  },
+  {
+    "id": "brighton-grammar",
+    "name": "Brighton Grammar School",
+    "scraper": "Brighton Grammar School/brighton-grammar.py",
+    "sql": "Brighton Grammar School/brighton-grammar_courses_update.sql",
+    "xlsx": "Brighton Grammar School/brighton-grammar.xlsx",
+    "dir": "Brighton Grammar School"
+  },
+  {
+    "id": "carey",
+    "name": "Carey Baptist Grammar School",
+    "scraper": "Carey Baptist Grammar School/carey.py",
+    "sql": "Carey Baptist Grammar School/carey_courses_update.sql",
+    "xlsx": "Carey Baptist Grammar School/carey.xlsx",
+    "dir": "Carey Baptist Grammar School"
+  },
+  {
+    "id": "caulfield",
+    "name": "Caulfield Grammar School",
+    "scraper": "Caulfield Grammar School/caulfield.py",
+    "sql": "Caulfield Grammar School/caulfield_courses_update.sql",
+    "xlsx": "Caulfield Grammar School/caulfield.xlsx",
+    "dir": "Caulfield Grammar School"
+  },
+  {
+    "id": "eltham",
+    "name": "Eltham College",
+    "scraper": "Eltham College/eltham.py",
+    "sql": "Eltham College/eltham_courses_update.sql",
+    "xlsx": "Eltham College/eltham.xlsx",
+    "dir": "Eltham College"
+  },
+  {
+    "id": "unsw",
+    "name": "UNSW",
+    "scraper": "UNSW/unsw.py",
+    "sql": "UNSW/unsw_courses_update.sql",
+    "xlsx": "UNSW/unsw.xlsx",
+    "dir": "UNSW"
+  },
+  {
+    "id": "anu",
+    "name": "Australian National University",
+    "scraper": "ANU/anu.py",
+    "sql": "ANU/anu_courses_update.sql",
+    "xlsx": "ANU/anu.xlsx",
+    "dir": "ANU"
+  },
+  {
+    "id": "fintona",
+    "name": "Fintona Girls School",
+    "scraper": "Fintona Girls School/fintona.py",
+    "sql": "Fintona Girls School/fintona_courses_update.sql",
+    "xlsx": "Fintona Girls School/fintona.xlsx",
+    "dir": "Fintona Girls School"
+  },
+  {
+    "id": "firbank",
+    "name": "Firbank Grammar School",
+    "scraper": "Firbank Grammar School/firbank.py",
+    "sql": "Firbank Grammar School/firbank_courses_update.sql",
+    "xlsx": "Firbank Grammar School/firbank.xlsx",
+    "dir": "Firbank Grammar School"
+  },
+  {
+    "id": "camberwell-ggs",
+    "name": "Camberwell Anglican Girls' Grammar School",
+    "scraper": "Camberwell Anglican Girls' Grammar School/camberwell-ggs.py",
+    "sql": "Camberwell Anglican Girls' Grammar School/camberwell-ggs_courses_update.sql",
+    "xlsx": "Camberwell Anglican Girls' Grammar School/camberwell-ggs.xlsx",
+    "dir": "Camberwell Anglican Girls' Grammar School"
+  },
+  {
+    "id": "geelong-college",
+    "name": "The Geelong College",
+    "scraper": "The Geelong College/geelong-college.py",
+    "sql": "The Geelong College/geelong-college_courses_update.sql",
+    "xlsx": "The Geelong College/geelong-college.xlsx",
+    "dir": "The Geelong College"
+  },
+  {
+    "id": "geelong-grammar",
+    "name": "Geelong Grammar School",
+    "scraper": "Geelong Grammar School/geelong-grammar.py",
+    "sql": "Geelong Grammar School/geelong-grammar_courses_update.sql",
+    "xlsx": "Geelong Grammar School/geelong-grammar.xlsx",
+    "dir": "Geelong Grammar School"
+  },
+  {
+    "id": "hamilton-college",
+    "name": "The Hamilton and Alexandra College",
+    "scraper": "The Hamilton and Alexandra College/hamilton-college.py",
+    "sql": "The Hamilton and Alexandra College/hamilton-college_courses_update.sql",
+    "xlsx": "The Hamilton and Alexandra College/hamilton-college.xlsx",
+    "dir": "The Hamilton and Alexandra College"
+  },
+  {
+    "id": "huntingtower",
+    "name": "Huntingtower School",
+    "scraper": "Huntingtower School/huntingtower.py",
+    "sql": "Huntingtower School/huntingtower_courses_update.sql",
+    "xlsx": "Huntingtower School/huntingtower.xlsx",
+    "dir": "Huntingtower School"
+  },
+  {
+    "id": "ivanhoe-grammar",
+    "name": "The Ivanhoe Grammar School",
+    "scraper": "The Ivanhoe Grammar School/ivanhoe-grammar.py",
+    "sql": "The Ivanhoe Grammar School/ivanhoe-grammar_courses_update.sql",
+    "xlsx": "The Ivanhoe Grammar School/ivanhoe-grammar.xlsx",
+    "dir": "The Ivanhoe Grammar School"
+  },
+  {
+    "id": "kilvington",
+    "name": "Kilvington Grammar School",
+    "scraper": "Kilvington Grammar School/kilvington.py",
+    "sql": "Kilvington Grammar School/kilvington_courses_update.sql",
+    "xlsx": "Kilvington Grammar School/kilvington.xlsx",
+    "dir": "Kilvington Grammar School"
+  },
+  {
+    "id": "kingswood-college",
+    "name": "Kingswood College",
+    "scraper": "Kingswood College/kingswood-college.py",
+    "sql": "Kingswood College/kingswood-college_courses_update.sql",
+    "xlsx": "Kingswood College/kingswood-college.xlsx",
+    "dir": "Kingswood College"
+  },
+  {
+    "id": "knox-school",
+    "name": "The Knox School",
+    "scraper": "The Knox School/knox-school.py",
+    "sql": "The Knox School/knox-school_courses_update.sql",
+    "xlsx": "The Knox School/knox-school.xlsx",
+    "dir": "The Knox School"
+  },
+  {
+    "id": "lauriston",
+    "name": "Lauriston Girls' School",
+    "scraper": "Lauriston Girls' School/lauriston.py",
+    "sql": "Lauriston Girls' School/lauriston_courses_update.sql",
+    "xlsx": "Lauriston Girls' School/lauriston.xlsx",
+    "dir": "Lauriston Girls' School"
+  },
+  {
+    "id": "kent-institute",
+    "name": "Kent Institute Australia",
+    "scraper": "Kent Institute Australia/kent-institute.py",
+    "sql": "Kent Institute Australia/kent-institute_courses_update.sql",
+    "xlsx": "Kent Institute Australia/kent-institute.xlsx",
+    "dir": "Kent Institute Australia"
+  },
+  {
+    "id": "mercury-colleges",
+    "name": "Mercury Colleges",
+    "scraper": "Mercury Colleges/mercury-colleges.py",
+    "sql": "Mercury Colleges/mercury-colleges_courses_update.sql",
+    "xlsx": "Mercury Colleges/mercury-colleges.xlsx",
+    "dir": "Mercury Colleges"
+  },
+  {
+    "id": "sbta",
+    "name": "Lan-Grove Office Training (SBTA)",
+    "scraper": "Lan-Grove Office Training (SBTA)/sbta.py",
+    "sql": "Lan-Grove Office Training (SBTA)/sbta_courses_update.sql",
+    "xlsx": "Lan-Grove Office Training (SBTA)/sbta.xlsx",
+    "dir": "Lan-Grove Office Training (SBTA)"
+  },
+  {
+    "id": "cairns-business",
+    "name": "Cairns Business College",
+    "scraper": "Cairns Business College/cairns-business.py",
+    "sql": "Cairns Business College/cairns-business_courses_update.sql",
+    "xlsx": "Cairns Business College/cairns-business.xlsx",
+    "dir": "Cairns Business College"
+  },
+  {
+    "id": "endeavour",
+    "name": "Endeavour College of Natural Medicine",
+    "scraper": "Endeavour College of Natural Medicine/endeavour.py",
+    "sql": "Endeavour College of Natural Medicine/endeavour_courses_update.sql",
+    "xlsx": "Endeavour College of Natural Medicine/endeavour.xlsx",
+    "dir": "Endeavour College of Natural Medicine"
+  },
+  {
+    "id": "melbourne-girls-grammar",
+    "name": "Melbourne Girls Grammar",
+    "scraper": "Melbourne Girls Grammar/melbourne-girls-grammar.py",
+    "sql": "Melbourne Girls Grammar/melbourne-girls-grammar_courses_update.sql",
+    "xlsx": "Melbourne Girls Grammar/melbourne-girls-grammar.xlsx",
+    "dir": "Melbourne Girls Grammar"
+  },
+  {
+    "id": "mentone-girls",
+    "name": "Mentone Girls Grammar School",
+    "scraper": "Mentone Girls Grammar School/mentone-girls.py",
+    "sql": "Mentone Girls Grammar School/mentone-girls_courses_update.sql",
+    "xlsx": "Mentone Girls Grammar School/mentone-girls.xlsx",
+    "dir": "Mentone Girls Grammar School"
+  },
+  {
+    "id": "mlc",
+    "name": "Methodist Ladies' College",
+    "scraper": "Methodist Ladies' College/mlc.py",
+    "sql": "Methodist Ladies' College/mlc_courses_update.sql",
+    "xlsx": "Methodist Ladies' College/mlc.xlsx",
+    "dir": "Methodist Ladies' College"
+  },
+  {
+    "id": "oxley-college",
+    "name": "Oxley College (Life Ministry Centre)",
+    "scraper": "Oxley College (Life Ministry Centre)/oxley-college.py",
+    "sql": "Oxley College (Life Ministry Centre)/oxley-college_courses_update.sql",
+    "xlsx": "Oxley College (Life Ministry Centre)/oxley-college.xlsx",
+    "dir": "Oxley College (Life Ministry Centre)"
+  },
+  {
+    "id": "peninsula-school",
+    "name": "The Peninsula School",
+    "scraper": "The Peninsula School/peninsula-school.py",
+    "sql": "The Peninsula School/peninsula-school_courses_update.sql",
+    "xlsx": "The Peninsula School/peninsula-school.xlsx",
+    "dir": "The Peninsula School"
+  },
+  {
+    "id": "plc-melbourne",
+    "name": "Presbyterian Ladies' College",
+    "scraper": "Presbyterian Ladies' College/plc-melbourne.py",
+    "sql": "Presbyterian Ladies' College/plc-melbourne_courses_update.sql",
+    "xlsx": "Presbyterian Ladies' College/plc-melbourne.xlsx",
+    "dir": "Presbyterian Ladies' College"
+  },
+  {
+    "id": "gippsland-grammar",
+    "name": "Gippsland Grammar",
+    "scraper": "Gippsland Grammar/gippsland-grammar.py",
+    "sql": "Gippsland Grammar/gippsland-grammar_courses_update.sql",
+    "xlsx": "Gippsland Grammar/gippsland-grammar.xlsx",
+    "dir": "Gippsland Grammar"
+  },
+  {
+    "id": "kings-christian",
+    "name": "King's Christian College",
+    "scraper": "King's Christian College/kings-christian.py",
+    "sql": "King's Christian College/kings-christian_courses_update.sql",
+    "xlsx": "King's Christian College/kings-christian.xlsx",
+    "dir": "King's Christian College"
+  },
+  {
+    "id": "st-leonards",
+    "name": "St Leonard's College",
+    "scraper": "St Leonard's College/st-leonards.py",
+    "sql": "St Leonard's College/st-leonards_courses_update.sql",
+    "xlsx": "St Leonard's College/st-leonards.xlsx",
+    "dir": "St Leonard's College"
+  },
+  {
+    "id": "st-margarets",
+    "name": "St Margaret's School",
+    "scraper": "St Margaret's School/st-margarets.py",
+    "sql": "St Margaret's School/st-margarets_courses_update.sql",
+    "xlsx": "St Margaret's School/st-margarets.xlsx",
+    "dir": "St Margaret's School"
+  },
+  {
+    "id": "st-michaels",
+    "name": "St Michael's Grammar School",
+    "scraper": "St Michael's Grammar School/st-michaels.py",
+    "sql": "St Michael's Grammar School/st-michaels_courses_update.sql",
+    "xlsx": "St Michael's Grammar School/st-michaels.xlsx",
+    "dir": "St Michael's Grammar School"
+  },
+  {
+    "id": "tintern-grammar",
+    "name": "Tintern Grammar",
+    "scraper": "Tintern Grammar/tintern-grammar.py",
+    "sql": "Tintern Grammar/tintern-grammar_courses_update.sql",
+    "xlsx": "Tintern Grammar/tintern-grammar.xlsx",
+    "dir": "Tintern Grammar"
+  },
+  {
+    "id": "toorak-college",
+    "name": "Toorak College",
+    "scraper": "Toorak College/toorak-college.py",
+    "sql": "Toorak College/toorak-college_courses_update.sql",
+    "xlsx": "Toorak College/toorak-college.xlsx",
+    "dir": "Toorak College"
+  },
+  {
+    "id": "trinity-grammar-kew",
+    "name": "Trinity Grammar School Kew",
+    "scraper": "Trinity Grammar School Kew/trinity-grammar-kew.py",
+    "sql": "Trinity Grammar School Kew/trinity-grammar-kew_courses_update.sql",
+    "xlsx": "Trinity Grammar School Kew/trinity-grammar-kew.xlsx",
+    "dir": "Trinity Grammar School Kew"
+  },
+  {
+    "id": "wesley-college",
+    "name": "Wesley College Melbourne",
+    "scraper": "Wesley College Melbourne/wesley-college.py",
+    "sql": "Wesley College Melbourne/wesley-college_courses_update.sql",
+    "xlsx": "Wesley College Melbourne/wesley-college.xlsx",
+    "dir": "Wesley College Melbourne"
+  },
+  {
+    "id": "westbourne-grammar",
+    "name": "Westbourne Grammar School",
+    "scraper": "Westbourne Grammar School/westbourne-grammar.py",
+    "sql": "Westbourne Grammar School/westbourne-grammar_courses_update.sql",
+    "xlsx": "Westbourne Grammar School/westbourne-grammar.xlsx",
+    "dir": "Westbourne Grammar School"
+  },
+  {
+    "id": "yarra-valley",
+    "name": "Yarra Valley Grammar School",
+    "scraper": "Yarra Valley Grammar School/yarra-valley.py",
+    "sql": "Yarra Valley Grammar School/yarra-valley_courses_update.sql",
+    "xlsx": "Yarra Valley Grammar School/yarra-valley.xlsx",
+    "dir": "Yarra Valley Grammar School"
+  },
+  {
+    "id": "concordia",
+    "name": "Concordia College",
+    "scraper": "Concordia College/concordia.py",
+    "sql": "Concordia College/concordia_courses_update.sql",
+    "xlsx": "Concordia College/concordia.xlsx",
+    "dir": "Concordia College"
+  },
+  {
+    "id": "fintona_web",
+    "name": "Fintona Girls School",
+    "scraper": "Fintona Girls School/fintona_webscrape.py",
+    "sql": "Fintona Girls School/fintona_webscrape_courses_update.sql",
+    "xlsx": "Fintona Girls School/fintona_webscrape.xlsx",
+    "dir": "Fintona Girls School"
+  },
+  {
+    "id": "firbank_web",
+    "name": "Firbank Grammar School",
+    "scraper": "Firbank Grammar School/firbank_webscrape.py",
+    "sql": "Firbank Grammar School/firbank_webscrape_courses_update.sql",
+    "xlsx": "Firbank Grammar School/firbank_webscrape.xlsx",
+    "dir": "Firbank Grammar School"
+  },
+  {
+    "id": "camberwell-ggs_web",
+    "name": "Camberwell Anglican Girls' Grammar School",
+    "scraper": "Camberwell Anglican Girls' Grammar School/camberwell-ggs_webscrape.py",
+    "sql": "Camberwell Anglican Girls' Grammar School/camberwell-ggs_webscrape_courses_update.sql",
+    "xlsx": "Camberwell Anglican Girls' Grammar School/camberwell-ggs_webscrape.xlsx",
+    "dir": "Camberwell Anglican Girls' Grammar School"
+  },
+  {
+    "id": "geelong-college_web",
+    "name": "The Geelong College",
+    "scraper": "The Geelong College/geelong-college_webscrape.py",
+    "sql": "The Geelong College/geelong-college_webscrape_courses_update.sql",
+    "xlsx": "The Geelong College/geelong-college_webscrape.xlsx",
+    "dir": "The Geelong College"
+  },
+  {
+    "id": "geelong-grammar_web",
+    "name": "Geelong Grammar School",
+    "scraper": "Geelong Grammar School/geelong-grammar_webscrape.py",
+    "sql": "Geelong Grammar School/geelong-grammar_webscrape_courses_update.sql",
+    "xlsx": "Geelong Grammar School/geelong-grammar_webscrape.xlsx",
+    "dir": "Geelong Grammar School"
+  },
+  {
+    "id": "hamilton-college_web",
+    "name": "The Hamilton and Alexandra College",
+    "scraper": "The Hamilton and Alexandra College/hamilton-college_webscrape.py",
+    "sql": "The Hamilton and Alexandra College/hamilton-college_webscrape_courses_update.sql",
+    "xlsx": "The Hamilton and Alexandra College/hamilton-college_webscrape.xlsx",
+    "dir": "The Hamilton and Alexandra College"
+  },
+  {
+    "id": "huntingtower_web",
+    "name": "Huntingtower School",
+    "scraper": "Huntingtower School/huntingtower_webscrape.py",
+    "sql": "Huntingtower School/huntingtower_webscrape_courses_update.sql",
+    "xlsx": "Huntingtower School/huntingtower_webscrape.xlsx",
+    "dir": "Huntingtower School"
+  },
+  {
+    "id": "ivanhoe-grammar_web",
+    "name": "The Ivanhoe Grammar School",
+    "scraper": "The Ivanhoe Grammar School/ivanhoe-grammar_webscrape.py",
+    "sql": "The Ivanhoe Grammar School/ivanhoe-grammar_webscrape_courses_update.sql",
+    "xlsx": "The Ivanhoe Grammar School/ivanhoe-grammar_webscrape.xlsx",
+    "dir": "The Ivanhoe Grammar School"
+  },
+  {
+    "id": "kilvington_web",
+    "name": "Kilvington Grammar School",
+    "scraper": "Kilvington Grammar School/kilvington_webscrape.py",
+    "sql": "Kilvington Grammar School/kilvington_webscrape_courses_update.sql",
+    "xlsx": "Kilvington Grammar School/kilvington_webscrape.xlsx",
+    "dir": "Kilvington Grammar School"
+  },
+  {
+    "id": "kingswood-college_web",
+    "name": "Kingswood College",
+    "scraper": "Kingswood College/kingswood-college_webscrape.py",
+    "sql": "Kingswood College/kingswood-college_webscrape_courses_update.sql",
+    "xlsx": "Kingswood College/kingswood-college_webscrape.xlsx",
+    "dir": "Kingswood College"
+  },
+  {
+    "id": "knox-school_web",
+    "name": "The Knox School",
+    "scraper": "The Knox School/knox-school_webscrape.py",
+    "sql": "The Knox School/knox-school_webscrape_courses_update.sql",
+    "xlsx": "The Knox School/knox-school_webscrape.xlsx",
+    "dir": "The Knox School"
+  },
+  {
+    "id": "lauriston_web",
+    "name": "Lauriston Girls' School",
+    "scraper": "Lauriston Girls' School/lauriston_webscrape.py",
+    "sql": "Lauriston Girls' School/lauriston_webscrape_courses_update.sql",
+    "xlsx": "Lauriston Girls' School/lauriston_webscrape.xlsx",
+    "dir": "Lauriston Girls' School"
+  },
+  {
+    "id": "kent-institute_web",
+    "name": "Kent Institute Australia",
+    "scraper": "Kent Institute Australia/kent-institute_webscrape.py",
+    "sql": "Kent Institute Australia/kent-institute_webscrape_courses_update.sql",
+    "xlsx": "Kent Institute Australia/kent-institute_webscrape.xlsx",
+    "dir": "Kent Institute Australia"
+  },
+  {
+    "id": "mercury-colleges_web",
+    "name": "Mercury Colleges",
+    "scraper": "Mercury Colleges/mercury-colleges_webscrape.py",
+    "sql": "Mercury Colleges/mercury-colleges_webscrape_courses_update.sql",
+    "xlsx": "Mercury Colleges/mercury-colleges_webscrape.xlsx",
+    "dir": "Mercury Colleges"
+  },
+  {
+    "id": "sbta_web",
+    "name": "Lan-Grove Office Training (SBTA)",
+    "scraper": "Lan-Grove Office Training (SBTA)/sbta_webscrape.py",
+    "sql": "Lan-Grove Office Training (SBTA)/sbta_webscrape_courses_update.sql",
+    "xlsx": "Lan-Grove Office Training (SBTA)/sbta_webscrape.xlsx",
+    "dir": "Lan-Grove Office Training (SBTA)"
+  },
+  {
+    "id": "cairns-business_web",
+    "name": "Cairns Business College",
+    "scraper": "Cairns Business College/cairns-business_webscrape.py",
+    "sql": "Cairns Business College/cairns-business_webscrape_courses_update.sql",
+    "xlsx": "Cairns Business College/cairns-business_webscrape.xlsx",
+    "dir": "Cairns Business College"
+  },
+  {
+    "id": "endeavour_web",
+    "name": "Endeavour College of Natural Medicine",
+    "scraper": "Endeavour College of Natural Medicine/endeavour_webscrape.py",
+    "sql": "Endeavour College of Natural Medicine/endeavour_webscrape_courses_update.sql",
+    "xlsx": "Endeavour College of Natural Medicine/endeavour_webscrape.xlsx",
+    "dir": "Endeavour College of Natural Medicine"
+  },
+  {
+    "id": "melbourne-girls-grammar_web",
+    "name": "Melbourne Girls Grammar",
+    "scraper": "Melbourne Girls Grammar/melbourne-girls-grammar_webscrape.py",
+    "sql": "Melbourne Girls Grammar/melbourne-girls-grammar_webscrape_courses_update.sql",
+    "xlsx": "Melbourne Girls Grammar/melbourne-girls-grammar_webscrape.xlsx",
+    "dir": "Melbourne Girls Grammar"
+  },
+  {
+    "id": "mentone-girls_web",
+    "name": "Mentone Girls Grammar School",
+    "scraper": "Mentone Girls Grammar School/mentone-girls_webscrape.py",
+    "sql": "Mentone Girls Grammar School/mentone-girls_webscrape_courses_update.sql",
+    "xlsx": "Mentone Girls Grammar School/mentone-girls_webscrape.xlsx",
+    "dir": "Mentone Girls Grammar School"
+  },
+  {
+    "id": "mlc_web",
+    "name": "Methodist Ladies' College",
+    "scraper": "Methodist Ladies' College/mlc_webscrape.py",
+    "sql": "Methodist Ladies' College/mlc_webscrape_courses_update.sql",
+    "xlsx": "Methodist Ladies' College/mlc_webscrape.xlsx",
+    "dir": "Methodist Ladies' College"
+  },
+  {
+    "id": "oxley-college_web",
+    "name": "Oxley College (Life Ministry Centre)",
+    "scraper": "Oxley College (Life Ministry Centre)/oxley-college_webscrape.py",
+    "sql": "Oxley College (Life Ministry Centre)/oxley-college_webscrape_courses_update.sql",
+    "xlsx": "Oxley College (Life Ministry Centre)/oxley-college_webscrape.xlsx",
+    "dir": "Oxley College (Life Ministry Centre)"
+  },
+  {
+    "id": "peninsula-school_web",
+    "name": "The Peninsula School",
+    "scraper": "The Peninsula School/peninsula-school_webscrape.py",
+    "sql": "The Peninsula School/peninsula-school_webscrape_courses_update.sql",
+    "xlsx": "The Peninsula School/peninsula-school_webscrape.xlsx",
+    "dir": "The Peninsula School"
+  },
+  {
+    "id": "plc-melbourne_web",
+    "name": "Presbyterian Ladies' College",
+    "scraper": "Presbyterian Ladies' College/plc-melbourne_webscrape.py",
+    "sql": "Presbyterian Ladies' College/plc-melbourne_webscrape_courses_update.sql",
+    "xlsx": "Presbyterian Ladies' College/plc-melbourne_webscrape.xlsx",
+    "dir": "Presbyterian Ladies' College"
+  },
+  {
+    "id": "gippsland-grammar_web",
+    "name": "Gippsland Grammar",
+    "scraper": "Gippsland Grammar/gippsland-grammar_webscrape.py",
+    "sql": "Gippsland Grammar/gippsland-grammar_webscrape_courses_update.sql",
+    "xlsx": "Gippsland Grammar/gippsland-grammar_webscrape.xlsx",
+    "dir": "Gippsland Grammar"
+  },
+  {
+    "id": "kings-christian-college_web",
+    "name": "King's Christian College",
+    "scraper": "King's Christian College/kings-christian-college_webscrape.py",
+    "sql": "King's Christian College/kings-christian-college_webscrape_courses_update.sql",
+    "xlsx": "King's Christian College/kings-christian-college_webscrape.xlsx",
+    "dir": "King's Christian College"
+  },
+  {
+    "id": "st-leonards_web",
+    "name": "St Leonard's College",
+    "scraper": "St Leonard's College/st-leonards_webscrape.py",
+    "sql": "St Leonard's College/st-leonards_webscrape_courses_update.sql",
+    "xlsx": "St Leonard's College/st-leonards_webscrape.xlsx",
+    "dir": "St Leonard's College"
+  },
+  {
+    "id": "st-margarets_web",
+    "name": "St Margaret's School",
+    "scraper": "St Margaret's School/st-margarets_webscrape.py",
+    "sql": "St Margaret's School/st-margarets_webscrape_courses_update.sql",
+    "xlsx": "St Margaret's School/st-margarets_webscrape.xlsx",
+    "dir": "St Margaret's School"
+  },
+  {
+    "id": "st-michaels-grammar_web",
+    "name": "St Michael's Grammar School",
+    "scraper": "St Michael's Grammar School/st-michaels-grammar_webscrape.py",
+    "sql": "St Michael's Grammar School/st-michaels-grammar_webscrape_courses_update.sql",
+    "xlsx": "St Michael's Grammar School/st-michaels-grammar_webscrape.xlsx",
+    "dir": "St Michael's Grammar School"
+  },
+  {
+    "id": "tintern-grammar_web",
+    "name": "Tintern Grammar",
+    "scraper": "Tintern Grammar/tintern-grammar_webscrape.py",
+    "sql": "Tintern Grammar/tintern-grammar_webscrape_courses_update.sql",
+    "xlsx": "Tintern Grammar/tintern-grammar_webscrape.xlsx",
+    "dir": "Tintern Grammar"
+  },
+  {
+    "id": "toorak-college_web",
+    "name": "Toorak College",
+    "scraper": "Toorak College/toorak-college_webscrape.py",
+    "sql": "Toorak College/toorak-college_webscrape_courses_update.sql",
+    "xlsx": "Toorak College/toorak-college_webscrape.xlsx",
+    "dir": "Toorak College"
+  },
+  {
+    "id": "trinity-grammar-kew_web",
+    "name": "Trinity Grammar School Kew",
+    "scraper": "Trinity Grammar School Kew/trinity-grammar-kew_webscrape.py",
+    "sql": "Trinity Grammar School Kew/trinity-grammar-kew_webscrape_courses_update.sql",
+    "xlsx": "Trinity Grammar School Kew/trinity-grammar-kew_webscrape.xlsx",
+    "dir": "Trinity Grammar School Kew"
+  },
+  {
+    "id": "wesley-college_web",
+    "name": "Wesley College Melbourne",
+    "scraper": "Wesley College Melbourne/wesley-college_webscrape.py",
+    "sql": "Wesley College Melbourne/wesley-college_webscrape_courses_update.sql",
+    "xlsx": "Wesley College Melbourne/wesley-college_webscrape.xlsx",
+    "dir": "Wesley College Melbourne"
+  },
+  {
+    "id": "westbourne-grammar_web",
+    "name": "Westbourne Grammar School",
+    "scraper": "Westbourne Grammar School/westbourne-grammar_webscrape.py",
+    "sql": "Westbourne Grammar School/westbourne-grammar_webscrape_courses_update.sql",
+    "xlsx": "Westbourne Grammar School/westbourne-grammar_webscrape.xlsx",
+    "dir": "Westbourne Grammar School"
+  },
+  {
+    "id": "yarra-valley-grammar_web",
+    "name": "Yarra Valley Grammar School",
+    "scraper": "Yarra Valley Grammar School/yarra-valley-grammar_webscrape.py",
+    "sql": "Yarra Valley Grammar School/yarra-valley-grammar_webscrape_courses_update.sql",
+    "xlsx": "Yarra Valley Grammar School/yarra-valley-grammar_webscrape.xlsx",
+    "dir": "Yarra Valley Grammar School"
+  },
+  {
+    "id": "concordia-college_web",
+    "name": "Concordia College Inc",
+    "scraper": "Concordia College Inc/concordia-college_webscrape.py",
+    "sql": "Concordia College Inc/concordia-college_webscrape_courses_update.sql",
+    "xlsx": "Concordia College Inc/concordia-college_webscrape.xlsx",
+    "dir": "Concordia College Inc"
+  },
+  {
+    "id": "aquinas-college_web",
+    "name": "Aquinas College",
+    "scraper": "Aquinas College/aquinas-college_webscrape.py",
+    "sql": "Aquinas College/aquinas-college_webscrape_courses_update.sql",
+    "xlsx": "Aquinas College/aquinas-college_webscrape.xlsx",
+    "dir": "Aquinas College"
+  },
+  {
+    "id": "bunbury-cathedral-grammar_web",
+    "name": "Bunbury Cathedral Grammar School",
+    "scraper": "Bunbury Cathedral Grammar School/bunbury-cathedral-grammar_webscrape.py",
+    "sql": "Bunbury Cathedral Grammar School/bunbury-cathedral-grammar_webscrape_courses_update.sql",
+    "xlsx": "Bunbury Cathedral Grammar School/bunbury-cathedral-grammar_webscrape.xlsx",
+    "dir": "Bunbury Cathedral Grammar School"
+  },
+  {
+    "id": "christ-church-grammar_web",
+    "name": "Christ Church Grammar School",
+    "scraper": "Christ Church Grammar School/christ-church-grammar_webscrape.py",
+    "sql": "Christ Church Grammar School/christ-church-grammar_webscrape_courses_update.sql",
+    "xlsx": "Christ Church Grammar School/christ-church-grammar_webscrape.xlsx",
+    "dir": "Christ Church Grammar School"
+  },
+  {
+    "id": "guildford-grammar_web",
+    "name": "Guildford Grammar School",
+    "scraper": "Guildford Grammar School/guildford-grammar_webscrape.py",
+    "sql": "Guildford Grammar School/guildford-grammar_webscrape_courses_update.sql",
+    "xlsx": "Guildford Grammar School/guildford-grammar_webscrape.xlsx",
+    "dir": "Guildford Grammar School"
+  },
+  {
+    "id": "hale-school_web",
+    "name": "Hale School",
+    "scraper": "Hale School/hale-school_webscrape.py",
+    "sql": "Hale School/hale-school_webscrape_courses_update.sql",
+    "xlsx": "Hale School/hale-school_webscrape.xlsx",
+    "dir": "Hale School"
+  },
+  {
+    "id": "mlc-wa_web",
+    "name": "Methodist Ladies' College",
+    "scraper": "Methodist Ladies' College/mlc-wa_webscrape.py",
+    "sql": "Methodist Ladies' College/mlc-wa_webscrape_courses_update.sql",
+    "xlsx": "Methodist Ladies' College/mlc-wa_webscrape.xlsx",
+    "dir": "Methodist Ladies' College"
+  },
+  {
+    "id": "penrhos-college_web",
+    "name": "Penrhos College",
+    "scraper": "Penrhos College/penrhos-college_webscrape.py",
+    "sql": "Penrhos College/penrhos-college_webscrape_courses_update.sql",
+    "xlsx": "Penrhos College/penrhos-college_webscrape.xlsx",
+    "dir": "Penrhos College"
+  },
+  {
+    "id": "perth-college_web",
+    "name": "Perth College",
+    "scraper": "Perth College/perth-college_webscrape.py",
+    "sql": "Perth College/perth-college_webscrape_courses_update.sql",
+    "xlsx": "Perth College/perth-college_webscrape.xlsx",
+    "dir": "Perth College"
+  },
+  {
+    "id": "plc-melbourne_web",
+    "name": "Presbyterian Ladies' College",
+    "scraper": "Presbyterian Ladies' College/plc-melbourne_webscrape.py",
+    "sql": "Presbyterian Ladies' College/plc-melbourne_webscrape_courses_update.sql",
+    "xlsx": "Presbyterian Ladies' College/plc-melbourne_webscrape.xlsx",
+    "dir": "Presbyterian Ladies' College"
+  },
+  {
+    "id": "scotch-college-wa_web",
+    "name": "Scotch College",
+    "scraper": "Scotch College/scotch-college-wa_webscrape.py",
+    "sql": "Scotch College/scotch-college-wa_webscrape_courses_update.sql",
+    "xlsx": "Scotch College/scotch-college-wa_webscrape.xlsx",
+    "dir": "Scotch College"
+  },
+  {
+    "id": "st-brigids_web",
+    "name": "St Brigid's College",
+    "scraper": "St Brigid's College/st-brigids_webscrape.py",
+    "sql": "St Brigid's College/st-brigids_webscrape_courses_update.sql",
+    "xlsx": "St Brigid's College/st-brigids_webscrape.xlsx",
+    "dir": "St Brigid's College"
+  },
+  {
+    "id": "st-hildas_web",
+    "name": "St Hilda's Anglican School for Girls",
+    "scraper": "St Hilda's Anglican School for Girls/st-hildas_webscrape.py",
+    "sql": "St Hilda's Anglican School for Girls/st-hildas_webscrape_courses_update.sql",
+    "xlsx": "St Hilda's Anglican School for Girls/st-hildas_webscrape.xlsx",
+    "dir": "St Hilda's Anglican School for Girls"
+  },
+  {
+    "id": "st-marys-wa_web",
+    "name": "St Mary's Anglican Girls' School",
+    "scraper": "St Mary's Anglican Girls' School/st-marys-wa_webscrape.py",
+    "sql": "St Mary's Anglican Girls' School/st-marys-wa_webscrape_courses_update.sql",
+    "xlsx": "St Mary's Anglican Girls' School/st-marys-wa_webscrape.xlsx",
+    "dir": "St Mary's Anglican Girls' School"
+  },
+  {
+    "id": "wesley-college-wa_web",
+    "name": "Wesley College",
+    "scraper": "Wesley College/wesley-college-wa_webscrape.py",
+    "sql": "Wesley College/wesley-college-wa_webscrape_courses_update.sql",
+    "xlsx": "Wesley College/wesley-college-wa_webscrape.xlsx",
+    "dir": "Wesley College"
+  },
+  {
+    "id": "canning-college_web",
+    "name": "Canning College",
+    "scraper": "Canning College/canning-college_webscrape.py",
+    "sql": "Canning College/canning-college_webscrape_courses_update.sql",
+    "xlsx": "Canning College/canning-college_webscrape.xlsx",
+    "dir": "Canning College"
+  },
+  {
+    "id": "st-johns-catholic-college_web",
+    "name": "St John's Catholic College",
+    "scraper": "St John's Catholic College/st-johns-catholic-college_webscrape.py",
+    "sql": "St John's Catholic College/st-johns-catholic-college_webscrape_courses_update.sql",
+    "xlsx": "St John's Catholic College/st-johns-catholic-college_webscrape.xlsx",
+    "dir": "St John's Catholic College"
+  },
+  {
+    "id": "immanuel-college_web",
+    "name": "Immanuel College",
+    "scraper": "Immanuel College/immanuel-college_webscrape.py",
+    "sql": "Immanuel College/immanuel-college_webscrape_courses_update.sql",
+    "xlsx": "Immanuel College/immanuel-college_webscrape.xlsx",
+    "dir": "Immanuel College"
+  },
+  {
+    "id": "mercedes-college-springfield_web",
+    "name": "Mercedes College Springfield",
+    "scraper": "Mercedes College Springfield/mercedes-college-springfield_webscrape.py",
+    "sql": "Mercedes College Springfield/mercedes-college-springfield_webscrape_courses_update.sql",
+    "xlsx": "Mercedes College Springfield/mercedes-college-springfield_webscrape.xlsx",
+    "dir": "Mercedes College Springfield"
+  },
+  {
+    "id": "muirden-senior-secondary-college_web",
+    "name": "Muirden Senior Secondary College",
+    "scraper": "Muirden Senior Secondary College/muirden-senior-secondary-college_webscrape.py",
+    "sql": "Muirden Senior Secondary College/muirden-senior-secondary-college_webscrape_courses_update.sql",
+    "xlsx": "Muirden Senior Secondary College/muirden-senior-secondary-college_webscrape.xlsx",
+    "dir": "Muirden Senior Secondary College"
+  },
+  {
+    "id": "pembroke-school-inc_web",
+    "name": "Pembroke School Inc",
+    "scraper": "Pembroke School Inc/pembroke-school-inc_webscrape.py",
+    "sql": "Pembroke School Inc/pembroke-school-inc_webscrape_courses_update.sql",
+    "xlsx": "Pembroke School Inc/pembroke-school-inc_webscrape.xlsx",
+    "dir": "Pembroke School Inc"
+  },
+  {
+    "id": "prince-alfred-college-inc_web",
+    "name": "Prince Alfred College Inc",
+    "scraper": "Prince Alfred College Inc/prince-alfred-college-inc_webscrape.py",
+    "sql": "Prince Alfred College Inc/prince-alfred-college-inc_webscrape_courses_update.sql",
+    "xlsx": "Prince Alfred College Inc/prince-alfred-college-inc_webscrape.xlsx",
+    "dir": "Prince Alfred College Inc"
+  },
+  {
+    "id": "pulteney-grammar-school_web",
+    "name": "Pulteney Grammar School",
+    "scraper": "Pulteney Grammar School/pulteney-grammar-school_webscrape.py",
+    "sql": "Pulteney Grammar School/pulteney-grammar-school_webscrape_courses_update.sql",
+    "xlsx": "Pulteney Grammar School/pulteney-grammar-school_webscrape.xlsx",
+    "dir": "Pulteney Grammar School"
+  },
+  {
+    "id": "st-aloysius-college_web",
+    "name": "St Aloysius College",
+    "scraper": "St Aloysius College/st-aloysius-college_webscrape.py",
+    "sql": "St Aloysius College/st-aloysius-college_webscrape_courses_update.sql",
+    "xlsx": "St Aloysius College/st-aloysius-college_webscrape.xlsx",
+    "dir": "St Aloysius College"
+  },
+  {
+    "id": "st-peters-collegiate-girls-school_web",
+    "name": "St Peter's Collegiate Girls' School",
+    "scraper": "St Peter's Collegiate Girls' School/st-peters-collegiate-girls-school_webscrape.py",
+    "sql": "St Peter's Collegiate Girls' School/st-peters-collegiate-girls-school_webscrape_courses_update.sql",
+    "xlsx": "St Peter's Collegiate Girls' School/st-peters-collegiate-girls-school_webscrape.xlsx",
+    "dir": "St Peter's Collegiate Girls' School"
+  },
+  {
+    "id": "trinity-college-north_web",
+    "name": "Trinity College North",
+    "scraper": "Trinity College North/trinity-college-north_webscrape.py",
+    "sql": "Trinity College North/trinity-college-north_webscrape_courses_update.sql",
+    "xlsx": "Trinity College North/trinity-college-north_webscrape.xlsx",
+    "dir": "Trinity College North"
+  },
+  {
+    "id": "wilderness-school_web",
+    "name": "Wilderness School",
+    "scraper": "Wilderness School/wilderness-school_webscrape.py",
+    "sql": "Wilderness School/wilderness-school_webscrape_courses_update.sql",
+    "xlsx": "Wilderness School/wilderness-school_webscrape.xlsx",
+    "dir": "Wilderness School"
+  },
+  {
+    "id": "st-pauls-international-college_web",
+    "name": "St Paul's International College",
+    "scraper": "St Paul's International College/st-pauls-international-college_webscrape.py",
+    "sql": "St Paul's International College/st-pauls-international-college_webscrape_courses_update.sql",
+    "xlsx": "St Paul's International College/st-pauls-international-college_webscrape.xlsx",
+    "dir": "St Paul's International College"
+  },
+  {
+    "id": "ascham-school-ltd_web",
+    "name": "Ascham School Ltd",
+    "scraper": "Ascham School Ltd/ascham-school-ltd_webscrape.py",
+    "sql": "Ascham School Ltd/ascham-school-ltd_webscrape_courses_update.sql",
+    "xlsx": "Ascham School Ltd/ascham-school-ltd_webscrape.xlsx",
+    "dir": "Ascham School Ltd"
+  },
+  {
+    "id": "georges-river-grammar-school-ltd_web",
+    "name": "Georges River Grammar School Ltd",
+    "scraper": "Georges River Grammar School Ltd/georges-river-grammar-school-ltd_webscrape.py",
+    "sql": "Georges River Grammar School Ltd/georges-river-grammar-school-ltd_webscrape_courses_update.sql",
+    "xlsx": "Georges River Grammar School Ltd/georges-river-grammar-school-ltd_webscrape.xlsx",
+    "dir": "Georges River Grammar School Ltd"
+  },
+  {
+    "id": "knox-grammar-school_web",
+    "name": "Knox Grammar School",
+    "scraper": "Knox Grammar School/knox-grammar-school_webscrape.py",
+    "sql": "Knox Grammar School/knox-grammar-school_webscrape_courses_update.sql",
+    "xlsx": "Knox Grammar School/knox-grammar-school_webscrape.xlsx",
+    "dir": "Knox Grammar School"
+  },
+  {
+    "id": "masada-college_web",
+    "name": "Masada College",
+    "scraper": "Masada College/masada-college_webscrape.py",
+    "sql": "Masada College/masada-college_webscrape_courses_update.sql",
+    "xlsx": "Masada College/masada-college_webscrape.xlsx",
+    "dir": "Masada College"
+  },
+  {
+    "id": "redeemer-baptist-school-ltd_web",
+    "name": "Redeemer Baptist School Ltd",
+    "scraper": "Redeemer Baptist School Ltd/redeemer-baptist-school-ltd_webscrape.py",
+    "sql": "Redeemer Baptist School Ltd/redeemer-baptist-school-ltd_webscrape_courses_update.sql",
+    "xlsx": "Redeemer Baptist School Ltd/redeemer-baptist-school-ltd_webscrape.xlsx",
+    "dir": "Redeemer Baptist School Ltd"
+  },
+  {
+    "id": "friends_web",
+    "name": "The Friends School Incorporated",
+    "scraper": "The Friends School Incorporated/friends_webscrape.py",
+    "sql": "The Friends School Incorporated/friends_webscrape_courses_update.sql",
+    "xlsx": "The Friends School Incorporated/friends_webscrape.xlsx",
+    "dir": "The Friends School Incorporated"
+  },
+  {
+    "id": "hutchins_web",
+    "name": "Hutchins School Board of Management",
+    "scraper": "Hutchins School Board of Management/hutchins_webscrape.py",
+    "sql": "Hutchins School Board of Management/hutchins_webscrape_courses_update.sql",
+    "xlsx": "Hutchins School Board of Management/hutchins_webscrape.xlsx",
+    "dir": "Hutchins School Board of Management"
+  },
+  {
+    "id": "collegiate_web",
+    "name": "St Michael_s Collegiate School",
+    "scraper": "St Michael_s Collegiate School/collegiate_webscrape.py",
+    "sql": "St Michael_s Collegiate School/collegiate_webscrape_courses_update.sql",
+    "xlsx": "St Michael_s Collegiate School/collegiate_webscrape.xlsx",
+    "dir": "St Michael_s Collegiate School"
+  },
+  {
+    "id": "churchie_web",
+    "name": "Anglican Church Grammar School",
+    "scraper": "Anglican Church Grammar School/churchie_webscrape.py",
+    "sql": "Anglican Church Grammar School/churchie_webscrape_courses_update.sql",
+    "xlsx": "Anglican Church Grammar School/churchie_webscrape.xlsx",
+    "dir": "Anglican Church Grammar School"
+  },
+  {
+    "id": "btc_web",
+    "name": "Blackheath and Thornburgh College",
+    "scraper": "Blackheath and Thornburgh College/btc_webscrape.py",
+    "sql": "Blackheath and Thornburgh College/btc_webscrape_courses_update.sql",
+    "xlsx": "Blackheath and Thornburgh College/btc_webscrape.xlsx",
+    "dir": "Blackheath and Thornburgh College"
+  },
+  {
+    "id": "brisbane_grammar_web",
+    "name": "Brisbane Grammar School",
+    "scraper": "Brisbane Grammar School/brisbane_grammar_webscrape.py",
+    "sql": "Brisbane Grammar School/brisbane_grammar_webscrape_courses_update.sql",
+    "xlsx": "Brisbane Grammar School/brisbane_grammar_webscrape.xlsx",
+    "dir": "Brisbane Grammar School"
+  },
+  {
+    "id": "bbc_web",
+    "name": "Brisbane Boys College",
+    "scraper": "Brisbane Boys College/bbc_webscrape.py",
+    "sql": "Brisbane Boys College/bbc_webscrape_courses_update.sql",
+    "xlsx": "Brisbane Boys College/bbc_webscrape.xlsx",
+    "dir": "Brisbane Boys College"
+  },
+  {
+    "id": "downlands_web",
+    "name": "Downlands College Ltd",
+    "scraper": "Downlands College Ltd/downlands_webscrape.py",
+    "sql": "Downlands College Ltd/downlands_webscrape_courses_update.sql",
+    "xlsx": "Downlands College Ltd/downlands_webscrape.xlsx",
+    "dir": "Downlands College Ltd"
+  },
+  {
+    "id": "glennie_web",
+    "name": "The Glennie School",
+    "scraper": "The Glennie School/glennie_webscrape.py",
+    "sql": "The Glennie School/glennie_webscrape_courses_update.sql",
+    "xlsx": "The Glennie School/glennie_webscrape.xlsx",
+    "dir": "The Glennie School"
+  },
+  {
+    "id": "ipswich_grammar_web",
+    "name": "Ipswich Grammar School",
+    "scraper": "Ipswich Grammar School/ipswich_grammar_webscrape.py",
+    "sql": "Ipswich Grammar School/ipswich_grammar_webscrape_courses_update.sql",
+    "xlsx": "Ipswich Grammar School/ipswich_grammar_webscrape.xlsx",
+    "dir": "Ipswich Grammar School"
+  },
+  {
+    "id": "jpc_web",
+    "name": "John Paul College Limited",
+    "scraper": "John Paul College Limited/jpc_webscrape.py",
+    "sql": "John Paul College Limited/jpc_webscrape_courses_update.sql",
+    "xlsx": "John Paul College Limited/jpc_webscrape.xlsx",
+    "dir": "John Paul College Limited"
+  },
+  {
+    "id": "lhc_web",
+    "name": "Lourdes Hill College",
+    "scraper": "Lourdes Hill College/lhc_webscrape.py",
+    "sql": "Lourdes Hill College/lhc_webscrape_courses_update.sql",
+    "xlsx": "Lourdes Hill College/lhc_webscrape.xlsx",
+    "dir": "Lourdes Hill College"
+  },
+  {
+    "id": "st_brendans_web",
+    "name": "St Brendan_s College Rockhampton",
+    "scraper": "St Brendan_s College Rockhampton/st_brendans_webscrape.py",
+    "sql": "St Brendan_s College Rockhampton/st_brendans_webscrape_courses_update.sql",
+    "xlsx": "St Brendan_s College Rockhampton/st_brendans_webscrape.xlsx",
+    "dir": "St Brendan_s College Rockhampton"
+  },
+  {
+    "id": "rgs_web",
+    "name": "Rockhampton Grammar School",
+    "scraper": "Rockhampton Grammar School/rgs_webscrape.py",
+    "sql": "Rockhampton Grammar School/rgs_webscrape_courses_update.sql",
+    "xlsx": "Rockhampton Grammar School/rgs_webscrape.xlsx",
+    "dir": "Rockhampton Grammar School"
+  },
+  {
+    "id": "rggs_web",
+    "name": "Rockhampton Girls Grammar School",
+    "scraper": "Rockhampton Girls Grammar School/rggs_webscrape.py",
+    "sql": "Rockhampton Girls Grammar School/rggs_webscrape_courses_update.sql",
+    "xlsx": "Rockhampton Girls Grammar School/rggs_webscrape.xlsx",
+    "dir": "Rockhampton Girls Grammar School"
+  },
+  {
+    "id": "sac_web",
+    "name": "St Augustine_s College Cairns",
+    "scraper": "St Augustine_s College Cairns/sac_webscrape.py",
+    "sql": "St Augustine_s College Cairns/sac_webscrape_courses_update.sql",
+    "xlsx": "St Augustine_s College Cairns/sac_webscrape.xlsx",
+    "dir": "St Augustine_s College Cairns"
+  },
+  {
+    "id": "st_hildas_web",
+    "name": "St Hilda_s School Southport",
+    "scraper": "St Hilda_s School Southport/st_hildas_webscrape.py",
+    "sql": "St Hilda_s School Southport/st_hildas_webscrape_courses_update.sql",
+    "xlsx": "St Hilda_s School Southport/st_hildas_webscrape.xlsx",
+    "dir": "St Hilda_s School Southport"
+  },
+  {
+    "id": "st_margarets_web",
+    "name": "St Margaret_s School Council Ltd",
+    "scraper": "St Margaret_s School Council Ltd/st_margarets_webscrape.py",
+    "sql": "St Margaret_s School Council Ltd/st_margarets_webscrape_courses_update.sql",
+    "xlsx": "St Margaret_s School Council Ltd/st_margarets_webscrape.xlsx",
+    "dir": "St Margaret_s School Council Ltd"
   }
 ]

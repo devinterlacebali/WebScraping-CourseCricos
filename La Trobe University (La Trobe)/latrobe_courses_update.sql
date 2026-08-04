@@ -12,7 +12,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-arts',
     updated_at = NOW()
 WHERE cricos_course_code = '002080A';
 
@@ -24,7 +24,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-psychological-science',
     updated_at = NOW()
 WHERE cricos_course_code = '002915G';
 
@@ -36,7 +36,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-biological-sciences',
     updated_at = NOW()
 WHERE cricos_course_code = '006171K';
 
@@ -48,9 +48,21 @@ UPDATE courses SET
     enrolment_fee = NULL,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://www.latrobe.edu.au/study/apply/research',
+    apply_form = 'https://www.latrobe.edu.au/courses/doctor-of-philosophy',
     updated_at = NOW()
-WHERE cricos_course_code = 'Low cost: 0100699; High cost: 0100698';
+WHERE cricos_course_code = '0100699';
+
+UPDATE courses SET
+    course_description = '<p>The Doctor of Philosophy (PhD) degree is an internationally-recognised advanced research qualification.</p><p>Each PhD candidate undertakes a substantial piece of independent and sustained research on an original topic under academic supervision and leading to the submission of a thesis for examination. The research is expected to make a significantly new and innovative contribution to the discipline.</p><p>Candidates are supported by at least two accredited supervisors with a demonstrated track record in the proposed area of investigation as outlined in the Graduate Research Supervision Policy. Progress throughout the degree is tracked and managed in keeping with the University''s Graduate Research Progress Policy. Candidature may be undertaken on a full-time or part-time basis, subject to the restrictions of the student visa.</p><p>The thesis must be submitted within four years (or part-time equivalent) of commencement in the degree. All PhD programs are administered by the La Trobe Graduate Research School.</p><p>The qualification awarded on graduation is recognised in the Australian Qualifications Framework (AQF) as Level 10 - PhD.</p>',
+    course_duration_per_week = 208,
+    offshore_tuition_fee = 45000,
+    onshore_tuition_fee = 45000,
+    enrolment_fee = NULL,
+    materials_fee = NULL,
+    entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
+    apply_form = 'https://www.latrobe.edu.au/courses/doctor-of-philosophy',
+    updated_at = NOW()
+WHERE cricos_course_code = '0100698';
 
 UPDATE courses SET
     course_description = '<p>You''ll learn practical skills and knowledge essential for a career in professional clinical psychology. The curriculum covers areas such as cognitive behavioural therapy, child and adolescent mental health, psychopathology, counselling skills, psychological assessment and treatment, and advanced psychotherapy process skills.</p><p>You''ll also explore the ethical and professional issues associated with work in this field, and develop skills in writing professional-standard assessment reports suitable for a range of referral agencies or contexts.</p><p>During your clinical placement practicum, you''ll perform clinic intake assessments and conduct case work with clients including face-to-face assessment and intervention with adults and children.</p><p>During your program you''ll be required to work on a research project. Working collaboratively with your research supervisor, you''ll address a research question relevant to the field of clinical psychology and produce a research report. </p><p>As a graduate, you''ll be equipped with the relevant skills and knowledge to work with adults and children in a range of clinical settings (such as community health centres, schools, hospitals, prisons, applied research facilities, and private practice).</p><p>The qualification awarded on graduation is recognised in the Australian Qualifications Framework (AQF) as Level 9 - Masters Degree.</p>',
@@ -60,7 +72,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>7.0 IELTS (Academic) with no individual band less than 7.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-clinical-psychology',
     updated_at = NOW()
 WHERE cricos_course_code = '006277M';
 
@@ -72,7 +84,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-business-analytics',
     updated_at = NOW()
 WHERE cricos_course_code = '0100037';
 
@@ -84,9 +96,21 @@ UPDATE courses SET
     enrolment_fee = NULL,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://www.latrobe.edu.au/study/apply/research',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-philosophy',
     updated_at = NOW()
-WHERE cricos_course_code = 'Low cost: 0100701; High cost: 0100700';
+WHERE cricos_course_code = '0100701';
+
+UPDATE courses SET
+    course_description = '<p>The Master of Philosophy (MPhil) degree is an internationally-recognised Master''s (by research) degree. It is designed for students to develop advanced skills in carrying out independent and sustained research. It culminates in a thesis of up to 50,000 words or its practice-based equivalent. The thesis should demonstrate a critical application of specialist knowledge and make an independent contribution to existing scholarship in the area of research. Each candidate undertakes a piece of independent and sustained research on a topic under academic supervision and leading to the submission of a thesis for examination. Please note that some research areas require a higher fee, and you will need to apply for a different course code. </p><p>The qualification awarded on graduation is recognised in the Australian Qualifications Framework (AQF) as Level 9 – Masters Degree by Research.</p>',
+    course_duration_per_week = 104,
+    offshore_tuition_fee = 45000,
+    onshore_tuition_fee = 45000,
+    enrolment_fee = NULL,
+    materials_fee = NULL,
+    entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-philosophy',
+    updated_at = NOW()
+WHERE cricos_course_code = '0100700';
 
 UPDATE courses SET
     course_description = '<p>If you''re endlessly curious about the past, La Trobe''s Bachelor of Archaeology is the perfect place to develop specialist skills and knowledge, and build a rewarding career as a professional archaeologist or heritage manager.</p><p>You''ll learn from renowned researchers in La Trobe''s world-class facilities and benefit from both a hands-on and academic perspective.</p><p>Exploring Australia''s rich and varied Indigenous cultures, as well as peoples from other ancient and urban societies around the globe, you''ll develop in-demand, specialist skills in contemporary archaeological practice.</p><p>For students interested in further study or a global career in archaeology, the Bachelor of Archaeology will give you strong field skills applicable anywhere in the world.</p><p><strong>You''ll learn:</strong></p><ul><li><strong>Archaeological fieldwork methods</strong><ul><li>Build the practical skills and knowledge you need to work in professional archaeology in Australia and overseas.</li></ul></li><li><strong>Ethical heritage management</strong><ul><li>Learn how to collaborate and communicate respectfully with traditional owners and local communities.</li></ul></li><li><strong>Ancient societies and civilisations</strong><ul><li>Learn how the human species evolved and spread across the world – adapting to new environments, transforming landscapes and developing new technologies.</li></ul></li><li><strong>Scientific methods of archaeological practice</strong><ul><li>Explore a wide range of scientific techniques and methods, including geophysical survey, geographic information systems (GIS), archaeomagnetic dating, and ancient DNA.</li></ul></li></ul><p>The qualification awarded on graduation is recognised in the Australian Qualifications Framework (AQF) as Level 7 - Bachelor Degree.</p>',
@@ -96,7 +120,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-archaeology',
     updated_at = NOW()
 WHERE cricos_course_code = '0100732';
 
@@ -105,7 +129,7 @@ UPDATE courses SET
     course_duration_per_week = 156,
     offshore_tuition_fee = 170400,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-languages-and-linguistics',
     updated_at = NOW()
 WHERE cricos_course_code = '0100735';
 
@@ -117,7 +141,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</p><p>Units 3 and 4: a study score of at least 25 in one of Biology, Chemistry, Health and Human Development, Physical Education, Physics, Psychology or any Mathematics.</p> English Language Requirements<p>Please refer to our <a href="https://www.latrobe.edu.au/study/apply/international/requirements">Language requirements</a> page for details of other accepted English proficiency tests and additional recognised English language proficiency measures, such as English as the language of instruction.</p><br/><p>IELTS is the only English Proficiency test accepted for entry into this course.</p><br/><p>6.5 IELTS (Academic) with no individual band less than 6.0.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-orthoptics-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '0100796';
 
@@ -129,7 +153,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</p><p>Units 3 and 4: a study score of at least 25 in one of Biology, Chemistry, Health and Human Development, Physical Education , Physics, Psychology or any Mathematics.</p> English Language Requirements<p>7.0 IELTS (Academic) with no individual band less than 7.0.</p><br/><p>Please refer to our <a href="https://www.latrobe.edu.au/study/apply/international/requirements">Language requirements</a> page for details of other accepted English proficiency tests and additional recognised English language proficiency measures, such as English as the language of instruction.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-podiatry-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '0100797';
 
@@ -141,7 +165,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</p> English Language Requirements<p>IELTS (Academic) score of 7.0 with no individual band score less than 6.5. (increase in IELTS score due to a change in accreditation requirements)</p><br/><p>IELTS is the only English Proficiency tests accepted for entry into this course.</p><br/><p>Please refer to our <a href="https://www.latrobe.edu.au/study/apply/international/requirements">Language requirements</a> page for details of other accepted English proficiency tests and additional recognised English language proficiency measures, such as English as the language of instruction.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-prosthetics-and-orthotics-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '0100798';
 
@@ -153,7 +177,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</p> English Language Requirements<p>IELTS is the only English Proficiency test accepted for entry into this course.</p><br/><p>7.0 IELTS (Academic) with no individual band less than 7.0.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-dental-science-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '0100799';
 
@@ -165,7 +189,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-cybersecurity-bachelor-of-commerce',
     updated_at = NOW()
 WHERE cricos_course_code = '0100860';
 
@@ -177,7 +201,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-cybersecurity-bachelor-of-criminology',
     updated_at = NOW()
 WHERE cricos_course_code = '0100861';
 
@@ -189,7 +213,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-artificial-intelligence',
     updated_at = NOW()
 WHERE cricos_course_code = '0100864';
 
@@ -201,7 +225,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://www.latrobe.edu.au/study/apply/research',
+    apply_form = 'https://www.latrobe.edu.au/courses/doctor-of-midwifery',
     updated_at = NOW()
 WHERE cricos_course_code = '0101141';
 
@@ -213,7 +237,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</p> English Language Requirements<p>7.0 IELTS (Academic) with no individual band less than 7.0.</p><br/><p>Please refer to our <a href="https://www.latrobe.edu.au/study/apply/international/requirements">Language requirements</a> page for details of other accepted English proficiency tests and additional recognised English language proficiency measures, such as English as the language of instruction.</p><br/><p>IELTS, TOEFL, PTE, OET are the only English Proficiency tests accepted for entry into this course.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-occupational-therapy-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '0101261';
 
@@ -225,7 +249,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</p><p>Units 3 and 4: a study score of at least 25 in two of Biology, Chemistry, Physics, General Mathematics, Mathematics Methods, Specialist Mathematics or Physical Education.</p> English Language Requirements<p>7.0 IELTS (Academic) with no individual band less than 7.0.</p><br/><p>Please refer to our <a href="https://www.latrobe.edu.au/study/apply/international/requirements">Language requirements</a> page for details of other accepted English proficiency tests and additional recognised English language proficiency measures, such as English as the language of instruction.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-physiotherapy-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '0101262';
 
@@ -237,7 +261,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td><ul><li>Please refer to our Language requirements page for details of other accepted English proficiency tests and additional recognised English language proficiency measures, such as English as the language of instruction.</li><li>7.0 IELTS (Academic) with no individual band less than 7.0.</li></ul></td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-social-work-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '0101263';
 
@@ -249,7 +273,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 25 in one of Biology, Chemistry, any Mathematics, Physical Education, Physics or Health and Human Development.</p><p>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</p> English Language Requirements<p>IELTS is the only English Proficiency test accepted for entry into this course.</p><br/><p>Please refer to our <a href="https://www.latrobe.edu.au/study/apply/international/requirements">Language requirements</a> page for details of other accepted English proficiency tests and additional recognised English language proficiency measures, such as English as the language of instruction.</p><br/><p>7.5 IELTS (Academic) with no individual band less than 7.0.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-speech-pathology-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '0101264';
 
@@ -261,7 +285,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-digital-health',
     updated_at = NOW()
 WHERE cricos_course_code = '0101684';
 
@@ -273,7 +297,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-education',
     updated_at = NOW()
 WHERE cricos_course_code = '011412M';
 
@@ -285,7 +309,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-business',
     updated_at = NOW()
 WHERE cricos_course_code = '019479E';
 
@@ -297,7 +321,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</p> English Language Requirements<p>IELTS, TOEFL and PTE are the only English Proficiency tests accepted for entry into this course.</p><p><strong>Please note:<br/></strong><a href="http://pearsonpte.com/"><strong>Pearson Test of English </strong></a>(PTE) Academic. <br/>Applicants must achieve a minimum overall score of 65 and a minimum score of 65 in each of the four communicative skills (listening, reading, writing and speaking).</p><p><strong><em>NOTE:</em></strong></p><p><strong>We will only accept test results:</strong></p><ol><li><em>from one test sitting, or</em></li><li><em>a maximum of two test sittings in a six month period only if:</em></li></ol><ul><li><em>a minimum overall score of 65 is achieved in each sitting, and</em></li><li><em>you achieve a minimum score of 65 in each of the communicative skills across the two sittings, and</em></li><li><em>no score in any of the communicative skills is below 58</em></li></ul><br/><p>IELTS of 7.0 with no individual band score less than 7.0 (can be across 2 sittings in a 6-month period, but no score can be below 6.5 and overall score must be 7 in both sittings)</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-nursing',
     updated_at = NOW()
 WHERE cricos_course_code = '113570D';
 
@@ -309,7 +333,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td><ul><li>Units 3 and 4: a study score of at least 20 in any Mathematics</li><li>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL</li></ul></td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-computer-science',
     updated_at = NOW()
 WHERE cricos_course_code = '118149K';
 
@@ -321,7 +345,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td><ul><li>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</li><li>Units 3 and 4: a study score of at least 20 in any Mathematics.</li></ul></td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-science',
     updated_at = NOW()
 WHERE cricos_course_code = '022039C';
 
@@ -333,7 +357,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-arts-bachelor-of-health-sciences',
     updated_at = NOW()
 WHERE cricos_course_code = '025959E';
 
@@ -347,7 +371,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-information-technology',
     updated_at = NOW()
 WHERE cricos_course_code = '037928B';
 
@@ -356,7 +380,7 @@ UPDATE courses SET
     course_duration_per_week = 52,
     offshore_tuition_fee = 43800,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-diploma-in-information-technology',
     updated_at = NOW()
 WHERE cricos_course_code = '049582B';
 
@@ -368,7 +392,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-biotechnology-and-bioinformatics',
     updated_at = NOW()
 WHERE cricos_course_code = '049585K';
 
@@ -380,7 +404,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-information-technology',
     updated_at = NOW()
 WHERE cricos_course_code = '049940G';
 
@@ -392,7 +416,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://www.latrobe.edu.au/study/apply/research',
+    apply_form = 'https://www.latrobe.edu.au/courses/doctor-of-clinical-science',
     updated_at = NOW()
 WHERE cricos_course_code = '054041M';
 
@@ -404,7 +428,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'English Language Requirements<p>Please refer to our <a href="https://www.latrobe.edu.au/study/apply/international/requirements">Language requirements</a> page for details of other accepted English proficiency tests and additional recognised English language proficiency measures, such as English as the language of instruction.</p><br/><p>7.0 IELTS (Academic) with no individual band less than 7.0.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-social-work',
     updated_at = NOW()
 WHERE cricos_course_code = '110240B';
 
@@ -416,7 +440,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-animal-and-veterinary-biosciences',
     updated_at = NOW()
 WHERE cricos_course_code = '060348G';
 
@@ -428,7 +452,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-biomedical-science',
     updated_at = NOW()
 WHERE cricos_course_code = '062549E';
 
@@ -440,7 +464,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-health-sciences',
     updated_at = NOW()
 WHERE cricos_course_code = '062598G';
 
@@ -452,7 +476,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td><ul><li>IELTS, TOEFL, PTE are the only English Proficiency tests accepted for entry into this course.</li><li>Refer to Language requirements page for details of other accepted English proficiency tests and additional recognised English language proficiency measures, such as English as the language of instruction.</li><li>7.0 IELTS (Academic) with no individual band less than 7.0.</li></ul></td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-occupational-therapy-practice',
     updated_at = NOW()
 WHERE cricos_course_code = '062795B';
 
@@ -464,7 +488,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'English Language Requirements<p>Please refer to our <a href="https://www.latrobe.edu.au/study/apply/international/requirements">Language requirements</a> page for details of other accepted English proficiency tests and additional recognised English language proficiency measures, such as English as the language of instruction.</p><br/><p>7.0 IELTS (Academic) with no individual band less than 7.0.</p><br/><p>IELTS, TOEFL and PTE are the only English Proficiency tests accepted for entry into this course.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-physiotherapy-practice',
     updated_at = NOW()
 WHERE cricos_course_code = '111850A';
 
@@ -473,7 +497,7 @@ UPDATE courses SET
     course_duration_per_week = 104,
     offshore_tuition_fee = 87200,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-health-information-management',
     updated_at = NOW()
 WHERE cricos_course_code = '062804F';
 
@@ -485,7 +509,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-accounting',
     updated_at = NOW()
 WHERE cricos_course_code = '066343J';
 
@@ -497,7 +521,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-psychological-science-with-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '069379F';
 
@@ -509,7 +533,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.5.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-pharmacy-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '069561G';
 
@@ -530,7 +554,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://www.latrobe.edu.au/study/apply/research',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-science',
     updated_at = NOW()
 WHERE cricos_course_code = '071897K';
 
@@ -542,9 +566,9 @@ UPDATE courses SET
     enrolment_fee = NULL,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-politics-philosophy-and-economics',
     updated_at = NOW()
-WHERE cricos_course_code = ' 071901G';
+WHERE cricos_course_code = '071901G';
 
 UPDATE courses SET
     course_description = '<p>La Trobe''s Master of Speech Pathology gives you the knowledge and skills to help people realise their communication and swallowing potential. Learn how to observe communication and mealtimes in everyday settings, conduct assessments, interpret clinical data and develop interventions. You''ll also gain hands-on experience working with a range of individual clients.</p><p>As you learn, you''ll take part in clinical workshops, guided demonstration sessions and simulation activities. You''ll also work with service providers to help people with communication and swallowing needs participate and feel included in their community.</p><p>Graduate ready to help people live their best lives.</p><p><strong>You''ll learn:</strong></p><ul><li><strong>Speech pathology practice</strong><ul><li>Explore the roles and functions of speech pathologists and how to optimise communication and swallowing in a variety of social and clinical contexts.</li></ul></li><li><strong>Assessment of communication and swallowing</strong><ul><li>Gain theoretical and practical experience in conducting and interpreting speech pathology assessments.</li></ul></li><li><strong>Therapeutic intervention and management</strong><ul><li>Discover how to use assessment information, clinical experience and client observation to formulate intervention and management strategies in partnership with others.</li></ul></li><li><strong>Clinical management</strong><ul><li>Develop your clinical and workplace skills by undertaking placements in a range of community health, school, hospital and private practice settings.</li></ul></li></ul><p>The qualification awarded on graduation is recognised in the Australian Qualifications Framework (AQF) as Level 9 - Masters Degree.</p>',
@@ -554,7 +578,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td><ul><li>7.5 IELTS (Academic) with no individual band less than 7.0.</li><li>IELTS and TOEFL and are the only English Proficiency tests accepted for entry into this course.</li><li>Please refer to our Language requirements page for details of other accepted English proficiency tests and additional recognised English language proficiency measures, such as English as the language of instruction.</li></ul></td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-speech-pathology',
     updated_at = NOW()
 WHERE cricos_course_code = '073116F';
 
@@ -563,7 +587,7 @@ UPDATE courses SET
     course_duration_per_week = 52,
     offshore_tuition_fee = 49200,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-diploma-in-business-administration',
     updated_at = NOW()
 WHERE cricos_course_code = '075422B';
 
@@ -572,7 +596,7 @@ UPDATE courses SET
     course_duration_per_week = 26,
     offshore_tuition_fee = 24600,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-in-business-administration',
     updated_at = NOW()
 WHERE cricos_course_code = '075423A';
 
@@ -584,7 +608,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>7.5 IELTS (Academic) with no individual band less than 7.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-art-therapy',
     updated_at = NOW()
 WHERE cricos_course_code = '077479B';
 
@@ -596,7 +620,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 20 in one of Maths: General Mathematics, Mathematical Methods or Specialist Mathematics.</p><p>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</p> English Language Requirements<p>6.0 IELTS (Academic) with no individual band less than 6.0.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-civil-engineering-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '078469G';
 
@@ -608,7 +632,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-in-business',
     updated_at = NOW()
 WHERE cricos_course_code = '079546B';
 
@@ -620,7 +644,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-engineering-management',
     updated_at = NOW()
 WHERE cricos_course_code = '080775A';
 
@@ -632,7 +656,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td><ul><li>7.0 IELTS (Academic) with no individual band less than 7.0.</li><li>Please refer to our Language requirements page for details of other accepted English proficiency tests and additional recognised English language proficiency measures, such as English as the language of instruction.</li><li>IELTS, TOEFL and PTE are the only English Proficiency tests accepted for entry into this course.</li></ul></td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-clinical-audiology',
     updated_at = NOW()
 WHERE cricos_course_code = '080780D';
 
@@ -644,7 +668,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-commerce-bachelor-of-arts',
     updated_at = NOW()
 WHERE cricos_course_code = '084537E';
 
@@ -656,7 +680,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-commerce',
     updated_at = NOW()
 WHERE cricos_course_code = '084539C';
 
@@ -668,7 +692,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td><ul><li>Units 3 and 4: a study score of at least 20 in any Mathematics.</li><li>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</li></ul></td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-commerce-bachelor-of-science',
     updated_at = NOW()
 WHERE cricos_course_code = '085379F';
 
@@ -680,7 +704,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-media-and-communication',
     updated_at = NOW()
 WHERE cricos_course_code = '086278C';
 
@@ -692,7 +716,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-business-analytics',
     updated_at = NOW()
 WHERE cricos_course_code = '087774A';
 
@@ -704,7 +728,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>7.0 IELTS (Academic) with no individual band less than 7.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-oral-health-science',
     updated_at = NOW()
 WHERE cricos_course_code = '089313C';
 
@@ -716,7 +740,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-criminology',
     updated_at = NOW()
 WHERE cricos_course_code = '089314B';
 
@@ -728,7 +752,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-biotechnology-management',
     updated_at = NOW()
 WHERE cricos_course_code = '091417K';
 
@@ -740,7 +764,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-of-archaeology',
     updated_at = NOW()
 WHERE cricos_course_code = '091422B';
 
@@ -752,7 +776,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-data-science',
     updated_at = NOW()
 WHERE cricos_course_code = '092396B';
 
@@ -764,7 +788,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 20 in any Mathematics </p><p>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</p> English Language Requirements<p>6.5 IELTS (Academic) with no individual band less than 6.0.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-commerce-bachelor-of-computer-science',
     updated_at = NOW()
 WHERE cricos_course_code = '092917D';
 
@@ -776,7 +800,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-commerce-bachelor-of-health-sciences',
     updated_at = NOW()
 WHERE cricos_course_code = '093259C';
 
@@ -797,7 +821,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</p><p>Units 1 and 2: satisfactory completion in one of Maths: General Mathematics, Maths: Mathematical Methods or Maths: Specialist Mathematics or Units 3 and 4: any Mathematics</p> English Language Requirements<p>7.0 IELTS (Academic) with no individual band less than 7.0 and a score of no less than 7.5 in Speaking and Listening.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-education',
     updated_at = NOW()
 WHERE cricos_course_code = '110999K';
 
@@ -809,7 +833,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-diploma-in-sport-analytics',
     updated_at = NOW()
 WHERE cricos_course_code = '094173A';
 
@@ -821,7 +845,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-biomedicine',
     updated_at = NOW()
 WHERE cricos_course_code = '114827J';
 
@@ -833,7 +857,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 20 in one of Health And Human Development, Physical Education, any Mathematics (General mathematics, Mathematical Methods, Specialist Mathematics, Further Mathematics), or in one of Biology, Chemistry, Physics, Psychology.</p><p>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</p> English Language Requirements<p>6.5 IELTS (Academic) with no individual band less than 6.0.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-sport-and-exercise-science',
     updated_at = NOW()
 WHERE cricos_course_code = '095558J';
 
@@ -845,7 +869,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</p><p>Units 3 and 4: a study score of at least 20 in two of Biology, Chemistry, Health And Human Development, any Mathematics, Physical Education, Physics or Psychology.</p> English Language Requirements<p>7.0 IELTS (Academic) with no individual band less than 7.0.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-paramedic-practice-with-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '095691D';
 
@@ -857,7 +881,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-criminology-bachelor-of-psychological-science',
     updated_at = NOW()
 WHERE cricos_course_code = '096350F';
 
@@ -869,7 +893,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-cybersecurity',
     updated_at = NOW()
 WHERE cricos_course_code = '096351E';
 
@@ -881,7 +905,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-cybersecurity-bachelor-of-psychological-science',
     updated_at = NOW()
 WHERE cricos_course_code = '096858M';
 
@@ -893,7 +917,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-commerce-bachelor-of-psychological-science',
     updated_at = NOW()
 WHERE cricos_course_code = '099396A';
 
@@ -905,7 +929,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-in-digital-health',
     updated_at = NOW()
 WHERE cricos_course_code = '102426C';
 
@@ -914,7 +938,7 @@ UPDATE courses SET
     course_duration_per_week = 26,
     offshore_tuition_fee = 21900,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-in-information-technology-fundamentals',
     updated_at = NOW()
 WHERE cricos_course_code = '102578J';
 
@@ -926,7 +950,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-wildlife-and-conservation-biology',
     updated_at = NOW()
 WHERE cricos_course_code = '103743D';
 
@@ -938,7 +962,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-sport-analytics',
     updated_at = NOW()
 WHERE cricos_course_code = '103840C';
 
@@ -950,7 +974,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-in-sport-analytics',
     updated_at = NOW()
 WHERE cricos_course_code = '103841B';
 
@@ -962,7 +986,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-engineering',
     updated_at = NOW()
 WHERE cricos_course_code = '104735G';
 
@@ -971,7 +995,7 @@ UPDATE courses SET
     course_duration_per_week = 52,
     offshore_tuition_fee = 43800,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-diploma-in-artificial-intelligence',
     updated_at = NOW()
 WHERE cricos_course_code = '104800C';
 
@@ -983,7 +1007,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-cybersecurity',
     updated_at = NOW()
 WHERE cricos_course_code = '104801B';
 
@@ -995,7 +1019,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td><ul><li>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</li><li>Units 3 and 4: a study score of at least 20 in any Mathematics.</li></ul></td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-agriculture',
     updated_at = NOW()
 WHERE cricos_course_code = '115616A';
 
@@ -1007,7 +1031,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 20 in any Mathematics.</p><p>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</p> English Language Requirements<p>6.0 IELTS (Academic) with no individual band less than 6.0.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/diploma-of-science',
     updated_at = NOW()
 WHERE cricos_course_code = '104807G';
 
@@ -1016,7 +1040,7 @@ UPDATE courses SET
     course_duration_per_week = 52,
     offshore_tuition_fee = 42000,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/diploma-of-information-technology',
     updated_at = NOW()
 WHERE cricos_course_code = '104936J';
 
@@ -1028,7 +1052,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-health-information-management',
     updated_at = NOW()
 WHERE cricos_course_code = '106398C';
 
@@ -1040,7 +1064,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-laws-honours',
     updated_at = NOW()
 WHERE cricos_course_code = '106400C';
 
@@ -1052,7 +1076,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-laws-honours-bachelor-of-psychological-science',
     updated_at = NOW()
 WHERE cricos_course_code = '106403M';
 
@@ -1064,7 +1088,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-laws-honours-bachelor-of-criminology',
     updated_at = NOW()
 WHERE cricos_course_code = '106404K';
 
@@ -1076,7 +1100,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-global-studies',
     updated_at = NOW()
 WHERE cricos_course_code = '106465H';
 
@@ -1088,7 +1112,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-outdoor-and-sustainability-education',
     updated_at = NOW()
 WHERE cricos_course_code = '106466G';
 
@@ -1097,7 +1121,7 @@ UPDATE courses SET
     course_duration_per_week = 52,
     offshore_tuition_fee = 36800,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/diploma-of-teacher-education',
     updated_at = NOW()
 WHERE cricos_course_code = '106754K';
 
@@ -1109,7 +1133,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL</td></tr><tr><td><strong>English Proficiency</strong></td><td>IELTS (Academic) score of 7.5 with no individual band score less than 7.0</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/associate-degree-of-teacher-education',
     updated_at = NOW()
 WHERE cricos_course_code = '106755J';
 
@@ -1121,7 +1145,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-diploma-in-education',
     updated_at = NOW()
 WHERE cricos_course_code = '106756H';
 
@@ -1133,7 +1157,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-professional-accounting',
     updated_at = NOW()
 WHERE cricos_course_code = '106758F';
 
@@ -1145,7 +1169,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-extended-professional-accounting',
     updated_at = NOW()
 WHERE cricos_course_code = '106759E';
 
@@ -1157,7 +1181,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-commerce-bachelor-of-global-studies',
     updated_at = NOW()
 WHERE cricos_course_code = '106768D';
 
@@ -1169,7 +1193,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-logistics-and-supply-chain-management',
     updated_at = NOW()
 WHERE cricos_course_code = '106769C';
 
@@ -1190,7 +1214,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-in-logistics-and-supply-chain-management',
     updated_at = NOW()
 WHERE cricos_course_code = '106771J';
 
@@ -1202,7 +1226,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-laws-honours-bachelor-of-global-studies',
     updated_at = NOW()
 WHERE cricos_course_code = '106772H';
 
@@ -1214,7 +1238,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-laws-honours-bachelor-of-commerce',
     updated_at = NOW()
 WHERE cricos_course_code = '106773G';
 
@@ -1226,7 +1250,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-laws-honours-bachelor-of-media-and-communication',
     updated_at = NOW()
 WHERE cricos_course_code = '106774F';
 
@@ -1238,7 +1262,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td><ul><li>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</li><li>Units 3 and 4: a study score of at least 20 in any Mathematics.</li></ul></td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/associate-degree-in-engineering-technology',
     updated_at = NOW()
 WHERE cricos_course_code = '106835J';
 
@@ -1247,7 +1271,7 @@ UPDATE courses SET
     course_duration_per_week = 26,
     offshore_tuition_fee = 21900,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-in-data-science-fundamentals',
     updated_at = NOW()
 WHERE cricos_course_code = '106836H';
 
@@ -1259,7 +1283,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 20 in any Mathematics.</p><p>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</p> English Language Requirements<p>6.0 IELTS (Academic) with no individual band less than 6.0.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-arts-bachelor-of-science',
     updated_at = NOW()
 WHERE cricos_course_code = '106838F';
 
@@ -1268,7 +1292,7 @@ UPDATE courses SET
     course_duration_per_week = 26,
     offshore_tuition_fee = 21900,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-in-business-analytics',
     updated_at = NOW()
 WHERE cricos_course_code = '107088J';
 
@@ -1280,7 +1304,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-laws-honours-bachelor-of-arts',
     updated_at = NOW()
 WHERE cricos_course_code = '107090D';
 
@@ -1292,7 +1316,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-laws-honours-bachelor-of-politics-philosophy-and-economics',
     updated_at = NOW()
 WHERE cricos_course_code = '107091C';
 
@@ -1304,7 +1328,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'Academic Requirements<p>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</p><p>Units 3 and 4: a study score of at least 20 in any Mathematics.</p> English Language Requirements<p>6.5 IELTS (Academic) with no individual band less than 6.0.</p>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-laws-honours-bachelor-of-science',
     updated_at = NOW()
 WHERE cricos_course_code = '107092B';
 
@@ -1316,7 +1340,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-diploma-of-archaeology',
     updated_at = NOW()
 WHERE cricos_course_code = '107139C';
 
@@ -1328,7 +1352,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-archaeology',
     updated_at = NOW()
 WHERE cricos_course_code = '107140K';
 
@@ -1340,7 +1364,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-in-professional-accounting',
     updated_at = NOW()
 WHERE cricos_course_code = '107148B';
 
@@ -1352,7 +1376,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-business-information-systems',
     updated_at = NOW()
 WHERE cricos_course_code = '107439B';
 
@@ -1364,7 +1388,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-nursing',
     updated_at = NOW()
 WHERE cricos_course_code = '107440J';
 
@@ -1376,7 +1400,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-diploma-in-engineering-management',
     updated_at = NOW()
 WHERE cricos_course_code = '108004K';
 
@@ -1388,7 +1412,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-visual-arts',
     updated_at = NOW()
 WHERE cricos_course_code = '110457G';
 
@@ -1400,7 +1424,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>7.0 IELTS (Academic) with no individual band less than 7.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-dietetics',
     updated_at = NOW()
 WHERE cricos_course_code = '110805C';
 
@@ -1412,7 +1436,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/global-master-of-business-administration',
     updated_at = NOW()
 WHERE cricos_course_code = '112624C';
 
@@ -1430,7 +1454,7 @@ UPDATE courses SET
     course_duration_per_week = 156,
     offshore_tuition_fee = 127200,
     enrolment_fee = 0,
-    apply_form = 'https://www.latrobe.edu.au/contact/question',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-food-and-nutrition',
     updated_at = NOW()
 WHERE cricos_course_code = '113593H';
 
@@ -1442,7 +1466,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>IELTS of 7.0 with no individual band score less than 7.0 (can be across 2 sittings in a 6-month period, but no score can be below 6.5 and overall score must be 7 in both sittings)</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-nursing-bachelor-of-psychological-science',
     updated_at = NOW()
 WHERE cricos_course_code = '113662M';
 
@@ -1454,7 +1478,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-in-marketing',
     updated_at = NOW()
 WHERE cricos_course_code = '113897C';
 
@@ -1466,7 +1490,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-manufacturing-engineering',
     updated_at = NOW()
 WHERE cricos_course_code = '113898B';
 
@@ -1478,7 +1502,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-civil-engineering',
     updated_at = NOW()
 WHERE cricos_course_code = '113899A';
 
@@ -1487,7 +1511,7 @@ UPDATE courses SET
     course_duration_per_week = 104,
     offshore_tuition_fee = 86000,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-counselling-rehabilitation-and-mental-health',
     updated_at = NOW()
 WHERE cricos_course_code = '114007A';
 
@@ -1499,7 +1523,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-commerce-bachelor-of-biomedicine',
     updated_at = NOW()
 WHERE cricos_course_code = '116675D';
 
@@ -1511,7 +1535,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 30 in English (EAL) or at least 25 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-laws-honours-bachelor-of-biomedicine',
     updated_at = NOW()
 WHERE cricos_course_code = '116914E';
 
@@ -1520,7 +1544,7 @@ UPDATE courses SET
     course_duration_per_week = 52,
     offshore_tuition_fee = 43800,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-diploma-in-cybersecurity',
     updated_at = NOW()
 WHERE cricos_course_code = '116915D';
 
@@ -1532,7 +1556,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = 'English Language Requirements<p>7.0 IELTS (Academic) with no individual band less than 7.0.</p><br/><p>IELTS, TOEFL and PTE are the only English Proficiency tests accepted for entry into this course.</p><p><strong>Please note:<br/></strong><a href="http://pearsonpte.com/"><strong>Pearson Test of English </strong></a>(PTE) Academic. <br/>Applicants must achieve a minimum overall score of 65 and a minimum score of 65 in each of the four communicative skills (listening, reading, writing and speaking).</p><p><strong><em>NOTE:</em></strong></p><p><strong>We will only accept test results:</strong></p><ol><li><em>from one test sitting, or</em></li><li><em>a maximum of two test sittings in a six month period only if:</em></li></ol><ul><li><em>a minimum overall score of 65 is achieved in each sitting, and</em></li><li><em>you achieve a minimum score of 65 in each of the communicative skills across the two sittings, and</em></li><li><em>no score in any of the communicative skills is below 58</em></li></ul>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-nursing-practice',
     updated_at = NOW()
 WHERE cricos_course_code = '117009H';
 
@@ -1544,7 +1568,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-construction-engineering-and-management',
     updated_at = NOW()
 WHERE cricos_course_code = '117010D';
 
@@ -1556,7 +1580,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>Academic Requirements</strong></td><td>Units 3 and 4: a study score of at least 25 in English (EAL) or at least 20 in English other than EAL.</td></tr><tr><td><strong>English Proficiency</strong></td><td>6.0 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/bachelor-of-sport-and-recreation-management',
     updated_at = NOW()
 WHERE cricos_course_code = '117169C';
 
@@ -1568,7 +1592,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/master-of-professional-engineering',
     updated_at = NOW()
 WHERE cricos_course_code = '117350F';
 
@@ -1577,7 +1601,7 @@ UPDATE courses SET
     course_duration_per_week = 26,
     offshore_tuition_fee = 22100,
     enrolment_fee = 0,
-    apply_form = 'https://apply.latrobe.edu.au/content/forms/af/direct-applications/home.html',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-in-public-health',
     updated_at = NOW()
 WHERE cricos_course_code = '119013G';
 
@@ -1589,7 +1613,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.5.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-diploma-in-early-childhood-education',
     updated_at = NOW()
 WHERE cricos_course_code = '119321F';
 
@@ -1601,6 +1625,7 @@ UPDATE courses SET
     enrolment_fee = 0,
     materials_fee = NULL,
     entry_requirements = '<table><tbody><tr><td><strong>English Proficiency</strong></td><td>6.5 IELTS (Academic) with no individual band less than 6.0.</td></tr></tbody></table>',
-    apply_form = 'https://student-latrobe.studylink.com',
+    apply_form = 'https://www.latrobe.edu.au/courses/graduate-certificate-in-international-business',
     updated_at = NOW()
 WHERE cricos_course_code = '119325B';
+

@@ -422,7 +422,7 @@ async def run_scraper():
                 continue
             
             # Find all valid CRICOS codes in the string (e.g. "Low cost: 0100699; High cost: 0100698" -> ["0100699", "0100698"])
-            codes = re.findall(r"\b\d{6}[A-Za-z]\b", d["cricos"])
+            codes = re.findall(r"\b\d{5,7}[A-Za-z]?\b", d["cricos"])
             if not codes:
                 codes = [d["cricos"]]
                 

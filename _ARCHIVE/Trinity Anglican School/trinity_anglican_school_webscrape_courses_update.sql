@@ -1,0 +1,41 @@
+-- QLD Provider: Trinity Anglican School (00770B)
+-- Courses sourced from CRICOS register (3 courses)
+
+UPDATE provider_institution SET
+    intake_date = 'January, July',
+    updated_at = NOW()
+WHERE cricos_provider_code = '00770B';
+
+UPDATE courses SET
+    course_description = '<h4>Primary School Studies P-6</h4> <p><strong>Level:</strong> Primary School Studies</p>',
+    course_duration_per_week = 364,
+    offshore_tuition_fee = 205660,
+    onshore_tuition_fee = NULL,
+    enrolment_fee = 12190,
+    materials_fee = NULL,
+    entry_requirements = '<h4>Entry Requirements</h4><p>Academic transcripts, English language proficiency assessment, school interview</p>',
+    apply_form = 'https://www.tas.qld.edu.au',
+    updated_at = NOW()
+WHERE cricos_course_code = '085320C';
+UPDATE courses SET
+    course_description = '<h4>Junior Secondary 7-10</h4> <p><strong>Level:</strong> Junior Secondary Studies</p>',
+    course_duration_per_week = 208,
+    offshore_tuition_fee = 141330,
+    onshore_tuition_fee = NULL,
+    enrolment_fee = 8330,
+    materials_fee = NULL,
+    entry_requirements = '<h4>Entry Requirements</h4><p>Academic transcripts, English language proficiency assessment, school interview</p>',
+    apply_form = 'https://www.tas.qld.edu.au',
+    updated_at = NOW()
+WHERE cricos_course_code = '085321B';
+UPDATE courses SET
+    course_description = '<h4>Senior Secondary 11-12</h4> <p><strong>Level:</strong> Senior Secondary Certificate of Education</p>',
+    course_duration_per_week = 104,
+    offshore_tuition_fee = 77370,
+    onshore_tuition_fee = NULL,
+    enrolment_fee = 13740,
+    materials_fee = NULL,
+    entry_requirements = '<h4>Entry Requirements</h4><p>Academic records, English language proficiency (IELTS 5.5+ or equivalent), relevant prior study or work experience</p>',
+    apply_form = 'https://www.tas.qld.edu.au',
+    updated_at = NOW()
+WHERE cricos_course_code = '085322A';

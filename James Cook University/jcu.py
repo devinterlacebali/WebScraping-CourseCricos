@@ -1,163 +1,285 @@
-import re, asyncio, pandas as pd
-from bs4 import BeautifulSoup
-from datetime import datetime
-from playwright.async_api import async_playwright
+"""
+James Cook University course scraper (Scrapling, plain HTTP — no browser).
 
-# === CLEAN HTML ===
+Rewritten from the old Playwright version: JCU course pages embed a schema.org
+`Course` JSON-LD block with everything we need — CRICOS (`identifier`), description,
+and `offers` (Domestic CSP + International tuition, both indicative *annual* fees).
+Duration / intake / entry come from the `.course-fast-facts` tiles in the raw HTML.
+No tab-clicking needed (the old scraper drove Playwright to open the International tab).
+
+Fees are annual -> stored as the TOTAL over the course (annual x years), matching the
+repo convention. The CRICOS register (00117J) backfills any registered course whose
+page we didn't scrape, so every registered JCU course is covered.
+"""
+import re
+import sys
+import csv
+import json
+import time
+import pandas as pd
+from bs4 import BeautifulSoup
+from scrapling.fetchers import Fetcher
+
+if sys.platform.startswith("win"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
+# --- constants -------------------------------------------------------------
+PROVIDER_CODE = "00117J"                          # James Cook University
+SLUG = "jcu"
+DIR = "James Cook University"
+EXCEL_PATH = f"{DIR}/{SLUG}.xlsx"
+SQL_PATH = f"{DIR}/{SLUG}_courses_update.sql"
+REGISTER_CSV = "cricos-courses.csv"
+
+MONTH_ORDER = ["January", "February", "March", "April", "May", "June", "July",
+               "August", "September", "October", "November", "December"]
+
+# --- helpers ---------------------------------------------------------------
 def clean_html(html: str) -> str:
     if not html:
         return ""
-    html = re.sub(r"\s+", " ", html)
-    html = re.sub(r"(<br\s*/?>\s*){2,}", "<br>", html)
-    html = html.replace("'", "''")
-    return html.strip()
+    return re.sub(r"\s+", " ", html).replace("'", "''").strip()
 
-# === SANITIZE HTML ===
-def sanitize_html(soup: BeautifulSoup) -> str:
-    """hapus elemen media & ubah heading ke <p style='font-weight:bold;'>"""
-    for tag in soup.find_all(['img', 'svg', 'picture', 'iframe', 'video', 'source']):
-        tag.decompose()
-    for h in soup.find_all(['h1', 'h2', 'h3']):
-        h.name = 'p'
-        h['style'] = 'font-weight:bold;'
-    return str(soup)
+ALLOWED_TAGS = {"p", "ul", "ol", "li", "strong", "b", "em", "i", "a", "br", "h5"}
 
-# === SCRAPER PER COURSE ===
-async def scrape_jcu(url, browser):
-    data = {
-        "url": url,
-        "course_name": "",
-        "course_description": "",
-        "total_course_duration": "",
-        "offshore_tuition_fee": "",
-        "entry_requirements": "",
-        "apply_form": url,  # langsung link course
-        "cricos_course_code": ""
-    }
+def sanitise(node) -> str:
+    if node is None:
+        return ""
+    frag = BeautifulSoup(str(node), "html.parser")
+    for t in frag.find_all(["script", "style", "svg", "img", "button", "iframe"]):
+        t.decompose()
+    for t in frag.find_all(True):
+        for a in list(t.attrs):
+            if a != "href":
+                del t[a]
+    for t in frag.find_all("span"):
+        t.unwrap()
+    for t in frag.find_all(["h1", "h2", "h3", "h4", "h6"]):
+        t.name = "h5"
+    while True:
+        div = frag.find("div")
+        if div is None:
+            break
+        if div.find(["p", "ul", "ol", "li", "div", "h5"]):
+            div.unwrap()
+        else:
+            div.name = "p"
+    for t in frag.find_all(True):
+        if t.name not in ALLOWED_TAGS:
+            t.unwrap()
+    for t in frag.find_all(["p", "li", "strong", "b", "em", "i", "h5"]):
+        if not t.get_text(strip=True) and not t.find("br"):
+            t.decompose()
+    return str(frag)
 
-    page = await browser.new_page()
-    print(f"\n🌐 Opening {url} ...")
+def txt(el):
+    return re.sub(r"\s+", " ", el.get_text(" ", strip=True)) if el else ""
 
-    try:
-        await page.goto(url, timeout=90000, wait_until="domcontentloaded")
-        await asyncio.sleep(2)
+def num_fee(val):
+    v = re.sub(r"[^\d.]", "", str(val or ""))
+    if not v:
+        return "NULL"
+    n = float(v)
+    # < $100 is a nominal placeholder (e.g. the $1 Exchange Program), not a real fee
+    return str(int(n)) if n >= 100 else "NULL"
 
-        # === PASTIKAN TAB "International" DIKLIK ===
+def get_page(url, tries=3):
+    last = RuntimeError("unreachable")
+    for i in range(tries):
         try:
-            international_btn = await page.query_selector("a.course-fast-facts__header-link[href*='international']")
-            if international_btn:
-                await international_btn.click()
-                await page.wait_for_timeout(4000)
-                print("🌍 Switched to International tab")
+            return Fetcher.get(url, stealthy_headers=True)
         except Exception as e:
-            print(f"⚠️ Failed to switch to International tab: {e}")
+            last = e
+            time.sleep(1.5 * (i + 1))
+    raise last
 
-        # scroll biar semua data muncul
-        for _ in range(12):
-            await page.mouse.wheel(0, 2000)
-            await asyncio.sleep(0.6)
+def months_in(text):
+    return [m for m in MONTH_ORDER if re.search(rf"\b{m}\b", text or "")]
 
-        html = await page.content()
-        soup = BeautifulSoup(html, "html.parser")
+# --- JSON-LD + tile extraction ---------------------------------------------
+def course_ldjson(soup):
+    for sc in soup.select("script[type='application/ld+json']"):
+        try:
+            d = json.loads(sc.string or "{}")
+        except Exception:
+            continue
+        if isinstance(d, dict) and d.get("@type") == "Course":
+            return d
+    return {}
 
-        # === COURSE NAME ===
-        h1 = soup.find("h1")
-        data["course_name"] = h1.get_text(strip=True) if h1 else ""
+def offer_annual(course, category):
+    for o in course.get("offers", []) or []:
+        if category.lower() in (o.get("category") or "").lower():
+            price = (o.get("priceSpecification") or {}).get("price")
+            if price:
+                return float(price)
+    return None
 
-        # === DESCRIPTION ===
-        desc = soup.select_one("p.course-banner__text")
+def tile(soup, cls):
+    return soup.select_one(f"[class*='fast-facts-{cls}']")
+
+def extract_years(soup):
+    d = tile(soup, "duration")
+    m = re.search(r"([\d.]+)\s*year", txt(d), re.I)
+    if m:
+        return float(m.group(1))
+    m = re.search(r"([\d.]+)\s*month", txt(d), re.I)
+    return float(m.group(1)) / 12 if m else None
+
+# --- per course ------------------------------------------------------------
+def scrape_course(row):
+    url = str(row["url"]).strip()
+    title = str(row.get("title", "")).strip()
+    d = {"cricos": "", "title": title, "url": url, "course_description": "",
+         "course_duration_per_week": "", "offshore_tuition_fee": "NULL",
+         "onshore_tuition_fee": "NULL", "enrolment_fee": "NULL",
+         "materials_fee": "NULL", "entry_requirements": "", "apply_form": url,
+         "intake_months": [], "source": "page", "note": ""}
+    try:
+        soup = BeautifulSoup(str(get_page(url).html_content), "html.parser")
+        course = course_ldjson(soup)
+        d["cricos"] = (course.get("identifier") or "").strip()
+        d["title"] = course.get("name") or title
+
+        desc = (course.get("description") or "").strip()
         if desc:
-            data["course_description"] = clean_html(sanitize_html(desc))
+            d["course_description"] = clean_html(f"<h4>Course overview</h4><p>{desc}</p>")
 
-        # === DURATION ===
-        dur_tile = soup.select_one("div.fast-facts-duration div.course-fast-facts__tile__body-top p")
-        if dur_tile:
-            data["total_course_duration"] = dur_tile.get_text(strip=True)
+        years = extract_years(soup)
+        if years:
+            d["course_duration_per_week"] = str(int(round(years * 52)))
+        yr = years or 1
+        intl = offer_annual(course, "International")
+        dom = offer_annual(course, "Domestic")
+        if intl:
+            d["offshore_tuition_fee"] = str(int(round(intl * yr)))
+        if dom:
+            d["onshore_tuition_fee"] = str(int(round(dom * yr)))
 
-        # === FEE ===
-        fee_tile = soup.select_one("div.fast-facts-fees div.course-fast-facts__tile__body-top__lrg p")
-        if fee_tile:
-            m = re.search(r"\$([\d,]+)", fee_tile.get_text())
-            if m:
-                data["offshore_tuition_fee"] = m.group(1).replace(",", "")
+        com = tile(soup, "commencing")
+        d["intake_months"] = months_in(txt(com))
 
-        # === ENTRY REQUIREMENTS ===
-        entry_tile = soup.select_one("div.fast-facts-entry-requirements div.course-fast-facts__tile__body-top")
-        if entry_tile:
-            data["entry_requirements"] = clean_html(sanitize_html(entry_tile))
+        er = tile(soup, "entry-requ")
+        if er:
+            for h in er.select("[class*='__header']"):
+                h.decompose()
+            d["entry_requirements"] = clean_html("<h4>Entry Requirements</h4>" + sanitise(er))
 
-        # === CRICOS CODE ===
-        cricos_tile = soup.select_one("div.fast-facts-codes div.cricos-code p")
-        if cricos_tile:
-            data["cricos_course_code"] = cricos_tile.get_text(strip=True)
-
+        if not d["cricos"]:
+            d["note"] = "no CRICOS in JSON-LD"
+        print(f"{'✅' if d['cricos'] else '⚠️ '} {d['title'][:44]:44} → {d['cricos'] or '—'} | "
+              f"off {d['offshore_tuition_fee']} on {d['onshore_tuition_fee']} "
+              f"| {d['course_duration_per_week'] or '?'}w")
     except Exception as e:
-        print(f"⚠️ Error scraping {url}: {e}")
-    finally:
-        await page.close()
+        d["note"] = f"error: {e}"
+        print(f"❌ {url}: {e}")
+    return d
 
-    print(f"✅ Scraped: {data['course_name']} ({data['cricos_course_code']})")
-    return data
-
-
-# === MAIN LOOP ===
-async def main():
-    df = pd.read_excel("James Cook University/jcu.xlsx")
-    all_data, sqls = [], []
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
-
-        for i, row in enumerate(df.itertuples(), start=1):
-            url = getattr(row, "url", "") if hasattr(row, "url") else getattr(row, "link", "")
-            if not isinstance(url, str) or not url.startswith("http"):
-                print(f"⚠️ Skipped invalid URL: {url}")
+# --- register backfill -----------------------------------------------------
+def load_register():
+    reg = {}
+    with open(REGISTER_CSV, encoding="utf-8-sig") as f:
+        for r in csv.DictReader(f):
+            if r["CRICOS Provider Code"].strip() != PROVIDER_CODE:
                 continue
-
-            print(f"\n🔍 ({i}/{len(df)}) Scraping: {url}")
-            result = await scrape_jcu(url, browser)
-
-            if not result["course_name"]:
-                print(f"⚠️ Skipped or failed: {url}")
+            if r["Expired"].strip().lower() == "yes":
                 continue
+            reg[r["CRICOS Course Code"].strip()] = r
+    return reg
 
-            all_data.append(result)
-            cricos = result["cricos_course_code"] or "UNKNOWN"
+def register_rows(scraped_codes):
+    """Partial records for registered courses the site scrape didn't cover."""
+    extra = []
+    for code, r in load_register().items():
+        if code in scraped_codes:
+            continue
+        weeks = re.sub(r"[^\d]", "", r.get("Duration (Weeks)") or "")
+        extra.append({
+            "cricos": code, "title": r["Course Name"].strip(),
+            "url": "", "course_description": "", "course_duration_per_week": weeks,
+            "offshore_tuition_fee": num_fee(r.get("Tuition Fee")),
+            "onshore_tuition_fee": "NULL", "enrolment_fee": num_fee(r.get("Non Tuition Fee")),
+            "materials_fee": "NULL", "entry_requirements": "", "apply_form": "",
+            "intake_months": [], "source": "register",
+            "note": "not on site scrape; from CRICOS register",
+        })
+    return extra
 
-            def esc(s): return s.replace("'", "''") if s else ""
+# --- main ------------------------------------------------------------------
+def main():
+    df = pd.read_excel(EXCEL_PATH)
+    # The xlsx doubles as our enriched output, so on re-runs it also contains the
+    # register-only rows (blank url). Only scrape rows with a real course URL;
+    # register rows are re-derived from the CSV below.
+    driver = [r for _, r in df.iterrows() if str(r.get("url", "")).strip().startswith("http")]
+    results = [scrape_course(r) for r in driver]
+    scraped_codes = {d["cricos"] for d in results if d["cricos"]}
+    results += register_rows(scraped_codes)
 
-            sql = f"""
+    months = set()
+    for d in results:
+        months.update(d["intake_months"])
+    intake_date = ", ".join(m for m in MONTH_ORDER if m in months)
+
+    enriched = sum(1 for d in results if d["source"] == "page" and d["cricos"])
+    emitted = set()
+    with open(SQL_PATH, "w", encoding="utf-8") as f:
+        f.write("-- Update provider institution details\n"
+                "UPDATE provider_institution SET\n"
+                f"    intake_date = '{intake_date}',\n    updated_at = NOW()\n"
+                f"WHERE cricos_provider_code = '{PROVIDER_CODE}';\n\n")
+        for d in results:
+            if not d["cricos"]:
+                f.write(f"-- ⚠️ Skipped ({d['note'] or 'no CRICOS'}): {d['title']} | {d['url']}\n\n")
+                continue
+            if d["cricos"] in emitted:
+                f.write(f"-- ⚠️ Skipped (CRICOS {d['cricos']} already emitted): {d['title']}\n\n")
+                continue
+            emitted.add(d["cricos"])
+            if d["source"] == "register":
+                f.write(f"""-- Register-only (not on site scrape): {d['title']}
 UPDATE courses SET
-    course_description = '{esc(result["course_description"])}',
-    total_course_duration = '{esc(result["total_course_duration"])}',
-    offshore_tuition_fee = '{esc(result["offshore_tuition_fee"])}',
-    entry_requirements = '{esc(result["entry_requirements"])}',
-    apply_form = '{esc(result["apply_form"])}',
-    created_at = '{now}',
-    updated_at = '{now}'
-WHERE cricos_course_code = '{cricos}';
-"""
-            sqls.append(sql)
+    course_duration_per_week = {d["course_duration_per_week"] or "NULL"},
+    offshore_tuition_fee = {d["offshore_tuition_fee"]},
+    enrolment_fee = {d["enrolment_fee"]},
+    updated_at = NOW()
+WHERE cricos_course_code = '{d["cricos"]}';
+""")
+                continue
+            f.write(f"""UPDATE courses SET
+    course_description = '{d["course_description"]}',
+    course_duration_per_week = {d["course_duration_per_week"] or "NULL"},
+    offshore_tuition_fee = {d["offshore_tuition_fee"]},
+    onshore_tuition_fee = {d["onshore_tuition_fee"]},
+    enrolment_fee = {d["enrolment_fee"]},
+    materials_fee = {d["materials_fee"]},
+    entry_requirements = '{d["entry_requirements"]}',
+    apply_form = '{d["apply_form"]}',
+    updated_at = NOW()
+WHERE cricos_course_code = '{d["cricos"]}';
+""")
 
-            # Auto-save tiap 10 course
-            if i % 10 == 0:
-                pd.DataFrame(all_data).to_excel("jcu_scraped_progress.xlsx", index=False)
-                with open("jcu_scraped_progress.sql", "w", encoding="utf-8") as f:
-                    f.write("\n".join(sqls))
-                print(f"💾 Progress saved ({i}/{len(df)}) ...")
+    def cell(v):
+        v = "" if v in (None, "NULL") else str(v).replace("''", "'")
+        return v[:32000]
+    pd.DataFrame([{
+        "cricos": d["cricos"], "title": d["title"], "url": d["url"],
+        "course_duration_per_week": int(d["course_duration_per_week"]) if str(d["course_duration_per_week"]).isdigit() else "",
+        "offshore_tuition_fee": cell(d["offshore_tuition_fee"]),
+        "onshore_tuition_fee": cell(d["onshore_tuition_fee"]),
+        "enrolment_fee": cell(d["enrolment_fee"]),
+        "intake": ", ".join(d["intake_months"]),
+        "course_description": cell(d["course_description"]),
+        "entry_requirements": cell(d["entry_requirements"]),
+        "source": d["source"], "note": d["note"],
+    } for d in results]).to_excel(EXCEL_PATH, index=False)
 
-        await browser.close()
-
-    # Final save
-    pd.DataFrame(all_data).to_excel("jcu_scraped_all.xlsx", index=False)
-    with open("jcu_scraped_all.sql", "w", encoding="utf-8") as f:
-        f.write("\n".join(sqls))
-
-    print("\nDone! Saved final outputs:")
-    print("- jcu_scraped_all.xlsx")
-    print("- jcu_scraped_all.sql")
-
+    print(f"\n✅ {len(emitted)} courses ({enriched} from site, {len(emitted)-enriched} register-only). "
+          f"Intake: {intake_date}\nSQL  -> {SQL_PATH}\nxlsx -> {EXCEL_PATH}")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

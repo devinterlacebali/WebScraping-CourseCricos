@@ -1,0 +1,47 @@
+-- Western Business Group Pty Ltd (04277E) - Webscrape Update
+UPDATE provider_institution SET intake_date='February, July', updated_at=NOW() WHERE cricos_provider_code='04277E';
+
+UPDATE courses SET
+    course_duration_per_week = 52,
+    offshore_tuition_fee = 10000,
+    onshore_tuition_fee = NULL,
+    enrolment_fee = 1500,
+    materials_fee = NULL,
+    course_description = '',
+    entry_requirements = '',
+    apply_form = '',
+    updated_at = NOW()
+WHERE cricos_course_code = '116658E';
+UPDATE courses SET
+    course_duration_per_week = 78,
+    offshore_tuition_fee = 14500,
+    onshore_tuition_fee = NULL,
+    enrolment_fee = 1500,
+    materials_fee = NULL,
+    course_description = '',
+    entry_requirements = '',
+    apply_form = '',
+    updated_at = NOW()
+WHERE cricos_course_code = '116659D';
+UPDATE courses SET
+    course_duration_per_week = 78,
+    offshore_tuition_fee = 16500,
+    onshore_tuition_fee = NULL,
+    enrolment_fee = 1000,
+    materials_fee = NULL,
+    course_description = '',
+    entry_requirements = '',
+    apply_form = '',
+    updated_at = NOW()
+WHERE cricos_course_code = '116660M';
+UPDATE courses SET
+    course_duration_per_week = 104,
+    offshore_tuition_fee = 19500,
+    onshore_tuition_fee = NULL,
+    enrolment_fee = 1000,
+    materials_fee = NULL,
+    course_description = '',
+    entry_requirements = '',
+    apply_form = '',
+    updated_at = NOW()
+WHERE cricos_course_code = '116661K';
